@@ -128,42 +128,56 @@ bool AppInit(int argc, char* argv[])
             fprintf(stderr, "Error: There is no RPC client functionality in bellsd anymore. Use the dogecoin-cli utility instead.\n");
             exit(EXIT_FAILURE);
         }
+
         // -server defaults to true for bitcoind but not for the GUI so do this here
         SoftSetBoolArg("-server", true);
+
         // Set this early so that parameter interactions go to console
         InitLogging();
         InitParameterInteraction();
         if (!AppInitBasicSetup())
         {
+            fprintf(stdout, "Error: FAILED INIT BASIC SETUP.\n");
             // InitError will have been called with detailed error, which ends up on console
             exit(1);
         }
         if (!AppInitParameterInteraction())
         {
+            fprintf(stdout, "Error: INVALID INIT PARAMETERS.\n");
             // InitError will have been called with detailed error, which ends up on console
             exit(1);
         }
         if (!AppInitSanityChecks())
         {
+            fprintf(stdout, "Error: INVALID SANITY CHECKS.\n");
             // InitError will have been called with detailed error, which ends up on console
             exit(1);
         }
+
         if (GetBoolArg("-daemon", false))
         {
 #if HAVE_DECL_DAEMON
-            fprintf(stdout, "Dogecoin server starting\n");
+            fprintf(stdout, "Bells server starting\n");
+
+            //bool test = ;
+
+            //fprintf(stdout, "test: %d\n", test);
 
             // Daemonize
             if (daemon(1, 0)) { // don't chdir (1), do close FDs (0)
+                fprintf(stdout, "Error: daemon() failed: %s\n", strerror(errno));
                 fprintf(stderr, "Error: daemon() failed: %s\n", strerror(errno));
                 return false;
             }
+
+            fprintf(stdout, "test\n");
 #else
             fprintf(stderr, "Error: -daemon is not supported on this operating system\n");
             return false;
 #endif // HAVE_DECL_DAEMON
         }
 
+        fprintf(stderr, "Starting... \n");
         fRet = AppInitMain(threadGroup, scheduler);
     }
     catch (const std::exception& e) {
