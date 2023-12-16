@@ -1,6 +1,6 @@
 ## Getting started
 
-This tutorial will help you to go through the basics to use Dogecoin Core after you completed the [installation instructions](/INSTALL.md). You now have `dogecoind` or `dogecoin-qt` executables available to run a node, and `dogecoin-cli`/`dogecoin-tx` tools to help you transact DOGE.
+This tutorial will help you to go through the basics to use Dogecoin Core after you completed the [installation instructions](/INSTALL.md). You now have `dogecoind` or `bells-qt` executables available to run a node, and `dogecoin-cli`/`dogecoin-tx` tools to help you transact DOGE.
 
 > **Note:** For simplicity, this guide assumes that executables can be found under the `PATH` environment variable.
 If needed, you can specify their location by typing `PATH=$PATH:/path/to/executables`, or prepend the full path to the command like:
@@ -31,9 +31,9 @@ To start your node, you can run an headless server using `dogecoind`:
 shibetoshi:~$ dogecoind -daemon
 ```
 
-Or you can use the Graphical User Interface (GUI), `dogecoin-qt`:
+Or you can use the Graphical User Interface (GUI), `bells-qt`:
 ```console
-shibetoshi:~$ dogecoin-qt
+shibetoshi:~$ bells-qt
 ```
 
 Detailed logging is recorded in `debug.log`, located in the [data directory](#data-directory).
@@ -41,7 +41,7 @@ Detailed logging is recorded in `debug.log`, located in the [data directory](#da
 
 Your node is now running and starts with a *synchronization process* that downloads the entire blockchain from other nodes. This operation will take many hours to complete, but you are now part of the Dogecoin network!
 
-> **Note:** The rest of this guide assumes the use of an headless node. The RPC server is not exposed with `dogecoin-qt` until you activate the `-server` option as a startup argument, but inside the GUI application, you can use all the commands explored below (without `dogecoin-cli`) by going to `Help -> Debug window` and inside the popup window selecting the tab `Console`.
+> **Note:** The rest of this guide assumes the use of an headless node. The RPC server is not exposed with `bells-qt` until you activate the `-server` option as a startup argument, but inside the GUI application, you can use all the commands explored below (without `dogecoin-cli`) by going to `Help -> Debug window` and inside the popup window selecting the tab `Console`.
 
 ## Introduction to the JSON-RPC API
 

@@ -1,5 +1,5 @@
 [Protocol]
-exec=dogecoin-qt '%u'
+exec=bells-qt '%u'
 protocol=dogecoin
 input=none
 output=none

@@ -1,4 +1,4 @@
-Dogecoin Core 0.14.2
+Bells Core 0.14.2
 =====================
 
 Development

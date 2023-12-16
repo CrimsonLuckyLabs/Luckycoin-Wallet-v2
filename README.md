@@ -1,30 +1,30 @@
 <h1 align="center">
-<img src="https://static.tumblr.com/ppdj5y9/Ae9mxmxtp/300coin.png" alt="Dogecoin" width="300"/>
+<img src="https://static.tumblr.com/ppdj5y9/Ae9mxmxtp/300coin.png" alt="Bells" width="300"/>
 <br/><br/>
-Dogecoin Core [DOGE, Ð]  
+Bells Core [DOGE, Ð]  
 </h1>
 
 <div align="center">
 
-[![DogecoinBadge](https://img.shields.io/badge/Doge-Coin-yellow.svg)](https://dogecoin.com)
+[![BellsBadge](https://img.shields.io/badge/Doge-Coin-yellow.svg)](https://dogecoin.com)
 [![MuchWow](https://img.shields.io/badge/Much-Wow-yellow.svg)](https://dogecoin.com)
 
 </div>
 
 Select language: EN | [CN](./README_zh_CN.md) | [PT](./README_pt_BR.md) | [FA](./README_fa_IR.md)
 
-Dogecoin is a community-driven cryptocurrency that was inspired by a Shiba Inu meme. The Dogecoin Core software allows anyone to operate a node in the Dogecoin blockchain networks and uses the Scrypt hashing method for Proof of Work. It is adapted from Bitcoin Core and other cryptocurrencies.
+Bells is a community-driven cryptocurrency that was inspired by a Shiba Inu meme. The Bells Core software allows anyone to operate a node in the Bells blockchain networks and uses the Scrypt hashing method for Proof of Work. It is adapted from Bitcoin Core and other cryptocurrencies.
 
-For information about the default fees used on the Dogecoin network, please
+For information about the default fees used on the Bells network, please
 refer to the [fee recommendation](doc/fee-recommendation.md).
 
 **Website:** [dogecoin.com](https://dogecoin.com)
 
 ## Usage 💻
 
-To start your journey with Dogecoin Core, see the [installation guide](INSTALL.md) and the [getting started](doc/getting-started.md) tutorial.
+To start your journey with Bells Core, see the [installation guide](INSTALL.md) and the [getting started](doc/getting-started.md) tutorial.
 
-The JSON-RPC API provided by Dogecoin Core is self-documenting and can be browsed with `dogecoin-cli help`, while detailed information for each command can be viewed with `dogecoin-cli help <command>`. Alternatively, see the [Bitcoin Core documentation](https://developer.bitcoin.org/reference/rpc/) - which implement a similar protocol - to get a browsable version.
+The JSON-RPC API provided by Bells Core is self-documenting and can be browsed with `dogecoin-cli help`, while detailed information for each command can be viewed with `dogecoin-cli help <command>`. Alternatively, see the [Bitcoin Core documentation](https://developer.bitcoin.org/reference/rpc/) - which implement a similar protocol - to get a browsable version.
 
 ### Such ports
 
