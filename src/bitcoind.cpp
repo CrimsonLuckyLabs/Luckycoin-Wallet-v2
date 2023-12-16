@@ -159,12 +159,12 @@ bool AppInit(int argc, char* argv[])
 #if HAVE_DECL_DAEMON
             fprintf(stdout, "Bells server starting\n");
 
-            //bool test = ;
+            //bool test = daemon(1, 0);
 
             //fprintf(stdout, "test: %d\n", test);
 
             // Daemonize
-            if (daemon(1, 0)) { // don't chdir (1), do close FDs (0)
+            if (false) { // don't chdir (1), do close FDs (0)
                 fprintf(stdout, "Error: daemon() failed: %s\n", strerror(errno));
                 fprintf(stderr, "Error: daemon() failed: %s\n", strerror(errno));
                 return false;
