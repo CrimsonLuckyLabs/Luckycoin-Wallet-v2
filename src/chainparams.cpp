@@ -84,7 +84,7 @@ public:
         // BIP34 is never enforced in Dogecoin v2 blocks, so we enforce from v3
 
         consensus.BIP34Height = 17000;
-        consensus.BIP34Hash = uint256S("0x80d1364201e5df97e696c03bdd24dc885e8617b9de51e453c10a4f629b1e797a");
+        consensus.BIP34Hash = uint256S("0x80d1364201e5df97e696c03bdd24dc885e8617b9de51e453c10a4f629b1e797a"); // unsued for now.
         consensus.BIP65Height = 17010; // 34cd2cbba4ba366f47e5aa0db5f02c19eba2adf679ceb6653ac003bdc9a0ef1f - first v4 block after the last v3 block
         consensus.BIP66Height = 17020; // 80d1364201e5df97e696c03bdd24dc885e8617b9de51e453c10a4f629b1e797a - this is the last block that could be v2, 1900 blocks past the last v2 block
 
@@ -173,8 +173,8 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("0x5b2a3f53f605d62c53e62932dac6925e3d74afa5a4b459745c36d42d0ed26a69"));
 
         // Note that of those with the service bits flag, most only support a subset of possible options
-        //vSeeds.push_back(CDNSSeedData("seed.belscan.io", "seeder.belscan.io", true));
-        vSeeds.push_back(CDNSSeedData("seeder.belscan.io", "seed.belscan.io", true));
+        vSeeds.push_back(CDNSSeedData("belscan.io", "seeder.belscan.io", true));
+        vSeeds.push_back(CDNSSeedData("belscan.io", "seed.belscan.io", true));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,25);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,30);
