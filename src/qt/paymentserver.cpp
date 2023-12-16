@@ -81,7 +81,7 @@ namespace // Anon namespace
 //
 static QString ipcServerName()
 {
-    QString name("DogecoinQt");
+    QString name("BellsQt");
 
     // Append a simple hash of the datadir
     // Note that GetDataDir(true) returns a different path
@@ -240,7 +240,7 @@ void PaymentServer::ipcParseCommandLine(int argc, char* argv[])
             PaymentRequestPlus request;
             if (readPaymentRequestFromFile(arg, request))
             {
-                if (request.getDetails().genesis() == "1a91e3dace36e2be3bf030a65679fe821aa1d6ef92e7c9902eb318182c355691")
+                if (request.getDetails().genesis() == "e5be24df57c43a82d15c2f06bda961296948f8f8eb48501bed1efb929afe0698")
                 {
                     SelectParams(CBaseChainParams::MAIN);
                 }
@@ -449,7 +449,7 @@ void PaymentServer::handleURIOrFile(const QString& s)
             }
             else
                 Q_EMIT message(tr("URI handling"),
-                    tr("URI cannot be parsed! This can be caused by an invalid Dogecoin address or malformed URI parameters."),
+                    tr("URI cannot be parsed! This can be caused by an invalid Bells address or malformed URI parameters."),
                     CClientUIInterface::ICON_WARNING);
 
             return;

@@ -206,7 +206,7 @@ public:
 
         checkpointData = (CCheckpointData) {
                 boost::assign::map_list_of
-                        (      0, uint256S("0x1a91e3dace36e2be3bf030a65679fe821aa1d6ef92e7c9902eb318182c355691"))
+                        (      0, uint256S("0xe5be24df57c43a82d15c2f06bda961296948f8f8eb48501bed1efb929afe0698"))
         };
 
         chainTxData = ChainTxData{
