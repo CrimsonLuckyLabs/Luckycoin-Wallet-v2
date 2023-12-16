@@ -1,2 +1,2 @@
 # List of fixed seed nodes for testnet
-
+65.109.171.29:29919
