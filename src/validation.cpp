@@ -1879,7 +1879,9 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
     fEnforceBIP30 = fEnforceBIP30 && (!pindexBIP34height || !(pindexBIP34height->GetBlockHash() == chainparams.GetConsensus(0).BIP34Hash));
 
     if(!fEnforceBIP30) {
-        LogPrint("cmpctblock", "Calculated BIP34 hash: " + strprintf(_("Reducing -maxconnections from %d to %d, because of system limitations."), pindexBIP34height->GetBlockHash()));
+        std::string hash = pindexBIP34height->GetBlockHash().ToString();
+
+        LogPrint("bench", "Calculated BIP34 hash: " + hash + "\n");
     }
 
     if (fEnforceBIP30) {
