@@ -1878,6 +1878,10 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
     //Only continue to enforce if we're below BIP34 activation height or the block hash at that height doesn't correspond.
     fEnforceBIP30 = fEnforceBIP30 && (!pindexBIP34height || !(pindexBIP34height->GetBlockHash() == chainparams.GetConsensus(0).BIP34Hash));
 
+    if(!fEnforceBIP30) {
+        LogPrint("cmpctblock", "Calculated BIP34 hash: " + strprintf(_("Reducing -maxconnections from %d to %d, because of system limitations."), pindexBIP34height->GetBlockHash()));
+    }
+
     if (fEnforceBIP30) {
         for (const auto& tx : block.vtx) {
             const CCoins* coins = view.AccessCoins(tx->GetHash());

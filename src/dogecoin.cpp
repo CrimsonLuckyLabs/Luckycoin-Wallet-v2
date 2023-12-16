@@ -29,10 +29,11 @@ bool AllowDigishieldMinDifficultyForBlock(const CBlockIndex* pindexLast, const C
     if (!params.fPowAllowMinDifficultyBlocks)
         return false;
 
-    // check if the chain allows minimum difficulty blocks on recalc blocks
-    if (pindexLast->nHeight < 157500)
-    // if (!params.fPowAllowDigishieldMinDifficultyBlocks)
+    // check if the chain allows minimum difficulty blocks on recalc blocks 157500
+    if ((unsigned)pindexLast->nHeight < params.nHeightEffective) { //minDifficultyConsensus.nHeightEffective
+        //if (!params.fPowAllowDigishieldMinDifficultyBlocks)
         return false;
+    }
 
     // Allow for a minimum block time if the elapsed time > 2*nTargetSpacing
     return (pblock->GetBlockTime() > pindexLast->GetBlockTime() + params.nPowTargetSpacing*2);
@@ -125,7 +126,65 @@ bool CheckAuxPowProofOfWork(const CBlockHeader& block, const Consensus::Params& 
 
 CAmount GetDogecoinBlockSubsidy(int nHeight, const Consensus::Params& consensusParams, uint256 prevHash)
 {
-    int halvings = nHeight / consensusParams.nSubsidyHalvingInterval;
+    CAmount nSubsidy = 2 * COIN;
+
+    if(nHeight < 101) {
+        nSubsidy = 2 * COIN; //first 100 blocks have minimal rewards
+    } else {
+        const std::string cseed_str = prevHash.ToString().substr(7, 7);
+        const char* cseed = cseed_str.c_str();
+        char* endp = NULL;
+
+        long seed = strtol(cseed, &endp, 16);
+
+        int rand = generateMTRandom(seed, 1000);
+        if (nHeight < 129600) {
+            if(rand >= 990) {
+                nSubsidy = 10000 * COIN;
+            } else if (rand >= 940) {
+                nSubsidy = 1000 * COIN;
+            } else if (rand >= 840) {
+                nSubsidy = 500 * COIN;
+            } else if (rand >= 700) {
+                nSubsidy = 250 * COIN;
+            } else if (rand >= 500) {
+                nSubsidy = 100 * COIN;
+            } else if (rand <= 499) {
+                nSubsidy = 50 * COIN;
+            }
+        } else if(nHeight < 259200) {
+            if (rand >= 990) {
+                nSubsidy = 5000 * COIN;
+            } else if (rand >= 940) {
+                nSubsidy = 500 * COIN;
+            } else if (rand >= 840) {
+                nSubsidy = 250 * COIN;
+            } else if (rand >= 700) {
+                nSubsidy = 125 * COIN;
+            } else if (rand >= 500) {
+                nSubsidy = 50 * COIN;
+            } else if (rand <= 499) {
+                nSubsidy = 25 * COIN;
+            }
+        } else if(nHeight < 518400) {
+            if (rand >= 990) {
+                nSubsidy = 500 * COIN;
+            } else if (rand >= 940) {
+                nSubsidy = 50 * COIN;
+            } else if (rand >= 840) {
+                nSubsidy = 25 * COIN;
+            } else if (rand >= 500) {
+                nSubsidy = 10 * COIN;
+            } else if (rand <= 499) {
+                nSubsidy = 5 * COIN;
+            }
+        }
+    }
+
+    return nSubsidy;
+
+    // keeping this if we have to change it to halving.
+    /*int halvings = nHeight / consensusParams.nSubsidyHalvingInterval;
 
     if (!consensusParams.fSimplifiedRewards)
     {
@@ -144,7 +203,7 @@ CAmount GetDogecoinBlockSubsidy(int nHeight, const Consensus::Params& consensusP
     } else {
         // Constant inflation
         return 10000 * COIN;
-    }
+    }*/
 }
 
 
