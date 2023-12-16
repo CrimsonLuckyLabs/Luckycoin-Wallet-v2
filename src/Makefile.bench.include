@@ -30,7 +30,7 @@ bench_bench_bells_SOURCES = \
 #   bench/checkblock.cpp \        # disabled because this checks a specific bitcoin block
 #   bench/verify_script.cpp \     # disabled because this checks a segwit transaction
 
-nodist_bench_bench_dogecoin_SOURCES = $(GENERATED_TEST_FILES)
+nodist_bench_bench_bells_SOURCES = $(GENERATED_TEST_FILES)
 
 bench_bench_bells_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CLFAGS) $(EVENT_PTHREADS_CFLAGS) -I$(builddir)/bench/
 bench_bench_bells_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
