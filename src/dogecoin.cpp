@@ -131,13 +131,13 @@ CAmount GetDogecoinBlockSubsidy(int nHeight, const Consensus::Params& consensusP
     if(nHeight < 101) {
         nSubsidy = 2 * COIN; //first 100 blocks have minimal rewards
     } else {
-        const std::string cseed_str = prevHash.ToString().substr(7, 7);
+        /*const std::string cseed_str = prevHash.ToString().substr(7, 7);
         const char* cseed = cseed_str.c_str();
         char* endp = NULL;
 
-        long seed = nHeight > 14500 ? strtol(cseed, &endp, 16) : nHeight;
+        long seed = nHeight > 14500 ? strtol(cseed, &endp, 16) : nHeight;*/
 
-        int rand = generateMTRandom(seed, 1000);
+        int rand = generateMTRandom(nHeight, 1000);
         if (nHeight < 129600) {
             if(rand >= 990) {
                 nSubsidy = 10000 * COIN;
