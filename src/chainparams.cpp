@@ -315,10 +315,10 @@ public:
         digishieldConsensus.pRight = &minDifficultyConsensus;
         minDifficultyConsensus.pRight = &auxpowConsensus;
 
-        pchMessageStart[0] = 0xc0;
-        pchMessageStart[1] = 0xc0;
-        pchMessageStart[2] = 0xc0;
-        pchMessageStart[3] = 0xc0;
+        pchMessageStart[0] = 0xfc;
+        pchMessageStart[1] = 0xc1;
+        pchMessageStart[2] = 0xb7;
+        pchMessageStart[3] = 0xdc;
         nDefaultPort = 29919;
         nPruneAfterHeight = 1000;
 
@@ -339,11 +339,11 @@ public:
         vSeeds.push_back(CDNSSeedData("belscan.io", "testnetseed.belscan.io", true));
         vSeeds.push_back(CDNSSeedData("belscan.io", "testnetseeder.belscan.io", true));
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,25);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,30);
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,158);
-        base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x02)(0xfa)(0xca)(0xfd).convert_to_container<std::vector<unsigned char> >();
-        base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x02)(0xfa)(0xc3)(0x98).convert_to_container<std::vector<unsigned char> >();
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,112); // 0x71
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,198); // 0xc4
+        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,241); // 0xf1
+        base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xcf).convert_to_container<std::vector<unsigned char> >();
+        base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
 
