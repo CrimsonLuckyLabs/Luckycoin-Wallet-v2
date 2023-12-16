@@ -5,7 +5,7 @@ Arch Linux build guide
 **Test date:** 2022/07/15
 
 This example lists the steps necessary to setup and build a command line only
-dogecoind on archlinux:
+bellsd on archlinux:
 
 ```sh
 pacman -S git base-devel boost libevent python db

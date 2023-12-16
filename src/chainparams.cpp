@@ -71,6 +71,7 @@ class CMainParams : public CChainParams {
 private:
     Consensus::Params digishieldConsensus;
     Consensus::Params auxpowConsensus;
+    Consensus::Params minDifficultyConsensus;
 public:
     CMainParams() {
         strNetworkID = "main";

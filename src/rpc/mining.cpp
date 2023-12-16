@@ -1025,7 +1025,7 @@ static UniValue AuxMiningCreateBlock(const CScript& scriptPubKey)
 
     /* Search for cached blocks with given scriptPubKey and assign it to pBlock
      * if we find a match. This allows for creating multiple aux templates with
-     * a single dogecoind instance, for example when a pool runs multiple sub-
+     * a single bellsd instance, for example when a pool runs multiple sub-
      * pools with different payout strategies.
      */
     CBlock* pblock = nullptr;

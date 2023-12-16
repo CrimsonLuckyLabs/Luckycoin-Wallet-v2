@@ -260,7 +260,7 @@ Note: check that SHA256SUMS itself doesn't end up in SHA256SUMS, which is a spur
 
   - Update title of #dogecoin on Freenode IRC
 
-  - Announce on reddit /r/dogecoin, /r/dogecoindev
+  - Announce on reddit /r/dogecoin, /r/bellsdev
 
 - Add release notes for the new version to the directory `doc/release-notes` in git master
 

@@ -85,13 +85,13 @@ sudo apt-get install libminiupnpc-dev
 
 ## Build steps
 
-According to installed dependencies, the following steps will compile `dogecoind`, `dogecoin-cli` and `bells-qt`.
+According to installed dependencies, the following steps will compile `bellsd`, `dogecoin-cli` and `bells-qt`.
 
 ```bash
 ./autogen.sh
 ./configure
-make
-make install # optional
+make -j8
+make install -j8 # optional
 ```
 See [Build configuration](#build-configuration) for extra settings.
 

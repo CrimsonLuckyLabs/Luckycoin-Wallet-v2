@@ -1,8 +1,8 @@
 
 Debian
 ====================
-This directory contains files used to package dogecoind/bells-qt
-for Debian-based Linux systems. If you compile dogecoind/bells-qt yourself, there are some useful files here.
+This directory contains files used to package bellsd/bells-qt
+for Debian-based Linux systems. If you compile bellsd/bells-qt yourself, there are some useful files here.
 
 ## dogecoin: URI support ##
 

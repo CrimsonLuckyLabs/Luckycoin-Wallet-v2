@@ -25,7 +25,7 @@ menu. Ensure your existing wallet software is closed before upgrading.
 Note that a full reindex is required as part of the upgrade to 1.8, and this
 will typically take around an hour to complete. If you are running the Qt client
 you will be prompted to reindex when first running the software, while if you
-use "dogecoind" you must run it the first time with the "-reindex" command line
+use "bellsd" you must run it the first time with the "-reindex" command line
 option.
 
 To ensure a smooth switchover to AuxPoW, 1.8 has safe mode disabled 1 hour before

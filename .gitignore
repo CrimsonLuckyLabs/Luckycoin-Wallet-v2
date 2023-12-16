@@ -2,7 +2,7 @@
 
 *.exe
 src/dogecoin
-src/dogecoind
+src/bellsd
 src/dogecoin-cli
 src/dogecoin-tx
 src/test/test_dogecoin

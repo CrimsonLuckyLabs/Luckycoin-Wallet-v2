@@ -54,7 +54,7 @@ Build Dogecoin Core
 Running
 -------
 
-Dogecoin Core is now available at `./src/dogecoind`
+Dogecoin Core is now available at `./src/bellsd`
 
 Before running, it's recommended you create an RPC configuration file.
 
@@ -62,7 +62,7 @@ Before running, it's recommended you create an RPC configuration file.
 
     chmod 600 "/Users/${USER}/Library/Application Support/Dogecoin/dogecoin.conf"
 
-The first time you run dogecoind, it will start downloading the blockchain. This process could take several hours.
+The first time you run bellsd, it will start downloading the blockchain. This process could take several hours.
 
 You can monitor the download process by looking at the debug.log file:
 
@@ -71,7 +71,7 @@ You can monitor the download process by looking at the debug.log file:
 Other commands:
 -------
 
-    ./src/dogecoind -daemon # Starts the dogecoin daemon.
+    ./src/bellsd -daemon # Starts the dogecoin daemon.
     ./src/dogecoin-cli --help # Outputs a list of command-line options.
     ./src/dogecoin-cli help # Outputs a list of RPC commands when the daemon is running.
 

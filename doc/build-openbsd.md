@@ -5,7 +5,7 @@ OpenBSD build guide
 
 (updated for OpenBSD 6.0)
 
-This guide describes how to build dogecoind and command-line utilities on OpenBSD.
+This guide describes how to build bellsd and command-line utilities on OpenBSD.
 
 As OpenBSD is most common as a server OS, we will not bother with the GUI.
 
