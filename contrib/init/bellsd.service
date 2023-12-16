@@ -12,7 +12,7 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/bellsd -conf=/etc/dogecoin/dogecoin.conf -datadir=/var/lib/dogecoin
+ExecStart=/usr/bin/bellsd -conf=/etc/dogecoin/bells.conf -datadir=/var/lib/dogecoin
 
 KillSignal=SIGINT
 Restart=always

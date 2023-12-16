@@ -104,7 +104,7 @@ namespace boost {
 
 using namespace std;
 
-const char * const BITCOIN_CONF_FILENAME = "dogecoin.conf";
+const char * const BITCOIN_CONF_FILENAME = "bells.conf";
 const char * const BITCOIN_PID_FILENAME = "bellsd.pid";
 
 CCriticalSection cs_args;
@@ -463,7 +463,7 @@ static std::string FormatException(const std::exception* pex, const char* pszThr
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(NULL, pszModule, sizeof(pszModule));
 #else
-    const char* pszModule = "dogecoin";
+    const char* pszModule = "bells";
 #endif
     if (pex)
         return strprintf(

@@ -1,7 +1,7 @@
 # /etc/conf.d/bellsd: config file for /etc/init.d/bellsd
 
 # Config file location
-#bellsd_CONFIGFILE="/etc/dogecoin/dogecoin.conf"
+#bellsd_CONFIGFILE="/etc/dogecoin/bells.conf"
 
 # What directory to write pidfile to?  (created and owned by $bellsd_USER)
 #bellsd_PIDDIR="/var/run/bellsd"

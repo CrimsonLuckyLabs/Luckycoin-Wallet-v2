@@ -317,9 +317,9 @@ Using `bellsd -help` will display all available configuration parameters that ca
 shibetoshi:~$ bellsd -daemon -paytxfee=0.01 -sendfreetransactions=1 -maxconnections=150
 ```
 
-Configuration can be persisted by creating a `dogecoin.conf` file. Create it in the directory defined with the `datadir` setting, `$HOME/.dogecoin` by default, or specify the file location with `-conf`.
+Configuration can be persisted by creating a `bells.conf` file. Create it in the directory defined with the `datadir` setting, `$HOME/.dogecoin` by default, or specify the file location with `-conf`.
 
-**dogecoin.conf example :**
+**bells.conf example :**
 ```
 daemon=1
 server=1
@@ -328,7 +328,7 @@ paytxfee=0.01
 sendfreetransactions=1
 maxconnections=150
 ```
-You can see a more concrete example [here](/contrib/debian/examples/dogecoin.conf).
+You can see a more concrete example [here](/contrib/debian/examples/bells.conf).
 
 ### Mainnet, testnet and regtest
 

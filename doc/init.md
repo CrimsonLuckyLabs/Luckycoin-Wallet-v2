@@ -44,7 +44,7 @@ This allows for running bellsd without having to do any manual configuration.
 relative to the data directory. `wallet` *only* supports relative paths.
 
 For an example configuration file that describes the configuration settings,
-see `contrib/debian/examples/dogecoin.conf`.
+see `contrib/debian/examples/bells.conf`.
 
 3. Paths
 ---------------------------------
@@ -54,7 +54,7 @@ see `contrib/debian/examples/dogecoin.conf`.
 All three configurations assume several paths that might need to be adjusted.
 
 Binary:              `/usr/bin/bellsd`  
-Configuration file:  `/etc/dogecoin/dogecoin.conf`  
+Configuration file:  `/etc/dogecoin/bells.conf`  
 Data directory:      `/var/lib/bellsd`  
 PID file:            `/var/run/bellsd/bellsd.pid` (OpenRC and Upstart) or `/var/lib/bellsd/bellsd.pid` (systemd)  
 Lock file:           `/var/lock/subsys/bellsd` (CentOS)  
@@ -68,9 +68,9 @@ can then be controlled by group membership.
 3b) Mac OS X
 
 Binary:              `/usr/local/bin/bellsd`  
-Configuration file:  `~/Library/Application Support/Dogecoin/dogecoin.conf`  
+Configuration file:  `~/Library/Application Support/Bells/bells.conf`  
 Data directory:      `~/Library/Application Support/Dogecoin`
-Lock file:           `~/Library/Application Support/Dogecoin/.lock`
+Lock file:           `~/Library/Application Support/Bells/.lock`
 
 4. Installing Service Configuration
 -----------------------------------
