@@ -3219,11 +3219,7 @@ static bool AcceptBlockHeader(const CBlockHeader& block, CValidationState& state
     BlockMap::iterator miSelf = mapBlockIndex.find(hash);
     CBlockIndex *pindex = NULL;
 
-    fprintf(stdout, "received: %s\n", hash.ToString());
-    fprintf(stdout, "expected: %s\n", chainparams.GetConsensus(0).hashGenesisBlock.ToString());
-
     if (hash != chainparams.GetConsensus(0).hashGenesisBlock) {
-
         if (miSelf != mapBlockIndex.end()) {
             // Block header is already known.
             pindex = miSelf->second;

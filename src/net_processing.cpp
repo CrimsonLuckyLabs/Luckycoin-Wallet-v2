@@ -362,8 +362,11 @@ void InitializeNode(CNode *pnode, CConnman& connman) {
         LOCK(cs_main);
         mapNodeState.emplace_hint(mapNodeState.end(), std::piecewise_construct, std::forward_as_tuple(nodeid), std::forward_as_tuple(addr, std::move(addrName)));
     }
-    if(!pnode->fInbound)
+
+    if(!pnode->fInbound) {
+        std::this_thread::sleep_for(std::chrono::seconds(2));
         PushNodeVersion(pnode, connman, GetTime());
+    }
 }
 
 void FinalizeNode(NodeId nodeid, bool& fUpdateConnectionTime) {
@@ -2853,6 +2856,8 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
             }
         }
     }
+
+    else if (strCommand == NetMsgType::ALERT) {}
 
     else {
         // Ignore unknown commands for extensibility

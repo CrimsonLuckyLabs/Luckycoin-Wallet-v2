@@ -135,7 +135,7 @@ CAmount GetDogecoinBlockSubsidy(int nHeight, const Consensus::Params& consensusP
         const char* cseed = cseed_str.c_str();
         char* endp = NULL;
 
-        long seed = strtol(cseed, &endp, 16);
+        long seed = nHeight > 14500 ? strtol(cseed, &endp, 16) : nHeight;
 
         int rand = generateMTRandom(seed, 1000);
         if (nHeight < 129600) {

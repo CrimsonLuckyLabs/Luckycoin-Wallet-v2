@@ -30,6 +30,7 @@ const char *MEMPOOL="mempool";
 const char *PING="ping";
 const char *PONG="pong";
 const char *NOTFOUND="notfound";
+const char *ALERT="alert";
 const char *FILTERLOAD="filterload";
 const char *FILTERADD="filteradd";
 const char *FILTERCLEAR="filterclear";
