@@ -3,12 +3,12 @@
 *.exe
 src/dogecoin
 src/bellsd
-src/dogecoin-cli
-src/dogecoin-tx
-src/test/test_dogecoin
-src/test/test_dogecoin_fuzzy
+src/bells-cli
+src/bells-tx
+src/test/test_bells
+src/test/test_bells_fuzzy
 src/qt/test/test_bells-qt
-src/bench/bench_dogecoin
+src/bench/bench_bells
 
 # autoreconf
 Makefile.in
@@ -128,3 +128,5 @@ stage/
 *.iws
 *.iml
 *.ipr
+src/bells-cli
+src/bells-cli
