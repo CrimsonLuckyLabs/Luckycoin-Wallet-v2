@@ -33,7 +33,7 @@ Build Dogecoin Core
         git clone https://github.com/dogecoin/dogecoin
         cd dogecoin
 
-2.  Build dogecoin:
+2.  Build Bells:
 
     Configure and build the headless dogecoin binaries as well as the GUI (if Qt is found).
 

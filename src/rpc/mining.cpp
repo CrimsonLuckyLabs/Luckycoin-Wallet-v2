@@ -99,7 +99,7 @@ UniValue getnetworkhashps(const JSONRPCRequest& request)
 
 UniValue generateBlocks(boost::shared_ptr<CReserveScript> coinbaseScript, int nGenerate, uint64_t nMaxTries, bool keepScript, int nMineAuxPow)
 {
-    // Dogecoin: Never mine witness tx
+    // bells: Never mine witness tx
     const bool fMineWitnessTx = false;
     static const int nInnerLoopCount = 0x10000;
     int nHeightStart = 0;
@@ -353,7 +353,7 @@ std::string gbt_vb_name(const Consensus::DeploymentPos pos) {
 
 UniValue getblocktemplate(const JSONRPCRequest& request)
 {
-    // Dogecoin: Never mine witness tx
+    // bells: Never mine witness tx
     const bool fMineWitnessTx = false;
     if (request.fHelp || request.params.size() > 1)
         throw runtime_error(
@@ -1020,7 +1020,7 @@ static UniValue AuxMiningCreateBlock(const CScript& scriptPubKey)
     static std::map<CScriptID, CBlock*> curBlocks;
     static unsigned nExtraNonce = 0;
 
-    // Dogecoin: Never mine witness tx
+    // bells: Never mine witness tx
     const bool fMineWitnessTx = false;
 
     /* Search for cached blocks with given scriptPubKey and assign it to pBlock
@@ -1188,7 +1188,7 @@ UniValue getauxblockbip22(const JSONRPCRequest& request)
         static unsigned nExtraNonce = 0;
 
         // Update block
-        // Dogecoin: Never mine witness tx
+        // bells: Never mine witness tx
         const bool fMineWitnessTx = false;
         {
             LOCK(cs_main);

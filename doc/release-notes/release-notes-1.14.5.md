@@ -38,7 +38,7 @@ most Dogecoin Core users.
 
 This release addresses CVE-2021-3401 that opened potential remote code execution
 on QT (graphical user interface) wallets through malicious use of
-`dogecoin:` URIs.
+`bells:` URIs.
 
 **Dogecoin QT users are urged to please update their installations to this
 version immediately**, to prevent malicious actors from exploiting this

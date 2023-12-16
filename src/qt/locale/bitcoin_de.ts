@@ -443,8 +443,8 @@
         <translation>Registerkartenleiste</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and dogecoin: URIs)</source>
-        <translation>Zahlungen anfordern (erzeugt QR-Codes und &quot;dogecoin:&quot;-URIs)</translation>
+        <source>Request payments (generates QR codes and bells: URIs)</source>
+        <translation>Zahlungen anfordern (erzeugt QR-Codes und &quot;bells:&quot;-URIs)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -455,8 +455,8 @@
         <translation>Liste verwendeter Empfangsadressen und Bezeichnungen anzeigen</translation>
     </message>
     <message>
-        <source>Open a dogecoin: URI or payment request</source>
-        <translation>Eine &quot;dogecoin:&quot;-URI oder Zahlungsanforderung öffnen</translation>
+        <source>Open a bells: URI or payment request</source>
+        <translation>Eine &quot;bells:&quot;-URI oder Zahlungsanforderung öffnen</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -1649,7 +1649,7 @@ p, li { white-space: pre-wrap; }
         <translation>fehlerhafte Zahlungsanforderung</translation>
     </message>
     <message>
-        <source>Cannot start dogecoin: click-to-pay handler</source>
+        <source>Cannot start bells: click-to-pay handler</source>
         <translation>Kann Dogecoin nicht starten: Klicken-zum-Bezahlen-Handler</translation>
     </message>
     <message>

@@ -21,7 +21,7 @@ The developers also maintain personal Twitter accounts:
   * @JRossNicoll
 
 Lastly the founders are on Twitter, although as of the time of writing not involved in
-maintaining Dogecoin:
+maintaining bells:
 
   * @ummjackson
   * @BillyM2k

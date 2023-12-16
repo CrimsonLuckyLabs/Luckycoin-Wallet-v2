@@ -443,7 +443,7 @@
         <translation>Barra de pestañas</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and dogecoin: URIs)</source>
+        <source>Request payments (generates QR codes and bells: URIs)</source>
         <translation>Solicitar pagos (generando códigos QR e identificadores URI &quot;dogecoin:&quot;)</translation>
     </message>
     <message>
