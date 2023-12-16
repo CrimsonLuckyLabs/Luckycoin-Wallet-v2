@@ -89,7 +89,6 @@ public:
         consensus.powLimit = uint256S("0x00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 20;
         consensus.nPowTargetTimespan = 4 * 60 * 60; // pre-digishield: 4 hours
         consensus.nPowTargetSpacing = 60; // 1 minute
-        consensus.fDigishieldDifficultyCalculation = false;
         consensus.nCoinbaseMaturity = 30;
         consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 9576; // 95% of 10,080
@@ -169,10 +168,7 @@ public:
 
         // Note that of those with the service bits flag, most only support a subset of possible options
         vSeeds.push_back(CDNSSeedData("seeder.belscan.io", "seed.belscan.io", true));
-        //vSeeds.push_back(CDNSSeedData("seeder.belscan.io", "seed.belscan.io"));
         vSeeds.push_back(CDNSSeedData("seed.belscan.io", "seeder.belscan.io", true));
-        //vSeeds.push_back(CDNSSeedData("seed.belscan.io", "seeder.belscan.io"));
-        // vSeeds.push_back(CDNSSeedData("multidoge.org", "seed2.multidoge.org"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,25);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,30);
@@ -330,8 +326,10 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("0x5b2a3f53f605d62c53e62932dac6925e3d74afa5a4b459745c36d42d0ed26a69"));
 
         vSeeds.clear();
+
         // nodes with support for servicebits filtering should be at the top
         vSeeds.push_back(CDNSSeedData("testnetseeder.belscan.io", "testnetseed.belscan.io", true));
+        vSeeds.push_back(CDNSSeedData("testnetseed.belscan.io", "testnetseeder.belscan.io", true));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,112); // 0x71
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,198); // 0xc4
