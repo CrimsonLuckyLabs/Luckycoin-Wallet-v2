@@ -3218,6 +3218,10 @@ static bool AcceptBlockHeader(const CBlockHeader& block, CValidationState& state
     uint256 hash = block.GetHash();
     BlockMap::iterator miSelf = mapBlockIndex.find(hash);
     CBlockIndex *pindex = NULL;
+
+    fprintf(stdout, "received: %s\n", hash.ToString());
+    fprintf(stdout, "expected: %s\n", chainparams.GetConsensus(0).hashGenesisBlock.ToString());
+
     if (hash != chainparams.GetConsensus(0).hashGenesisBlock) {
 
         if (miSelf != mapBlockIndex.end()) {
