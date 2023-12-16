@@ -1495,7 +1495,7 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
         pfrom->SetSendVersion(nSendVersion);
         pfrom->nVersion = nVersion;
 
-        fprintf(stdout, "received version message: %s: version %d, blocks=%d, us=%s, peer=%ld \n", (std::string) cleanSubVer, (int) pfrom->nVersion, (int)  pfrom->nStartingHeight, addrMe.ToString(), pfrom->id); //
+        LogPrint("net", "received version message: %s: version %d, blocks=%d, us=%s, peer=%ld \n", (std::string) cleanSubVer, (int) pfrom->nVersion, (int)  pfrom->nStartingHeight, addrMe.ToString(), pfrom->id);
 
         if((nServices & NODE_WITNESS))
         {
