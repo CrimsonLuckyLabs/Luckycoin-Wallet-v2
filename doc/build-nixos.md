@@ -20,4 +20,4 @@ Run the build steps with flags necessary for NixOS:
 
 Start the GUI!
 
-    $ ./src/qt/dogecoin-qt
+    $ ./src/qt/bells-qt

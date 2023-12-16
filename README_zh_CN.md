@@ -1,12 +1,12 @@
 <h1 align="center">
   <img align="center" src="https://static.tumblr.com/ppdj5y9/Ae9mxmxtp/300coin.png" width="300">
   <br/><br/>
-  狗狗币核心 (Dogecoin Core) [DOGE, Ð]
+  狗狗币核心 (Bells Core) [DOGE, Ð]
 </h1>
 
 <div align="center">
 
-[![DogecoinBadge](https://img.shields.io/badge/Doge-Coin-yellow.svg)](https://dogecoin.com)
+[![BellsBadge](https://img.shields.io/badge/Doge-Coin-yellow.svg)](https://dogecoin.com)
 [![MuchWow](https://img.shields.io/badge/Much-Wow-yellow.svg)](https://dogecoin.com)
 
 </div>
@@ -40,7 +40,7 @@
 主要开发资料：
 * [Github Projects](https://github.com/dogecoin/dogecoin/projects)用于跟踪即将发布的计划和正在进行的工作。
 * [Github Discussion](https://github.com/dogecoin/dogecoin/discussions)用于讨论与狗狗币内核软件开发、底层协议和狗狗币资产相关的计划内和计划外功能。 
-* [Dogecoindev subreddit](https://www.reddit.com/r/dogecoindev/)
+* [Bellsdev subreddit](https://www.reddit.com/r/dogecoindev/)
 
 ## 版本说明
 版本号码遵循以下语法：```major.minor.patch```。
@@ -68,10 +68,10 @@
 
 以下是一些社区的访问链接:
 
-* [Dogecoin subreddit](https://www.reddit.com/r/dogecoin/)
+* [Bells subreddit](https://www.reddit.com/r/dogecoin/)
 * [Dogeducation subreddit](https://www.reddit.com/r/dogeducation/)
 * [Discord](https://discord.gg/dogecoin)
-* [Dogecoin Twitter](https://twitter.com/dogecoin)
+* [Bells Twitter](https://twitter.com/dogecoin)
 
 ## 灰常常见的问题 ❓
 

@@ -1,28 +1,28 @@
 <h1 align="center">
-Dogecoin Core [DOGE, Ð]  
+Bells Core [DOGE, Ð]  
 <br/><br/>
-<img src="https://static.tumblr.com/ppdj5y9/Ae9mxmxtp/300coin.png" alt="Dogecoin" width="300"/>
+<img src="https://static.tumblr.com/ppdj5y9/Ae9mxmxtp/300coin.png" alt="Bells" width="300"/>
 </h1>
 
 <div align="center">
 
-[![DogecoinBadge](https://img.shields.io/badge/Doge-Coin-yellow.svg)](https://dogecoin.com)
+[![BellsBadge](https://img.shields.io/badge/Doge-Coin-yellow.svg)](https://dogecoin.com)
 [![MuchWow](https://img.shields.io/badge/Much-Wow-yellow.svg)](https://dogecoin.com)
 
 </div>
 
 Selecione o idioma: [EN](./README.md) | [CN](./README_zh_CN.md) | PT | [FA](./README_fa_IR.md)
 
-Dogecoin é uma criptomoeda gerida pela comunidade que foi inspirada no meme Shiba Inu. O programa Dogecoin Core permite qualquer um operar um nó na rede blockchain da Dogecoin e utilizar o algoritmo de hash Scrypt para mineração usando Prova de Trabalho (Proof of Work). O Dogecoin Core é uma adaptação do Bitcoin Core e de outras criptomoedas.
+Bells é uma criptomoeda gerida pela comunidade que foi inspirada no meme Shiba Inu. O programa Bells Core permite qualquer um operar um nó na rede blockchain da Bells e utilizar o algoritmo de hash Scrypt para mineração usando Prova de Trabalho (Proof of Work). O Bells Core é uma adaptação do Bitcoin Core e de outras criptomoedas.
 
-Para maiores informações acerca das taxas de transação usadas na rede Dogecoin, por favor acesse: 
+Para maiores informações acerca das taxas de transação usadas na rede Bells, por favor acesse: 
 [taxas recomendadas](doc/fee-recommendation.md).
 
 **Website:** [dogecoin.com](https://dogecoin.com)
 
 ## Uso 💻
 
-Para começar a sua jornada com o Dogecoin Core, veja o [manual de instalação](INSTALL.md) e o [guia para iniciantes](doc/getting-started.md).
+Para começar a sua jornada com o Bells Core, veja o [manual de instalação](INSTALL.md) e o [guia para iniciantes](doc/getting-started.md).
 
 A API JSON-RPC fornecida pelo Dogecoin Core é auto documentada e pode ser buscada pelo comando `dogecoin-cli help`, informações mais detalhadas sobre cada comando podem ser encontradas usando `dogecoin-cli help <command>`. Alternativamente, veja a [documentação do Bitcoin Core](https://developer.bitcoin.org/reference/rpc/) - que implementa um protocolo similar - para conseguir uma versão navegável.
 

@@ -7,7 +7,7 @@ MANDIR=${MANDIR:-$TOPDIR/doc/man}
 BITCOIND=${BITCOIND:-$SRCDIR/dogecoind}
 BITCOINCLI=${BITCOINCLI:-$SRCDIR/dogecoin-cli}
 BITCOINTX=${BITCOINTX:-$SRCDIR/dogecoin-tx}
-BITCOINQT=${BITCOINQT:-$SRCDIR/qt/dogecoin-qt}
+BITCOINQT=${BITCOINQT:-$SRCDIR/qt/bells-qt}
 
 [ ! -x $BITCOIND ] && echo "$BITCOIND not found or not executable." && exit 1
 
@@ -16,7 +16,7 @@ BTCVER=($($BITCOINCLI --version | head -n1 | awk -F'[ -]' '{ print $6, $7 }'))
 
 # Create a footer file with copyright content.
 # This gets autodetected fine for dogecoind if --version-string is not set,
-# but has different outcomes for dogecoin-qt and dogecoin-cli.
+# but has different outcomes for bells-qt and dogecoin-cli.
 echo "[COPYRIGHT]" > footer.h2m
 $BITCOIND --version | sed -n '1!p' >> footer.h2m
 

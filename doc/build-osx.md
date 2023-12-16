@@ -84,7 +84,7 @@ Uncheck everything except Qt Creator during the installation process.
 1. Make sure you installed everything through Homebrew mentioned above
 2. Do a proper ./configure --enable-debug
 3. In Qt Creator do "New Project" -> Import Project -> Import Existing Project
-4. Enter "dogecoin-qt" as project name, enter src/qt as location
+4. Enter "bells-qt" as project name, enter src/qt as location
 5. Leave the file selection as it is
 6. Confirm the "summary page"
 7. In the "Projects" tab select "Manage Kits..."

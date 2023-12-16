@@ -7,7 +7,7 @@ src/dogecoin-cli
 src/dogecoin-tx
 src/test/test_dogecoin
 src/test/test_dogecoin_fuzzy
-src/qt/test/test_dogecoin-qt
+src/qt/test/test_bells-qt
 src/bench/bench_dogecoin
 
 # autoreconf
@@ -75,12 +75,14 @@ src/qt/test/moc*.cpp
 # Compilation and Qt preprocessor part
 *.qm
 Makefile
-dogecoin-qt
+bells-qt
+bells-qt
 Bitcoin-Qt.app
 
 # Unit-tests
 Makefile.test
-dogecoin-qt_test
+bells-qt_test
+bells-qt_test
 src/test/buildenv.py
 
 # Resources cpp
