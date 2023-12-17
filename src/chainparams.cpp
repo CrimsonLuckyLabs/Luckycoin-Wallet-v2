@@ -175,7 +175,7 @@ public:
         // Note that of those with the service bits flag, most only support a subset of possible options
         //vSeeds.push_back(CDNSSeedData("belscan.io", "seeder.belscan.io", true));
         //vSeeds.push_back(CDNSSeedData("belscan.io", "seed.belscan.io", true));
-        vSeeds.push_back(CDNSSeedData("quark.blue", "bdnsseed.quark.blue"));
+        vSeeds.push_back(CDNSSeedData("quark.blue", "bdnsseeder.quark.blue"));
 
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,25);
