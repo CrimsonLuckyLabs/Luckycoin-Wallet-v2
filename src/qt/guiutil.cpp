@@ -152,7 +152,7 @@ void setupAmountWidget(QLineEdit *widget, QWidget *parent)
 bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
 {
     // return if URI is not valid or is no bells: URI
-    if(!uri.isValid() || uri.scheme() != QString("dogecoin"))
+    if(!uri.isValid() || uri.scheme() != QString("bells"))
         return false;
 
     SendCoinsRecipient rv;
@@ -624,10 +624,10 @@ boost::filesystem::path static StartupShortcutPath()
 {
     std::string chain = ChainNameFromCommandLine();
     if (chain == CBaseChainParams::MAIN)
-        return GetSpecialFolderPath(CSIDL_STARTUP) / "Dogecoin.lnk";
+        return GetSpecialFolderPath(CSIDL_STARTUP) / "Bells.lnk";
     if (chain == CBaseChainParams::TESTNET) // Remove this special case when CBaseChainParams::TESTNET = "testnet4"
-        return GetSpecialFolderPath(CSIDL_STARTUP) / "Dogecoin (testnet).lnk";
-    return GetSpecialFolderPath(CSIDL_STARTUP) / strprintf("Dogecoin (%s).lnk", chain);
+        return GetSpecialFolderPath(CSIDL_STARTUP) / "Bells (testnet).lnk";
+    return GetSpecialFolderPath(CSIDL_STARTUP) / strprintf("Bells (%s).lnk", chain);
 }
 
 bool GetStartOnSystemStartup()
@@ -768,9 +768,9 @@ bool SetStartOnSystemStartup(bool fAutoStart)
         optionFile << "[Desktop Entry]\n";
         optionFile << "Type=Application\n";
         if (chain == CBaseChainParams::MAIN)
-            optionFile << "Name=Dogecoin\n";
+            optionFile << "Name=Bells\n";
         else
-            optionFile << strprintf("Name=Dogecoin (%s)\n", chain);
+            optionFile << strprintf("Name=Bells (%s)\n", chain);
         optionFile << "Exec=" << pszExePath << strprintf(" -min -testnet=%d -regtest=%d\n", GetBoolArg("-testnet", false), GetBoolArg("-regtest", false));
         optionFile << "Terminal=false\n";
         optionFile << "Hidden=false\n";

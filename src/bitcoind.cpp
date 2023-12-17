@@ -125,7 +125,7 @@ bool AppInit(int argc, char* argv[])
 
         if (fCommandLine)
         {
-            fprintf(stderr, "Error: There is no RPC client functionality in bellsd anymore. Use the dogecoin-cli utility instead.\n");
+            fprintf(stderr, "Error: There is no RPC client functionality in bellsd anymore. Use the bells-cli utility instead.\n");
             exit(EXIT_FAILURE);
         }
 
