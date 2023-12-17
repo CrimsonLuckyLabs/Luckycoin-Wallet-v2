@@ -126,7 +126,7 @@ public:
         // Blocks 14500 are Digishield without AuxPoW
         digishieldConsensus = consensus;
 
-        digishieldConsensus.nHeightEffective = 17030;
+        digishieldConsensus.nHeightEffective = 170030;
 
         digishieldConsensus.fSimplifiedRewards = true;
         digishieldConsensus.fDigishieldDifficultyCalculation = true;
@@ -136,7 +136,7 @@ public:
         // Blocks 157500 - 158099 are Digishield with minimum difficulty on all blocks
         minDifficultyConsensus = digishieldConsensus;
 
-        minDifficultyConsensus.nHeightEffective = 17040;
+        minDifficultyConsensus.nHeightEffective = 170040;
 
         minDifficultyConsensus.fPowAllowDigishieldMinDifficultyBlocks = true;
         minDifficultyConsensus.fPowAllowMinDifficultyBlocks = true;
