@@ -7,6 +7,7 @@
 #include "net_processing.h"
 
 #include "addrman.h"
+#include <array>
 #include "arith_uint256.h"
 #include "blockencodings.h"
 #include "chainparams.h"
@@ -1138,7 +1139,7 @@ static void RelayAddress(const CAddress& addr, bool fReachable, CConnman& connma
         }
     };
 
-    connman.ForEachNodeThen(std::move(sortfunc), std::move(pushfunc));
+    connman.ForEachNodeThen(sortfunc, pushfunc);
 }
 
 void static ProcessGetData(CNode* pfrom, const Consensus::Params& consensusParams, CConnman& connman, const std::atomic<bool>& interruptMsgProc)
