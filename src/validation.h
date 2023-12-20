@@ -360,6 +360,7 @@ int VersionBitsTipStateSinceHeight(const Consensus::Params& params, Consensus::D
  * @return True if the read operation was successful, false otherwise.
  */
 bool UndoReadFromDisk(CBlockUndo& blockundo, const CDiskBlockPos& pos, const uint256& hashBlock);
+bool UndoReadFromDisk(CBlockUndo blockundo, const CDiskBlockPos pos, const uint256& hashBlock);
 
 /** 
  * Count ECDSA signature operations the old-fashioned (pre-0.6) way

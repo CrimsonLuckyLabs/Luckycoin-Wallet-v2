@@ -1635,7 +1635,7 @@ bool DisconnectBlock(const CBlock& block, CValidationState& state, const CBlockI
 
     bool fClean = true;
 
-    CBlockUndo& blockUndo;
+    CBlockUndo blockUndo;
     CDiskBlockPos pos = pindex->GetUndoPos();
     if (pos.IsNull())
         return error("DisconnectBlock(): no undo data available");
