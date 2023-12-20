@@ -163,12 +163,21 @@ bool AppInit(int argc, char* argv[])
 
             //fprintf(stdout, "test: %d\n", test);
 
+            bool daemonStarted = daemon(1, 0);
+
+            if (daemonStarted) {
+                fprintf(stdout, "Bells daemon started\n");
+            } else {
+                fprintf(stdout, "Bells daemon failed to start\n");
+                fprintf(stdout, "Error: daemon() failed: %s\n", strerror(errno));
+            }
+
             // Daemonize
-            if (false) { // don't chdir (1), do close FDs (0)
+            /*if (false) { // don't chdir (1), do close FDs (0)
                 fprintf(stdout, "Error: daemon() failed: %s\n", strerror(errno));
                 fprintf(stderr, "Error: daemon() failed: %s\n", strerror(errno));
                 return false;
-            }
+            }*/
 
             fprintf(stdout, "test\n");
 #else

@@ -8,8 +8,11 @@ work.
 #### Generic packages
 
 ```
-sudo apt-get install autoconf automake binutils-gold ca-certificates curl \
-                     faketime git-core libtool pkg-config python bison
+Ubuntu 21.10 and earlier:
+sudo apt-get install autoconf automake binutils-gold ca-certificates curl faketime git-core libtool pkg-config python bison
+
+Ubuntu 22.04 and later:
+sudo apt-get install autoconf automake binutils-gold ca-certificates curl faketime git-core libtool pkg-config python2 bison
 ```
 
 #### Generic linux: i686-pc-linux-gnu and x86_64-linux-gnu
@@ -50,7 +53,7 @@ sudo apt-get install g++ cmake imagemagick fonts-tuffy libz-dev libbz2-dev \
 
 To build dependencies for the current arch+OS:
 
-    make
+    make -j8
 
 To build for another arch/OS:
 
