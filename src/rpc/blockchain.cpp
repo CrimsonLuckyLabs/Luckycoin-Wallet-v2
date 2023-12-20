@@ -789,6 +789,25 @@ void CalculatePercentilesByWeight(CAmount result[NUM_GETBLOCKSTATS_PERCENTILES],
     }
 }
 
+static CBlockUndo GetUndoChecked(const CBlockIndex* pblockindex)
+{
+    /*if (IsBlockPruned(pblockindex)) {
+        throw JSONRPCError(RPC_MISC_ERROR, "Undo data not available (pruned data)");
+    }*/
+
+    CBlockUndo blockUndo;
+    CDiskBlockPos pos = pindex->GetUndoPos();
+    if (pos.IsNull()) {
+        throw JSONRPCError(RPC_MISC_ERROR, "Block undo data not available");
+    }
+
+    if (!UndoReadFromDisk(blockUndo, pos, pindex->pprev->GetBlockHash())) {
+        throw JSONRPCError(RPC_MISC_ERROR, "Block undo data not found on disk");
+    }
+
+    return blockUndo;
+}
+
 template<typename T>
 static inline bool SetHasKeys(const std::set<T>& set) {return false;}
 template<typename T, typename Tk, typename... Args>
@@ -842,7 +861,8 @@ UniValue getblockstats(const JSONRPCRequest& request) {
       }
     }
 
-    const CBlock block = GetBlockChecked(pindex);
+    const CBlock& block = GetBlockChecked(pindex);
+    const CBlockUndo& blockUndo = GetUndoChecked(pindex);
 
     const bool do_all = stats.size() == 0; // Calculate everything if nothing selected (default)
     const bool do_mediantxsize = do_all || stats.count("mediantxsize") != 0;
@@ -919,10 +939,10 @@ UniValue getblockstats(const JSONRPCRequest& request) {
           swtotal_weight += weight;
       }
 
-      /*if (loop_inputs) {
+      if (loop_inputs) {
           CAmount tx_total_in = 0;
           const auto& txundo = blockUndo.vtxundo.at(i - 1);
-          for (const Coin& coin: txundo.vprevout) {
+          for (const CCoins& coin: txundo.vprevout) {
               const CTxOut& prevoutput = coin.out;
 
               tx_total_in += prevoutput.nValue;
@@ -930,23 +950,26 @@ UniValue getblockstats(const JSONRPCRequest& request) {
           }
 
           CAmount txfee = tx_total_in - tx_total_out;
-          CHECK_NONFATAL(MoneyRange(txfee));
-          if (do_medianfee) {
-              fee_array.push_back(txfee);
-          }
+          //CHECK_NONFATAL(MoneyRange(txfee));
 
-          maxfee = std::max(maxfee, txfee);
-          minfee = std::min(minfee, txfee);
-          totalfee += txfee;
+          if(MoneyRange(txfee)) {
+              if (do_medianfee) {
+                  fee_array.push_back(txfee);
+              }
 
-          // New feerate uses satoshis per virtual byte instead of per serialized byte
-          CAmount feerate = weight ? (txfee * WITNESS_SCALE_FACTOR) / weight : 0;
-          if (do_feerate_percentiles) {
-              feerate_array.emplace_back(std::make_pair(feerate, weight));
+              maxfee = std::max(maxfee, txfee);
+              minfee = std::min(minfee, txfee);
+              totalfee += txfee;
+
+              // New feerate uses satoshis per virtual byte instead of per serialized byte
+              CAmount feerate = weight ? (txfee * WITNESS_SCALE_FACTOR) / weight : 0;
+              if (do_feerate_percentiles) {
+                  feerate_array.emplace_back(std::make_pair(feerate, weight));
+              }
+              maxfeerate = std::max(maxfeerate, feerate);
+              minfeerate = std::min(minfeerate, feerate);
           }
-          maxfeerate = std::max(maxfeerate, feerate);
-          minfeerate = std::min(minfeerate, feerate);
-      }*/
+      }
     }
 
     CAmount feerate_percentiles[NUM_GETBLOCKSTATS_PERCENTILES] = { 0 };
