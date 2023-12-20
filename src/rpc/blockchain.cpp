@@ -798,9 +798,9 @@ static CBlockUndo GetUndoChecked(const CBlockIndex* pblockindex)
         throw JSONRPCError(RPC_MISC_ERROR, "Block undo data not available");
     }
 
-    if (!UndoReadFromDisk(blockUndo, pos, pblockindex->pprev->GetBlockHash())) {
-        throw JSONRPCError(RPC_MISC_ERROR, "Block undo data not found on disk");
-    }
+    //if (!UndoReadFromDisk(blockUndo, pos, pblockindex->pprev->GetBlockHash())) {
+    //    throw JSONRPCError(RPC_MISC_ERROR, "Block undo data not found on disk");
+    //}
 
     return blockUndo;
 }
