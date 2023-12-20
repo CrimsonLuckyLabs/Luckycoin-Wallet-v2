@@ -5,7 +5,7 @@ Upstart: bellsd.conf
 OpenRC:  bellsd.openrc
          bellsd.openrcconf
 CentOS:  bellsd.init
-OS X:    org.dogecoin.bellsd.plist
+OS X:    org.bells.bellsd.plist
 
 have been made available to assist packagers in creating node packages here.
 

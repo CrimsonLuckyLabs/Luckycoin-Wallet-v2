@@ -76,17 +76,18 @@ public:
     CMainParams() {
         strNetworkID = "main";
 
-        // Blocks 0 - 144999 are conventional difficulty calculation
+        // Not used in Bells
         consensus.nSubsidyHalvingInterval = 100000;
         consensus.nMajorityEnforceBlockUpgrade = 1500;
         consensus.nMajorityRejectBlockOutdated = 1900;
         consensus.nMajorityWindow = 2000;
+
         // BIP34 is never enforced in Dogecoin v2 blocks, so we enforce from v3
 
-        consensus.BIP34Height = 170000;
-        consensus.BIP34Hash = uint256S("0x80d1364201e5df97e696c03bdd24dc885e8617b9de51e453c10a4f629b1e797a"); // unsued for now.
-        consensus.BIP65Height = 170100; // 34cd2cbba4ba366f47e5aa0db5f02c19eba2adf679ceb6653ac003bdc9a0ef1f - first v4 block after the last v3 block
-        consensus.BIP66Height = 170200; // 80d1364201e5df97e696c03bdd24dc885e8617b9de51e453c10a4f629b1e797a - this is the last block that could be v2, 1900 blocks past the last v2 block
+        consensus.BIP34Height = 25000; // We begin to enforce at 25000
+        consensus.BIP34Hash = uint256S("0x00"); // unused for now.
+        consensus.BIP65Height = 25000; //  - first v4 block after the last v3 block
+        consensus.BIP66Height = 25000; //  - this is the last block that could be v2, 1900 blocks past the last v2 block
 
         consensus.powLimit = uint256S("0x00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 20;
         consensus.nPowTargetTimespan = 4 * 60 * 60; // pre-digishield: 4 hours
@@ -101,18 +102,17 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999; // December 31, 2008
 
         // Deployment of BIP68, BIP112, and BIP113.
-        // XXX: BIP heights and hashes all need to be updated to Dogecoin values
+        // XXX: BIP heights and hashes all need to be updated to Bells values
         consensus.vDeployments[Consensus::DEPLOYMENT_CSV].bit = 0;
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1462060800; // May 1st, 2016
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 1493596800; // May 1st, 2017
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1703116800; // Dec 21st, 2023
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 1708473600; // Feb 21st, 2024
 
         // Deployment of SegWit (BIP141, BIP143, and BIP147)
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].bit = 1;
-        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nStartTime = 1479168000; // November 15th, 2016.
-        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 0; // Disabled
+        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nStartTime = 1703116800; // Dec 21st, 2023
+        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1708473600; // Feb 21st, 2024
 
         // The best chain should have at least this much work.
-        //consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000007dc8ab65fc32f953c4a"); // 4,303,965
         consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000003e3c33bc605e5d"); // 4,303,965
 
         // By default assume that the signatures in ancestors of this block are valid.
@@ -123,10 +123,10 @@ public:
         consensus.fStrictChainId = true;
         consensus.fAllowLegacyBlocks = true;
 
-        // Blocks 14500 are Digishield without AuxPoW
+        // We do not activate digishield in this consensus
         digishieldConsensus = consensus;
 
-        digishieldConsensus.nHeightEffective = 170030;
+        digishieldConsensus.nHeightEffective = 0xFFFFFFFF; // like never
 
         digishieldConsensus.fSimplifiedRewards = true;
         digishieldConsensus.fDigishieldDifficultyCalculation = true;
@@ -207,6 +207,8 @@ public:
         checkpointData = (CCheckpointData) {
                 boost::assign::map_list_of
                         (      0, uint256S("0xe5be24df57c43a82d15c2f06bda961296948f8f8eb48501bed1efb929afe0698"))
+                        (   1000, uint256S("0x35668ee4f0fc1334849813c8a8e583814e9b22bfe5dc5a2bd2ded2b3aeec6643"))
+                        (  10000, uint256S("0x2c05ea6918e28ca2d216c6518940c8782c09bebfe705d792155465662e275351"))                        
         };
 
         chainTxData = ChainTxData{
