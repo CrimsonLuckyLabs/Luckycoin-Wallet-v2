@@ -866,9 +866,8 @@ UniValue getblockstats(const JSONRPCRequest& request) {
       }
     }
 
-    const CBlock& block = GetBlockChecked(pindex);
-
-    const CBlockUndo& blockUndo = GetUndoChecked(pindex);
+    const CBlock block = GetBlockChecked(pindex);
+    const CBlockUndo blockUndo = GetUndoChecked(pindex);
 
     const bool do_all = stats.size() == 0; // Calculate everything if nothing selected (default)
     const bool do_mediantxsize = do_all || stats.count("mediantxsize") != 0;
