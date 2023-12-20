@@ -14,6 +14,7 @@
 #include "amount.h"
 #include "chain.h"
 #include "coins.h"
+#include "undo.h"
 #include "policy/policy.h" // For RECOMMENDED_MIN_TX_FEE
 #include "protocol.h" // For CMessageHeader::MessageStartChars
 #include "script/script_error.h"
