@@ -792,8 +792,8 @@ void CalculatePercentilesByWeight(CAmount result[NUM_GETBLOCKSTATS_PERCENTILES],
 
 static CBlockUndo GetUndoChecked(const CBlockIndex* pblockindex)
 {
-    CBlockUndo blockUndo;
-    CDiskBlockPos pos = pblockindex->GetUndoPos();
+    CBlockUndo& blockUndo;
+    const CDiskBlockPos pos = pblockindex->GetUndoPos();
 
     if (pos.IsNull()) {
         throw JSONRPCError(RPC_MISC_ERROR, "Block undo data not available");
