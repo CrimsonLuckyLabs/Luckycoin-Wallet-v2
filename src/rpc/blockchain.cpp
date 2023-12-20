@@ -942,7 +942,7 @@ UniValue getblockstats(const JSONRPCRequest& request) {
           const auto& txundo = blockUndo.vtxundo.at(i - 1);
           for (const CTxInUndo& prevoutput: txundo.vprevout) {
 
-              tx_total_in += prevoutput.nValue;
+              tx_total_in += prevoutput.txout.nValue;
               utxo_size_inc -= GetSerializeSize(prevoutput, PROTOCOL_VERSION) + PER_UTXO_OVERHEAD;
           }
 
