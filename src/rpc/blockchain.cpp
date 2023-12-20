@@ -790,10 +790,11 @@ void CalculatePercentilesByWeight(CAmount result[NUM_GETBLOCKSTATS_PERCENTILES],
     }
 }
 
-static CBlockUndo GetUndoChecked(const CBlockIndex* pblockindex)
+static CBlockUndo GetUndoChecked(const CBlockIndex& pblockindex)
 {
     CBlockUndo blockUndo;
     CDiskBlockPos pos = pblockindex->GetUndoPos();
+
     if (pos.IsNull()) {
         throw JSONRPCError(RPC_MISC_ERROR, "Block undo data not available");
     }
@@ -859,7 +860,7 @@ UniValue getblockstats(const JSONRPCRequest& request) {
     }
 
     const CBlock& block = GetBlockChecked(pindex);
-    const CBlockUndo& blockUndo = GetUndoChecked(pindex);
+    const CBlockUndo& blockUndo = GetUndoChecked(*pindex);
 
     const bool do_all = stats.size() == 0; // Calculate everything if nothing selected (default)
     const bool do_mediantxsize = do_all || stats.count("mediantxsize") != 0;
