@@ -796,10 +796,13 @@ static CBlockUndo GetUndoChecked(const CBlockIndex* pblockindex)
     const CDiskBlockPos pos = pblockindex->GetUndoPos();
 
     if (!pos.IsNull()) {
-        //throw JSONRPCError(RPC_MISC_ERROR, "Block undo data not available");
-        if (!UndoReadFromDisk(blockUndo, pos, pblockindex->pprev->GetBlockHash())) {
+        const CBlockIndex& index = *pos;
+
+        if (!UndoReadFromDisk(blockUndo, index, pblockindex->pprev->GetBlockHash())) {
             throw JSONRPCError(RPC_MISC_ERROR, "Block undo data not found on disk");
         }
+    } else {
+        throw JSONRPCError(RPC_MISC_ERROR, "Block undo data not available");
     }
 
     return blockUndo;
