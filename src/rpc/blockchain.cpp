@@ -801,7 +801,9 @@ UniValue getblockstats(const JSONRPCRequest& request) {
       }
     }
 
-    CHECK_NONFATAL(pindex != nullptr);
+    if(pindex == nullptr) {
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Block not found");
+    }
 
     std::set<std::string> stats;
     if (!request.params[1].isNull()) {
