@@ -4,7 +4,7 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "amount.h"
+#include "blockchain.h"
 #include "chain.h"
 #include "chainparams.h"
 #include "checkpoints.h"
@@ -733,7 +733,7 @@ static CBlock GetBlockChecked(const CBlockIndex* pblockindex)
 {
     CBlock block;
 
-    if (!ReadBlockFromDisk(block, pblockindex, Params().GetConsensus())) {
+    if (!ReadBlockFromDisk(block, pblockindex, Params().GetConsensus(pblockindex->nHeight))) {
         // Block not found on disk. This could be because we have the block
         // header in our index but not yet have the block or did not accept the
         // block.
