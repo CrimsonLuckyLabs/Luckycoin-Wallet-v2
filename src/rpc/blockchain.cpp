@@ -940,8 +940,7 @@ UniValue getblockstats(const JSONRPCRequest& request) {
       if (loop_inputs) {
           CAmount tx_total_in = 0;
           const auto& txundo = blockUndo.vtxundo.at(i - 1);
-          for (const CCoins& coin: txundo.vprevout) {
-              const CTxOut& prevoutput = coin.out;
+          for (const CTxInUndo& prevoutput: txundo.vprevout) {
 
               tx_total_in += prevoutput.nValue;
               utxo_size_inc -= GetSerializeSize(prevoutput, PROTOCOL_VERSION) + PER_UTXO_OVERHEAD;
