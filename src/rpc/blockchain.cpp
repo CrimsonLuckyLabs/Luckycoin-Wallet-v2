@@ -21,6 +21,7 @@
 #include "util.h"
 #include "utilstrencodings.h"
 #include "hash.h"
+#include "dogecoin.h"
 
 #include <stdint.h>
 
