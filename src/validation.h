@@ -351,16 +351,6 @@ ThresholdState VersionBitsTipState(const Consensus::Params& params, Consensus::D
 /** Get the block height at which the BIP9 deployment switched into the state for the block building on the current tip. */
 int VersionBitsTipStateSinceHeight(const Consensus::Params& params, Consensus::DeploymentPos pos);
 
-/**
- * Reads the undo information for a block from disk.
- *
- * @param blockundo Reference to CBlockUndo object to store the undo information.
- * @param pos The disk position to read the undo information from.
- * @param hashBlock The block hash for which undo information is to be read.
- * @return True if the read operation was successful, false otherwise.
- */
-bool UndoReadFromDisk(CBlockUndo& blockundo, const CDiskBlockPos& index, const uint256& hashBlock);
-
 /** 
  * Count ECDSA signature operations the old-fashioned (pre-0.6) way
  * @return number of sigops this transaction's outputs will produce when spent

@@ -790,6 +790,34 @@ void CalculatePercentilesByWeight(CAmount result[NUM_GETBLOCKSTATS_PERCENTILES],
     }
 }
 
+bool UndoReadFromDisk(CBlockUndo& blockundo, const CDiskBlockPos& pos, const uint256& hashBlock)
+{
+    // Open history file to read
+    CAutoFile filein(OpenUndoFile(pos, true), SER_DISK, CLIENT_VERSION);
+    if (filein.IsNull())
+        return error("%s: OpenUndoFile failed", __func__);
+
+    // Read block
+    uint256 hashChecksum;
+    try {
+        filein >> blockundo;
+        filein >> hashChecksum;
+    }
+    catch (const std::exception& e) {
+        return error("%s: Deserialize or I/O error - %s", __func__, e.what());
+    }
+
+    // Verify checksum
+    CHashWriter hasher(SER_GETHASH, PROTOCOL_VERSION);
+    hasher << hashBlock;
+    hasher << blockundo;
+    if (hashChecksum != hasher.GetHash())
+        return error("%s: Checksum mismatch", __func__);
+
+    return true;
+}
+
+
 static CBlockUndo GetUndoChecked(const CBlockIndex* pblockindex)
 {
     CBlockUndo blockUndo;
