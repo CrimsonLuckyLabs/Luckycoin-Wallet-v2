@@ -23,7 +23,6 @@
 #include "hash.h"
 #include "dogecoin.h"
 #include "undo.h"
-#include "validation.h"
 
 #include <stdint.h>
 
