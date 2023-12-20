@@ -1,6 +1,6 @@
 [Protocol]
 exec=bells-qt '%u'
-protocol=dogecoin
+protocol=bells
 input=none
 output=none
 helper=true

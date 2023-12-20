@@ -1,12 +1,12 @@
 [Desktop Entry]
-Name=Dogecoin Core
-Comment=Connect to the Dogecoin P2P Network
-Comment[de]=Verbinde mit dem Dogecoin peer-to-peer Netzwerk
-Comment[fr]=Dogecoin, monnaie virtuelle cryptographique pair à pair
-Comment[tr]=Dogecoin, eşten eşe kriptografik sanal para birimi
+Name=Bells Core
+Comment=Connect to the Bells P2P Network
+Comment[de]=Verbinde mit dem Bells peer-to-peer Netzwerk
+Comment[fr]=Bells, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Bells, eşten eşe kriptografik sanal para birimi
 Exec=bells-qt %u
 Terminal=false
 Type=Application
-Icon=dogecoin128
-MimeType=x-scheme-handler/dogecoin;
+Icon=bells128
+MimeType=x-scheme-handler/bells;
 Categories=Office;Finance;

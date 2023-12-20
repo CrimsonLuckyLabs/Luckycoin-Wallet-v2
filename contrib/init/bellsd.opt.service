@@ -3,17 +3,17 @@
 #
 # The relevant paths are:
 #
-#/opt/dogecoin/bellsd
-#/etc/opt/dogecoin/
-#/var/opt/dogecoin/
+#/opt/bells/bellsd
+#/etc/opt/bells/
+#/var/opt/bells/
 
 [Unit]
-Description=Dogecoin's distributed currency daemon
+Description=Bells's distributed currency daemon
 After=network.target
 
 [Service]
 Type=simple
-ExecStart=/opt/dogecoin/bin/bellsd -conf=/etc/opt/dogecoin/bells.conf -datadir=/var/opt/dogecoin
+ExecStart=/opt/bells/bin/bellsd -conf=/etc/opt/bells/bells.conf -datadir=/var/opt/bells
 
 KillSignal=SIGINT
 Restart=always
@@ -23,8 +23,8 @@ TimeoutStartSec=5
 StartLimitIntervalSec=120
 StartLimitBurst=5
 
-User=dogecoin
-Group=dogecoin
+User=bells
+Group=bells
 
 ### Restrict resource consumption
 MemoryAccounting=yes
@@ -41,8 +41,8 @@ TemporaryFileSystem=/:ro
 BindReadOnlyPaths=/etc/ /lib/ /lib64/
 
 # Add daemon paths
-BindReadOnlyPaths=/opt/dogecoin/ /etc/opt/dogecoin/
-BindPaths=/var/opt/dogecoin/
+BindReadOnlyPaths=/opt/bells/ /etc/opt/bells/
+BindPaths=/var/opt/bells/
 
 ### Restrict access to system.
 
