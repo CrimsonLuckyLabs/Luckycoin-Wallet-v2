@@ -793,10 +793,10 @@ void CalculatePercentilesByWeight(CAmount result[NUM_GETBLOCKSTATS_PERCENTILES],
 static CBlockUndo GetUndoChecked(const CBlockIndex* pblockindex)
 {
     CBlockUndo blockUndo;
-    const CDiskBlockPos pos = pblockindex->GetUndoPos();
+    CDiskBlockPos pos = pblockindex->GetUndoPos();
 
     if (!pos.IsNull()) {
-        const CBlockIndex& index = *pos;
+        const CBlockIndex& index = pos;
 
         if (!UndoReadFromDisk(blockUndo, index, pblockindex->pprev->GetBlockHash())) {
             throw JSONRPCError(RPC_MISC_ERROR, "Block undo data not found on disk");
