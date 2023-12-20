@@ -23,6 +23,7 @@
 #include "hash.h"
 #include "dogecoin.h"
 #include "undo.h"
+#include "validation.h"
 
 #include <stdint.h>
 
@@ -792,12 +793,8 @@ void CalculatePercentilesByWeight(CAmount result[NUM_GETBLOCKSTATS_PERCENTILES],
 
 static CBlockUndo GetUndoChecked(const CBlockIndex* pblockindex)
 {
-    /*if (IsBlockPruned(pblockindex)) {
-        throw JSONRPCError(RPC_MISC_ERROR, "Undo data not available (pruned data)");
-    }*/
-
     CBlockUndo blockUndo;
-    CDiskBlockPos pos = pindex->GetUndoPos();
+    CDiskBlockPos pos = pblockindex->GetUndoPos();
     if (pos.IsNull()) {
         throw JSONRPCError(RPC_MISC_ERROR, "Block undo data not available");
     }
