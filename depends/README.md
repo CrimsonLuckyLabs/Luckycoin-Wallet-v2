@@ -39,6 +39,7 @@ sudo apt-get install g++-aarch64-linux-gnu g++-7-aarch64-linux-gnu \
 
 ```
 sudo apt-get install g++ g++-mingw-w64 mingw-w64 nsis zip
+sudo apt-get install g++-mingw-w64-x86-64
 ```
 
 #### macOS (Intel): x86_64-apple-darwin11
