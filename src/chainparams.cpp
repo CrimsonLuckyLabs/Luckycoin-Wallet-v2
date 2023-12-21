@@ -78,22 +78,27 @@ public:
 
         // Not used in Bells
         consensus.nSubsidyHalvingInterval = 100000;
+
+
         consensus.nMajorityEnforceBlockUpgrade = 1500;
         consensus.nMajorityRejectBlockOutdated = 1900;
         consensus.nMajorityWindow = 2000;
 
-        // BIP34 is never enforced in Dogecoin v2 blocks, so we enforce from v3
 
-        consensus.BIP34Height = 25000; // We begin to enforce at 25000
+        // After deployments are activated we can change it
         consensus.BIP34Hash = uint256S("0x00"); // unused for now.
-        consensus.BIP65Height = 25000; //  - first v4 block after the last v3 block
-        consensus.BIP66Height = 25000; //  - this is the last block that could be v2, 1900 blocks past the last v2 block
+        consensus.BIP65Height = 99999999; 
+        consensus.BIP65Height = 99999999; 
+        consensus.BIP66Height = 99999999; 
+
 
         consensus.powLimit = uint256S("0x00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 20;
         consensus.nPowTargetTimespan = 4 * 60 * 60; // pre-digishield: 4 hours
         consensus.nPowTargetSpacing = 60; // 1 minute
         consensus.nCoinbaseMaturity = 30;
         consensus.fPowNoRetargeting = false;
+
+
         consensus.nRuleChangeActivationThreshold = 9576; // 95% of 10,080
         consensus.nMinerConfirmationWindow = 10080; // 60 * 24 * 7 = 10,080 blocks, or one week
 
@@ -101,16 +106,30 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1199145601; // January 1, 2008
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999; // December 31, 2008
 
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP34].bit = 0;
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP34].nStartTime = 1703289600;   // 2023-12-23 00:00:00
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP34].nTimeout   = 1735084800;   // 2024-12-25 00:00:00
+
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP66].bit = 1;
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP66].nStartTime = 1703289600;   // 2023-12-23 00:00:00
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP66].nTimeout   = 1735084800;   // 2024-12-25 18:00:00
+
+
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP65].bit = 2;
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP65].nStartTime = 1703289600;   // 2023-12-23 00:00:00
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP65].nTimeout   = 1735084800;   // 2024-12-25 18:00:00
+
+
         // Deployment of BIP68, BIP112, and BIP113.
         // XXX: BIP heights and hashes all need to be updated to Bells values
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].bit = 0;
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1703116800; // Dec 21st, 2023
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 1708473600; // Feb 21st, 2024
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].bit = 3;
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1703289600; // 2023-12-23 00:00:00
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 1735084800;   // 2024-12-25 18:00:00
 
         // Deployment of SegWit (BIP141, BIP143, and BIP147)
-        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].bit = 1;
-        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nStartTime = 1703116800; // Dec 21st, 2023
-        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1708473600; // Feb 21st, 2024
+        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].bit = 4;
+        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nStartTime = 1703289600; // 2023-12-23 00:00:00
+        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1735084800;   // 2024-12-25 18:00:00
 
         // The best chain should have at least this much work.
         consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000003e3c33bc605e5d"); // 4,303,965
@@ -133,17 +152,15 @@ public:
         digishieldConsensus.nPowTargetTimespan = 60; // post-digishield: 1 minute
         digishieldConsensus.nCoinbaseMaturity = 240;
 
-        // Blocks 157500 - 158099 are Digishield with minimum difficulty on all blocks
+        // Not implementing digishield yet
         minDifficultyConsensus = digishieldConsensus;
-
-        minDifficultyConsensus.nHeightEffective = 170040;
-
+        minDifficultyConsensus.nHeightEffective = std::numeric_limits<uint32_t>::max();;
         minDifficultyConsensus.fPowAllowDigishieldMinDifficultyBlocks = true;
         minDifficultyConsensus.fPowAllowMinDifficultyBlocks = true;
 
-        // Blocks 14500+ are AuxPoW
+        // Not implementing AuxPow hardfork yet
         auxpowConsensus = digishieldConsensus;
-        auxpowConsensus.nHeightEffective = 100000;
+        auxpowConsensus.nHeightEffective = std::numeric_limits<uint32_t>::max();
         auxpowConsensus.fAllowLegacyBlocks = false;
 
         // Assemble the binary search tree of consensus parameters
