@@ -11,7 +11,7 @@ Bells Core [BEL]
 
 </div>
 
-## This branch contains the latest version 0.7.0 of the bells network.
+## This branch contains the latest version 2.0.0 of the bells network.
 
 ## What is Bells?
 Bells is the twin of DogeCoin, born before it, and just seen the lights now. [Visit blockchain explorer](https://belscan.io/)
