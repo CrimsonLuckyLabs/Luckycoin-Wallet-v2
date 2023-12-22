@@ -1139,6 +1139,7 @@ static void RelayAddress(const CAddress& addr, bool fReachable, CConnman& connma
         }
     };
 
+    //connman.ForEachNodeThen(std::move(sortfunc), std::move(pushfunc));
     connman.ForEachNodeThen(sortfunc, pushfunc);
 }
 
