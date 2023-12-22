@@ -370,9 +370,6 @@ public:
 
 
         // nodes with support for servicebits filtering should be at the top
-        // vSeeds.emplace_back("seed.multidoge.org");
-        // vSeeds.emplace_back("seed2.multidoge.org");
-
         vSeeds.push_back(CDNSSeedData("belscan.io", "testnetseed.belscan.io", true));
         vSeeds.push_back(CDNSSeedData("belscan.io", "testnetseeder.belscan.io", true));
 
@@ -384,10 +381,10 @@ public:
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
 
-        fMiningRequiresPeers = true;
+        fMiningRequiresPeers = false;
         fDefaultConsistencyChecks = false;
-        fRequireStandard = true;
-        fMineBlocksOnDemand = false;
+        fRequireStandard = false;
+        fMineBlocksOnDemand = true;
 
         checkpointData = (CCheckpointData) {
                 boost::assign::map_list_of
