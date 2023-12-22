@@ -16,6 +16,10 @@ namespace Consensus {
 enum DeploymentPos
 {
     DEPLOYMENT_TESTDUMMY,
+    // NOTE: Also add new deployments to VersionBitsDeploymentInfo in versionbits.cpp   
+    DEPLOYMENT_BIP34, // Deployment of BIP34
+    DEPLOYMENT_BIP66, // Deployment of BIP66
+    DEPLOYMENT_BIP65, // Deployment of BIP65
     DEPLOYMENT_CSV, // Deployment of BIP68, BIP112, and BIP113.
     DEPLOYMENT_SEGWIT, // Deployment of BIP141, BIP143, and BIP147.
     // NOTE: Also add new deployments to VersionBitsDeploymentInfo in versionbits.cpp

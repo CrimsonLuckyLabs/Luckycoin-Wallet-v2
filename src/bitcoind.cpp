@@ -160,13 +160,10 @@ bool AppInit(int argc, char* argv[])
             fprintf(stdout, "Bells server starting\n");
 
             // Daemonize
-            bool daemonStarted = daemon(1, 0);
 
-            if (daemonStarted) {
-                fprintf(stdout, "Bells daemon started\n");
-            } else {
-                fprintf(stdout, "Bells daemon failed to start\n");
-                fprintf(stdout, "Error: daemon() failed: %s\n", strerror(errno));
+            if (daemon(1, 0)) { // don't chdir (1), do close FDs (0)
+                fprintf(stderr, "Error: daemon() failed: %s\n", strerror(errno));
+                return false;
             }
 #else
             fprintf(stderr, "Error: -daemon is not supported on this operating system\n");

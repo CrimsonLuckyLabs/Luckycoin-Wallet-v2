@@ -32,6 +32,8 @@
 #include "validationinterface.h"
 
 #include <boost/thread.hpp>
+#include <array>
+
 
 #if defined(NDEBUG)
 # error "Dogecoin cannot be compiled without assertions."
@@ -1138,7 +1140,8 @@ static void RelayAddress(const CAddress& addr, bool fReachable, CConnman& connma
         }
     };
 
-    connman.ForEachNodeThen(std::move(sortfunc), std::move(pushfunc));
+    //connman.ForEachNodeThen(std::move(sortfunc), std::move(pushfunc));
+    connman.ForEachNodeThen(sortfunc, pushfunc);
 }
 
 void static ProcessGetData(CNode* pfrom, const Consensus::Params& consensusParams, CConnman& connman, const std::atomic<bool>& interruptMsgProc)

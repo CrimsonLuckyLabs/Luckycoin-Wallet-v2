@@ -1404,13 +1404,16 @@ static UniValue SoftForkMajorityDesc(int version, CBlockIndex* pindex, const Con
     switch(version)
     {
         case 2:
-            activated = pindex->nHeight >= consensusParams.BIP34Height;
+            activated = (VersionBitsState(pindex->pprev, consensusParams, Consensus::DEPLOYMENT_BIP34, versionbitscache) == THRESHOLD_ACTIVE);
+            // activated = pindex->nHeight >= consensusParams.BIP34Height;
             break;
         case 3:
-            activated = pindex->nHeight >= consensusParams.BIP66Height;
+            activated = (VersionBitsState(pindex->pprev, consensusParams, Consensus::DEPLOYMENT_BIP66, versionbitscache) == THRESHOLD_ACTIVE);
+            // activated = pindex->nHeight >= consensusParams.BIP66Height;
             break;
         case 4:
-            activated = pindex->nHeight >= consensusParams.BIP65Height;
+            activated = (VersionBitsState(pindex->pprev, consensusParams, Consensus::DEPLOYMENT_BIP65, versionbitscache) == THRESHOLD_ACTIVE);
+            // activated = pindex->nHeight >= consensusParams.BIP65Height;
             break;
     }
     rv.pushKV("status", activated);
