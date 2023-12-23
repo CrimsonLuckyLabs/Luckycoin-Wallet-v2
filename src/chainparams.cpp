@@ -334,7 +334,7 @@ public:
         // Not implementing AuxPow hardfork yet
         auxpowConsensus = digishieldConsensus;
         auxpowConsensus.nHeightEffective = std::numeric_limits<uint32_t>::max();
-        auxpowConsensus.fAllowLegacyBlocks = false;
+        auxpowConsensus.fAllowLegacyBlocks = true;
 
         // Assemble the binary search tree of consensus parameters
         pConsensusRoot = &digishieldConsensus;
@@ -371,24 +371,23 @@ public:
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
 
         fMiningRequiresPeers = false;
-        fDefaultConsistencyChecks = false;
+        fDefaultConsistencyChecks = true;
         fRequireStandard = false;
         fMineBlocksOnDemand = true;
 
         checkpointData = (CCheckpointData) {
                 boost::assign::map_list_of
-                        (      0, uint256S("0xbb0a78264637406b6360aad926284d544d7049f45189db5664f3c4d07350559e"))
-                        (   1, uint256S("0x1589523c033c5f85ed4f3f05c3814029fd13c50fdf88344ae62270e697de39ff"))
+                        (      0, uint256S("0xe5be24df57c43a82d15c2f06bda961296948f8f8eb48501bed1efb929afe0698"))
         };
-
 
         chainTxData = ChainTxData{
-            // Data as of block af23c3e750bb4f2ce091235f006e7e4e2af453d4c866282e7870471dcfeb4382 (height 3976284)
-            1391503289, // * UNIX timestamp of last checkpoint block
-            1,    // * total number of transactions between genesis and last checkpoint
-            0.01        // * estimated number of transactions per second after that timestamp
+                // Data as of block ed7d266dcbd8bb8af80f9ccb8deb3e18f9cc3f6972912680feeb37b090f8cee0 (height 4303965).
+                // Tx estimate based on average between 2021-07-01 (3793538) and 2022-07-01 (4288126)
+                0, // * UNIX timestamp of last checkpoint block
+                0,   // * total number of transactions between genesis and last checkpoint
+                //   (the tx=... number in the SetBestChain debug.log lines)
+                0        // * estimated number of transactions per second after checkpoint
         };
-
     }
 };
 static CTestNetParams testNetParams;
