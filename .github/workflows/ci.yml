@@ -246,7 +246,7 @@ jobs:
       - name: Run benchmark
         if: ${{ matrix.run-bench }}
         run: |
-          src/bench/bench_bellscoin > ${{ matrix.name }}-bench.csv
+          src/bench/bench_bells > ${{ matrix.name }}-bench.csv
           cat ${{ matrix.name }}-bench.csv
 
       - name: Run tests
