@@ -76,7 +76,7 @@ jobs:
             goal: install
           - name: aarch64-linux-sha512-experimental
             host: aarch64-linux-gnu
-            os: ubuntu-20.04
+            os: ubuntu-22.04
             packages: g++-aarch64-linux-gnu
             run-tests: false
             check-security: true
@@ -236,7 +236,7 @@ jobs:
           path: ~/.ccache
           key: ${{ matrix.name }}-${{ env.cache-name }}-${{ hashFiles('**/configure.ac', '.github/workflows/ci.yml') }}
 
-      - name: Build Dogecoin
+      - name: Build Bellscoin
         run: |
           depends/${{ matrix.host }}/native/bin/ccache --max-size=$CCACHE_SIZE
           ./autogen.sh
@@ -246,7 +246,7 @@ jobs:
       - name: Run benchmark
         if: ${{ matrix.run-bench }}
         run: |
-          src/bench/bench_dogecoin > ${{ matrix.name }}-bench.csv
+          src/bench/bench_bellscoin > ${{ matrix.name }}-bench.csv
           cat ${{ matrix.name }}-bench.csv
 
       - name: Run tests
@@ -267,8 +267,8 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: dogecoin-${{ github.sha }}-${{ matrix.name }}
+          name: bellscoin-${{ github.sha }}-${{ matrix.name }}
           path: |
-            depends/${{ matrix.host }}/bin/dogecoin*
-            dist/Dogecoin-Qt.app
+            depends/${{ matrix.host }}/bin/bells*
+            dist/Bellscoin-Qt.app
             ${{ matrix.name }}-bench.csv
