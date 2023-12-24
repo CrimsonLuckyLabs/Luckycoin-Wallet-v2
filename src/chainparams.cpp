@@ -139,7 +139,7 @@ public:
 
         // AuxPoW parameters
         consensus.nAuxpowChainId = 0x2000; // 8192
-        consensus.fStrictChainId = true;
+        consensus.fStrictChainId = false;  // we set this to false as block is nonAuxPow
         consensus.fAllowLegacyBlocks = true;
 
         // We do not activate digishield in this consensus
