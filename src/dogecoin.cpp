@@ -99,6 +99,8 @@ bool CheckAuxPowProofOfWork(const CBlockHeader& block, const Consensus::Params& 
                      __func__, block.GetChainId(),
                      params.nAuxpowChainId, block.nVersion);
 
+       
+
     /* If there is no auxpow, just check the block hash.  */
     if (!block.auxpow) {
         if (block.IsAuxpow())

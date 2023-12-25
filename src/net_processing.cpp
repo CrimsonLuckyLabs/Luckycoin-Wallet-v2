@@ -7,6 +7,7 @@
 #include "net_processing.h"
 
 #include "addrman.h"
+#include <array>
 #include "arith_uint256.h"
 #include "blockencodings.h"
 #include "chainparams.h"
