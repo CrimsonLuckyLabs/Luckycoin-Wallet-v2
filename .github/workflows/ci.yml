@@ -10,6 +10,9 @@ on:
       - 'doc/**'
       - 'contrib/**'
       - '**/*.md'
+concurrency:
+  group: ${{ github.ref }}-${{ github.workflow }}-${{ github.event_name }}-${{ (github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/heads/version') || (github.ref == 'refs/heads/dev')) && github.sha || '' }}
+  cancel-in-progress: true
 
 jobs:
   build:
