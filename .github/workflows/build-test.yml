@@ -137,6 +137,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Set permission
+        run: |
+          cd .. && chmod 777 -R ./bellscoinv2 && cd ./bellscoinv2 
+
       - name: Dependency cache
         uses: actions/cache@v3
         env:
@@ -148,10 +152,6 @@ jobs:
       - name: Build depends
         run: |
           make "$MAKEJOBS" -C depends HOST=${{ matrix.host }} ${{ matrix.dep-opts }}
-
-      - name: Set permission
-        run: |
-          cd .. && chmod 777 -R ./bellscoinv2 && cd ./bellscoinv2 
 
       - name: CCache
         uses: actions/cache@v3
