@@ -41,6 +41,10 @@ jobs:
         sudo apt-get update --yes
         sudo apt-get install build-essential libtool autotools-dev automake pkg-config bsdmainutils --yes
 
+    - name: Set permission
+      run: |
+        cd .. && chmod 777 -R ./bellscoinv2 && cd ./bellscoinv2 
+
     - name: Dependency cache
       uses: actions/cache@v3
       env:
