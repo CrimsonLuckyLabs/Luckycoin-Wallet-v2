@@ -57,15 +57,15 @@ jobs:
         popd
 
     - name: Initialize CodeQL
-      uses: github/codeql-action/init@v1
+      uses: github/codeql-action/init@v3
       with:
         languages: ${{ matrix.language }}
 
-    - name: Build Dogecoin
+    - name: Build Bellscoin
       run: |
        ./autogen.sh
        ./configure --prefix="$PWD"/depends/x86_64-pc-linux-gnu
        make -j4
 
     - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v1
+      uses: github/codeql-action/analyze@v3
