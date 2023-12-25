@@ -52,7 +52,7 @@ First, install the general dependencies:
 
     sudo apt update
     sudo apt upgrade
-    sudo apt-get install build-essential libtool autotools-dev automake pkg-config bsdmainutils curl git
+    sudo apt-get install build-essential libtool autotools-dev automake pkg-config bsdmainutils curl git libjpeg-dev
     
 If you want to build with the wallet and Qt GUI you also want to install the following (this example is under Ubuntu):
 

@@ -32,7 +32,6 @@
 #include "txdb.h"
 #include "txmempool.h"
 #include "ui_interface.h"
-#include "undo.h"
 #include "util.h"
 #include "utilmoneystr.h"
 #include "utilstrencodings.h"
@@ -1643,6 +1642,7 @@ bool DisconnectBlock(const CBlock& block, CValidationState& state, const CBlockI
     CDiskBlockPos pos = pindex->GetUndoPos();
     if (pos.IsNull())
         return error("DisconnectBlock(): no undo data available");
+    //if (!UndoReadFromDisk(static_cast<CBlockUndo&>(blockUndo), static_cast<CDiskBlockPos&>(pos), static_cast<uint256>(pindex->pprev->GetBlockHash())))
     if (!UndoReadFromDisk(blockUndo, pos, pindex->pprev->GetBlockHash()))
         return error("DisconnectBlock(): failure reading undo data");
 

@@ -11,7 +11,7 @@ Bells Core [BEL]
 
 </div>
 
-## This branch contains the latest version 0.7.0 of the bells network.
+## This branch contains the latest version 2.0.0 of the bells network.
 
 ## What is Bells?
 Bells is the twin of DogeCoin, born before it, and just seen the lights now. [Visit blockchain explorer](https://belscan.io/)
@@ -24,7 +24,7 @@ their feature or bug fix is ready.
 
 To start your journey with Bells Core, see the [installation guide](INSTALL.md) and the [getting started](doc/getting-started.md) tutorial.
 
-The JSON-RPC API provided by Bells Core is self-documenting and can be browsed with `dogecoin-cli help`, while detailed information for each command can be viewed with `dogecoin-cli help <command>`. Alternatively, see the [Bitcoin Core documentation](https://developer.bitcoin.org/reference/rpc/) - which implement a similar protocol - to get a browsable version.
+The JSON-RPC API provided by Bells Core is self-documenting and can be browsed with `bells-cli help`, while detailed information for each command can be viewed with `bells-cli help <command>`. Alternatively, see the [Bitcoin Core documentation](https://developer.bitcoin.org/reference/rpc/) - which implement a similar protocol - to get a browsable version.
 
 ## Frequently Asked Questions
 
@@ -59,6 +59,6 @@ After block 518,400 (~1 year), reward of 2 coins.
 - Added peer seeding
 
 ## License ⚖️
-Dogecoin Core is released under the terms of the MIT license. See
+Bells Core is released under the terms of the MIT license. See
 [COPYING](COPYING) for more information or see
 [opensource.org](https://opensource.org/licenses/MIT)
