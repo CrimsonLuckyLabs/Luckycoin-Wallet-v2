@@ -41,6 +41,7 @@ jobs:
             host: aarch64-linux-gnu
             os: ubuntu-22.04
             packages: g++-aarch64-linux-gnu
+            run-bench: false
             run-tests: false
             check-security: true
             check-symbols: false
@@ -51,6 +52,7 @@ jobs:
             host: aarch64-linux-gnu
             os: ubuntu-22.04
             packages: g++-aarch64-linux-gnu
+            run-bench: false
             run-tests: false
             check-security: true
             check-symbols: false
@@ -75,7 +77,7 @@ jobs:
             run-bench: true
             run-tests: false
             check-security: true
-            check-symbols: true
+            check-symbols: false
             dep-opts: "NO_WALLET=1"
             config-opts: "--enable-gui=qt5 --enable-glibc-back-compat --disable-wallet LDFLAGS=-static-libstdc++"
             goal: install

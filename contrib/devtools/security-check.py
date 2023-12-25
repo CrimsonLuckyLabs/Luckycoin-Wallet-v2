@@ -128,7 +128,7 @@ def get_PE_dll_characteristics(executable):
         raise IOError('Error opening file')
     arch = ''
     bits = 0
-    for line in stdout.split('\n'):
+    for line in stdout.split(b'\n'):
         tokens = line.split()
         if len(tokens)>=2 and tokens[0] == 'architecture:':
             arch = tokens[1].rstrip(',')
