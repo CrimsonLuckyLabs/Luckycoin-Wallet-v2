@@ -64,7 +64,7 @@ jobs:
     - name: Build Dogecoin
       run: |
        ./autogen.sh
-       ./configure --prefix=`pwd`/depends/x86_64-pc-linux-gnu
+       ./configure --prefix="$PWD"/depends/x86_64-pc-linux-gnu
        make -j4
 
     - name: Perform CodeQL Analysis
