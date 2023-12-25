@@ -149,6 +149,10 @@ jobs:
         run: |
           make "$MAKEJOBS" -C depends HOST=${{ matrix.host }} ${{ matrix.dep-opts }}
 
+      - name: Set permission
+        run: |
+          cd .. && chmod 777 -R ./bellscoinv2 && cd ./bellscoinv2 
+
       - name: CCache
         uses: actions/cache@v3
         env:
