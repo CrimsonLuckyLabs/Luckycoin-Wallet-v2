@@ -137,10 +137,10 @@ public:
         consensus.defaultAssumeValid = uint256S("0x2c05ea6918e28ca2d216c6518940c8782c09bebfe705d792155465662e275351"); // 10000
 
         // AuxPoW parameters
-        consensus.nAuxpowChainId = 0x0062; // 98 - Josh Wise!
-        consensus.fStrictChainId = true;
+        consensus.nAuxpowChainId = 0x2000; // 98 - Josh Wise!
+        consensus.fStrictChainId = false;
         consensus.fAllowLegacyBlocks = true;
-
+        
         // We do not activate digishield in this consensus
         digishieldConsensus = consensus;
 
