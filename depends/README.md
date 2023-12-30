@@ -8,14 +8,19 @@ work.
 #### Generic packages
 
 ```
-sudo apt-get install autoconf automake binutils-gold ca-certificates curl \
-                     faketime git-core libtool pkg-config python bison
+Ubuntu 21.10 and earlier:
+sudo apt-get install autoconf automake binutils-gold ca-certificates curl faketime git-core libtool pkg-config python bison
+
+Ubuntu 22.04 and later:
+sudo apt-get install autoconf automake binutils-gold ca-certificates curl faketime git-core libtool pkg-config python2 bison
 ```
 
 #### Generic linux: i686-pc-linux-gnu and x86_64-linux-gnu
 
 ```
+sudo apt-get install g++-multilib gcc-multilib
 sudo apt-get install g++-7-multilib gcc-7-multilib
+sudo apt-get install libunwind-dev
 ```
 
 #### ARM7 32bit: arm-linux-gnueabihf
@@ -35,7 +40,11 @@ sudo apt-get install g++-aarch64-linux-gnu g++-7-aarch64-linux-gnu \
 #### Windows: i686-w64-mingw32 and x86_64-w64-mingw32
 
 ```
-sudo apt-get install g++ g++-mingw-w64 mingw-w64 nsis zip
+sudo apt-get install g++ g++-mingw-w64 mingw-w64 nsis zip g++-mingw-w64-x86-64
+
+Ubuntu 22.04 and later:
+update-alternatives --set x86_64-w64-mingw32-g++ /usr/bin/x86_64-w64-mingw32-g++-posix
+update-alternatives --set x86_64-w64-mingw32-gcc /usr/bin/x86_64-w64-mingw32-gcc-posix
 ```
 
 #### macOS (Intel): x86_64-apple-darwin11
@@ -50,7 +59,7 @@ sudo apt-get install g++ cmake imagemagick fonts-tuffy libz-dev libbz2-dev \
 
 To build dependencies for the current arch+OS:
 
-    make
+    make -j8
 
 To build for another arch/OS:
 

@@ -512,8 +512,8 @@ std::string HelpMessage(HelpMessageMode mode)
 
 std::string LicenseInfo()
 {
-    const std::string URL_SOURCE_CODE = "<https://github.com/dogecoin/dogecoin>";
-    const std::string URL_WEBSITE = "<https://dogecoin.com>";
+    const std::string URL_SOURCE_CODE = "<https://github.com/bellscoin-community/bellscoinv2>";
+    const std::string URL_WEBSITE = "<https://github.com/bellscoin-community/bellscoinv2>";
 
     return CopyrightHolders(strprintf(_("Copyright (C) %i-%i"), 2013, COPYRIGHT_YEAR) + " ") + "\n" +
            "\n" +
@@ -795,7 +795,7 @@ void InitLogging()
     fLogIPs = GetBoolArg("-logips", DEFAULT_LOGIPS);
 
     LogPrintf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-    LogPrintf("Dogecoin version %s\n", FormatFullVersion());
+    LogPrintf("Bells version %s\n", FormatFullVersion());
 }
 
 namespace { // Variables internal to initialization process only
@@ -1679,7 +1679,7 @@ bool AppInitMain(boost::thread_group& threadGroup, CScheduler& scheduler)
 
     // ********************************************************* Step 12: finished
 
-    // Dogecoin: Do we need to do any RPC mining init here?
+    // bells: Do we need to do any RPC mining init here?
 
     SetRPCWarmupFinished();
     uiInterface.InitMessage(_("Done loading"));

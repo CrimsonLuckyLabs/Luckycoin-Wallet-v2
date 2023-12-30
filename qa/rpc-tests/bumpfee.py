@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # Copyright (c) 2016 The Bitcoin Core developers
-# Copyright (c) 2022 The Dogecoin Core developers
+# Copyright (c) 2022 The Bells Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -196,7 +196,7 @@ def test_dust_to_fee(rbf_node, dest_address):
 
 
 def test_settxfee(rbf_node, dest_address):
-    # Dogecoin: Increment is fixed, so this test tests for settxfee not making a difference
+    # Bells: Increment is fixed, so this test tests for settxfee not making a difference
     # check that bumpfee reacts correctly to the use of settxfee (paytxfee)
     # increase feerate by 2.5x, test that fee increased at least 2x
     rbf_node.settxfee(Decimal("2.00000000"))

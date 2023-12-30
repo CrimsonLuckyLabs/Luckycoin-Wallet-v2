@@ -255,6 +255,7 @@ struct convertToInt
         return 0;
     }
 };
+
 // Specialization for convertToInt when conversion is possible
 template<typename T>
 struct convertToInt<T,true>

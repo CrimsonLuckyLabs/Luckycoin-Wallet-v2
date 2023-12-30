@@ -423,8 +423,8 @@
         <translation>ბარათების პანელი</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and dogecoin: URIs)</source>
-        <translation>გადახდის მოთხოვნა (შეიქმნება QR-კოდები და dogecoin: ბმულები)</translation>
+        <source>Request payments (generates QR codes and bells: URIs)</source>
+        <translation>გადახდის მოთხოვნა (შეიქმნება QR-კოდები და bells: ბმულები)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -435,8 +435,8 @@
         <translation>გამოყენებული მიღების მისამართებისა და ნიშნულების სიის ჩვენება</translation>
     </message>
     <message>
-        <source>Open a dogecoin: URI or payment request</source>
-        <translation>dogecoin: URI-ის ან გადახდის მოთხოვნის გახსნა</translation>
+        <source>Open a bells: URI or payment request</source>
+        <translation>bells: URI-ის ან გადახდის მოთხოვნის გახსნა</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>

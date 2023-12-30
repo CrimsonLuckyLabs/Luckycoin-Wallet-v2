@@ -1,0 +1,11 @@
+[Protocol]
+exec=bells-qt '%u'
+protocol=bells
+input=none
+output=none
+helper=true
+listing=
+reading=false
+writing=false
+makedir=false
+deleting=false

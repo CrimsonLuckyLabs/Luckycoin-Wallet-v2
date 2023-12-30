@@ -435,7 +435,7 @@
         <translation>Лента инструменти за раздели</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and dogecoin: URIs)</source>
+        <source>Request payments (generates QR codes and bells: URIs)</source>
         <translation>Изискване на плащания (генериране на QR кодове и Доджкойн: URIs)</translation>
     </message>
     <message>
@@ -447,7 +447,7 @@
         <translation>Показване на списъка с използваните адреси за получаване и етикети.</translation>
     </message>
     <message>
-        <source>Open a dogecoin: URI or payment request</source>
+        <source>Open a bells: URI or payment request</source>
         <translation>Отворете Доджкойн: URI или заявка за плащане</translation>
     </message>
     <message>
@@ -1635,7 +1635,7 @@ p, li { white-space: pre-wrap; }
         <translation>Възникна грешка при назаявката за плащане</translation>
     </message>
     <message>
-        <source>Cannot start dogecoin: click-to-pay handler</source>
+        <source>Cannot start bells: click-to-pay handler</source>
         <translation>Доджкойн не можe да стартира: манипулатор кликни-да-платиш</translation>
     </message>
     <message>

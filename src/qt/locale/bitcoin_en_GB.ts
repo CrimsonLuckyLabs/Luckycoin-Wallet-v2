@@ -435,8 +435,8 @@
         <translation>Tabs toolbar</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and dogecoin: URIs)</source>
-        <translation>Request payments (generates QR codes and dogecoin: URIs)</translation>
+        <source>Request payments (generates QR codes and bells: URIs)</source>
+        <translation>Request payments (generates QR codes and bells: URIs)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -447,8 +447,8 @@
         <translation>Show the list of used receiving addresses and labels</translation>
     </message>
     <message>
-        <source>Open a dogecoin: URI or payment request</source>
-        <translation>Open a dogecoin: URI or payment request</translation>
+        <source>Open a bells: URI or payment request</source>
+        <translation>Open a bells: URI or payment request</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -1645,7 +1645,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Cannot start dogecoin: click-to-pay handler</source>
+        <source>Cannot start bells: click-to-pay handler</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2776,8 +2776,8 @@ p, li { white-space: pre-wrap; }
         <translation>Enter a label for this address to add it to the list of used addresses</translation>
     </message>
     <message>
-        <source>A message that was attached to the dogecoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Dogecoin network.</source>
-        <translation>A message that was attached to the dogecoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Dogecoin network.</translation>
+        <source>A message that was attached to the bells: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Dogecoin network.</source>
+        <translation>A message that was attached to the bells: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Dogecoin network.</translation>
     </message>
     <message>
         <source>Pay To:</source>

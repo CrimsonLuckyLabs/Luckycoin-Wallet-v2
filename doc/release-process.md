@@ -36,7 +36,7 @@ Check out the source code in the following directory hierarchy.
     git clone https://github.com/devrandom/gitian-builder.git
     git clone https://github.com/dogecoin/dogecoin.git
 
-### Dogecoin maintainers/release engineers, update version in sources
+### Bells maintainers/release engineers, update version in sources
 
 Update the following:
 
@@ -260,7 +260,7 @@ Note: check that SHA256SUMS itself doesn't end up in SHA256SUMS, which is a spur
 
   - Update title of #dogecoin on Freenode IRC
 
-  - Announce on reddit /r/dogecoin, /r/dogecoindev
+  - Announce on reddit /r/dogecoin, /r/bellsdev
 
 - Add release notes for the new version to the directory `doc/release-notes` in git master
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2021-2022 The Dogecoin Core developers
+# Copyright (c) 2021-2022 The Bells Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """P2P Policies QA test
@@ -94,7 +94,7 @@ class P2PPolicyTests(BitcoinTestFramework):
     def setup_network(self):
         self.nodes = []
 
-        # a Dogecoin Core node that behaves similar to mainnet policies
+        # a Bells Core node that behaves similar to mainnet policies
         self.nodes.append(start_node(0, self.options.tmpdir, ["-debug", "-acceptnonstdtxn=0"]))
 
         # custom testnodes

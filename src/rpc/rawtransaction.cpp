@@ -220,7 +220,7 @@ UniValue getrawtransaction(const JSONRPCRequest& request)
 
     CTransactionRef tx;
     uint256 hashBlock;
-    // Dogecoin: Is this the best value for consensus height?
+    // bells: Is this the best value for consensus height?
     if (!GetTransaction(hash, tx, Params().GetConsensus(0), hashBlock, true))
         throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, std::string(fTxIndex ? "No such mempool or blockchain transaction"
             : "No such mempool transaction. Use -txindex to enable blockchain transaction queries") +

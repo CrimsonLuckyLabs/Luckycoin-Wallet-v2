@@ -451,8 +451,8 @@
         <translation>Panel s listy</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and dogecoin: URIs)</source>
-        <translation>Požaduj platby (generuje QR kódy a dogecoin: URI)</translation>
+        <source>Request payments (generates QR codes and bells: URIs)</source>
+        <translation>Požaduj platby (generuje QR kódy a bells: URI)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -463,8 +463,8 @@
         <translation>Ukaž seznam použitých přijímacích adres a jejich označení</translation>
     </message>
     <message>
-        <source>Open a dogecoin: URI or payment request</source>
-        <translation>Načti dogecoin: URI nebo platební požadavek</translation>
+        <source>Open a bells: URI or payment request</source>
+        <translation>Načti bells: URI nebo platební požadavek</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -1661,8 +1661,8 @@ p, li { white-space: pre-wrap; }
         <translation>Chyba platebního požadavku</translation>
     </message>
     <message>
-        <source>Cannot start dogecoin: click-to-pay handler</source>
-        <translation>Nemůžu spustit dogecoin: obsluha click-to-pay</translation>
+        <source>Cannot start bells: click-to-pay handler</source>
+        <translation>Nemůžu spustit bells: obsluha click-to-pay</translation>
     </message>
     <message>
         <source>URI handling</source>
@@ -2822,8 +2822,8 @@ p, li { white-space: pre-wrap; }
         <translation>Zadej označení této adresy; obojí se ti pak uloží do adresáře</translation>
     </message>
     <message>
-        <source>A message that was attached to the dogecoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Dogecoin network.</source>
-        <translation>Zpráva, která byla připojena k dogecoin: URI a která se ti pro přehled uloží k transakci. Poznámka: Tahle zpráva se neposílá s platbou po dogecoinové síti.</translation>
+        <source>A message that was attached to the bells: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Dogecoin network.</source>
+        <translation>Zpráva, která byla připojena k bells: URI a která se ti pro přehled uloží k transakci. Poznámka: Tahle zpráva se neposílá s platbou po dogecoinové síti.</translation>
     </message>
     <message>
         <source>Pay To:</source>

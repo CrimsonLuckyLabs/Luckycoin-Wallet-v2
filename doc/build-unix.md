@@ -64,13 +64,12 @@ using only fully tested dependencies, see the documentation in the
 
 **Required dependencies** :
 ```bash
-sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils
-sudo apt-get install libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev libboost-thread-dev
+sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev libboost-thread-dev libjpeg-dev
 ```
 
 **Optional dependencies** :
 ```bash
-# Qt (required for dogecoin-qt GUI)
+# Qt (required for bells-qt GUI)
 sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler libqrencode-dev
 
 # BerkeleyDB (version 5.3)
@@ -85,13 +84,13 @@ sudo apt-get install libminiupnpc-dev
 
 ## Build steps
 
-According to installed dependencies, the following steps will compile `dogecoind`, `dogecoin-cli` and `dogecoin-qt`.
+According to installed dependencies, the following steps will compile `bellsd`, `dogecoin-cli` and `bells-qt`.
 
 ```bash
 ./autogen.sh
 ./configure
-make
-make install # optional
+make -j8
+make install -j8 # optional
 ```
 See [Build configuration](#build-configuration) for extra settings.
 
@@ -100,7 +99,7 @@ See [Build configuration](#build-configuration) for extra settings.
 Configurations are done during the `./configure` step. Use `--help` to see all available options.
 
 #### Enable Qt GUI
-Create `dogecoin-qt`, the core wallet GUI.
+Create `bells-qt`, the core wallet GUI.
 ```bash
 ./configure --with-gui
 ```

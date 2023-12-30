@@ -24,13 +24,13 @@ CFeeRate GetDogecoinFeeRate(int priority)
     switch(priority)
     {
     case SUCH_EXPENSIVE:
-        return CFeeRate(COIN / 100 * 521); // 5.21 DOGE, but very carefully avoiding floating point maths
+        return CFeeRate(COIN / 100 * 258); // 2.58 BEL, but very carefully avoiding floating point maths
     case MANY_GENEROUS:
-        return CFeeRate(CWallet::minTxFee.GetFeePerK() * 100);
+        return CFeeRate(CWallet::minTxFee.GetFeePerK() * 50);
     case AMAZE:
-        return CFeeRate(CWallet::minTxFee.GetFeePerK() * 10);
+        return CFeeRate(CWallet::minTxFee.GetFeePerK() * 8);
     case WOW:
-        return CFeeRate(CWallet::minTxFee.GetFeePerK() * 5);
+        return CFeeRate(CWallet::minTxFee.GetFeePerK() * 4);
     case MORE:
         return CFeeRate(CWallet::minTxFee.GetFeePerK() * 2);
     case MINIMUM:
@@ -77,7 +77,7 @@ CAmount GetDogecoinMinRelayFee(const CTransaction& tx, unsigned int nBytes, bool
     }
 
     CAmount nMinFee = ::minRelayTxFeeRate.GetFee(nBytes);
-    nMinFee += GetDogecoinDustFee(tx.vout, nDustLimit);
+    nMinFee += GetbellsdustFee(tx.vout, nDustLimit);
 
     if (fAllowFree)
     {
@@ -94,7 +94,7 @@ CAmount GetDogecoinMinRelayFee(const CTransaction& tx, unsigned int nBytes, bool
     return nMinFee;
 }
 
-CAmount GetDogecoinDustFee(const std::vector<CTxOut> &vout, const CAmount dustLimit) {
+CAmount GetbellsdustFee(const std::vector<CTxOut> &vout, const CAmount dustLimit) {
     CAmount nFee = 0;
 
     // To limit dust spam, add the dust limit for each output

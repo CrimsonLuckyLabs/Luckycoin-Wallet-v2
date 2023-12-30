@@ -1,0 +1,74 @@
+name: 🚨 CodeQL
+
+on:
+  push:
+    branches:
+      - '*-dev'
+      - '*-maint'
+  pull_request:
+    # The branches below must be a subset of the branches above
+    branches:
+      - '*-dev'
+    paths-ignore:
+      - '**/*.md'
+      - '**/*.txt'
+      - 'contrib/**'
+      - 'doc/**'
+      - 'share/**'
+      - 'qa/**'
+
+jobs:
+  analyze:
+    name: Analyze
+    runs-on: ubuntu-22.04
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [ 'cpp' ]
+        # CodeQL supports [ 'cpp', 'csharp', 'go', 'java', 'javascript', 'python' ]
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Update system
+      run: |
+        sudo apt-get update --yes
+        sudo apt-get install build-essential libtool autotools-dev automake pkg-config bsdmainutils --yes
+
+    - name: Set permission
+      run: |
+        cd .. && chmod 777 -R ./bellscoinv2 && cd ./bellscoinv2 
+
+    - name: Dependency cache
+      uses: actions/cache@v3
+      env:
+        cache-name: depends
+      with:
+        path: ./depends/built
+        key: codeql-${{ env.cache-name }}-${{ hashFiles('depends/packages/*') }}
+
+    - name: Build depends
+      run: |
+        pushd depends
+        make -j4 HOST=x86_64-pc-linux-gnu
+        popd
+
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v3
+      with:
+        languages: ${{ matrix.language }}
+
+    - name: Build Bellscoin
+      run: |
+       ./autogen.sh
+       ./configure --prefix="$PWD"/depends/x86_64-pc-linux-gnu
+       make -j4
+
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v3

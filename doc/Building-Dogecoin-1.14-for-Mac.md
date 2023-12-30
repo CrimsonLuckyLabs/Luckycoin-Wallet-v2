@@ -1,4 +1,4 @@
-### Building dogecoin-qt 1.14 on modern macs. ###
+### Building bells-qt 1.14 on modern macs. ###
 
 Note that this requires changes made by michilumin on the 1.14-dev branch as well as some changes to BDB.
 
@@ -76,7 +76,7 @@ Build BDB 5.3.28
     $cd /usr/local/include 
     $ln -s ../opt/openssl/include/openssl 
 
-### Go back to your Dogecoin repo ###
+### Go back to your Bells repo ###
 
     $cd ~/dogecoin
     $./autogen.sh
@@ -91,7 +91,7 @@ Go have another beverage.
 
 Run it.
 
-	$/usr/local/bin/dogecoin-qt
+	$/usr/local/bin/bells-qt
 
 
 

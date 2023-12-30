@@ -452,7 +452,7 @@
     </message>
     <message>
         <source>Open a dogecoin: URI or payment request</source>
-        <translation>Åpne en Dogecoin: URI eller betalingsetterspørring</translation>
+        <translation>Åpne en bells: URI eller betalingsetterspørring</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>

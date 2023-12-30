@@ -1,0 +1,33 @@
+# /etc/conf.d/bellsd: config file for /etc/init.d/bellsd
+
+# Config file location
+#bellsd_CONFIGFILE="/etc/bells/bells.conf"
+
+# What directory to write pidfile to?  (created and owned by $bellsd_USER)
+#bellsd_PIDDIR="/var/run/bellsd"
+
+# What filename to give the pidfile
+#bellsd_PIDFILE="${bellsd_PIDDIR}/bellsd.pid"
+
+# Where to write bellsd data (be mindful that the blockchain is large)
+#bellsd_DATADIR="/var/lib/bellsd"
+
+# User and group to own bellsd process
+#bellsd_USER="bells"
+#bellsd_GROUP="bells"
+
+# Path to bellsd executable
+#bellsd_BIN="/usr/bin/bellsd"
+
+# Nice value to run bellsd under
+#bellsd_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+bellsd_OPTS="-disablewallet"
+
+# The timeout in seconds OpenRC will wait for bellsd to terminate
+# after a SIGTERM has been raised.
+# Note that this will be mapped as argument to start-stop-daemon's
+# '--retry' option, which means you can specify a retry schedule
+# here. For more information see man 8 start-stop-daemon.
+bellsd_SIGTERM_TIMEOUT=60

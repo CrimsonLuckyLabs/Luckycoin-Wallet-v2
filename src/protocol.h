@@ -173,6 +173,9 @@ extern const char *PONG;
  * @see https://bitcoin.org/en/developer-reference#notfound
  */
 extern const char *NOTFOUND;
+
+extern const char *ALERT;
+
 /**
  * The filterload message tells the receiving peer to filter all relayed
  * transactions and requested merkle blocks through the provided filter.

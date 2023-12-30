@@ -20,10 +20,10 @@ class CCoinsViewCache;
   * All fee defaults used throughout the client derive their
   * value from this base default.
   */
-static const CAmount RECOMMENDED_MIN_TX_FEE = COIN / 100;
+static const CAmount RECOMMENDED_MIN_TX_FEE = 10000;
 
 /** Default for -blockmaxsize, which controls the maximum size of block the mining code will create **/
-static const unsigned int DEFAULT_BLOCK_MAX_SIZE = 750000;
+static const unsigned int DEFAULT_BLOCK_MAX_SIZE = 1000000;
 /** Default for -blockprioritysize, maximum space for zero/low-fee transactions **/
 static const unsigned int DEFAULT_BLOCK_PRIORITY_SIZE = 27000;
 /** Default for -blockmaxweight, which controls the range of block weights the mining code will create **/
@@ -41,7 +41,7 @@ static const unsigned int DEFAULT_MAX_MEMPOOL_SIZE = 300;
 /** Default for -incrementalrelayfee, which sets the minimum feerate increase
  *  for mempool limiting or BIP 125 replacement
  *
- *  Dogecoin:    Increment mempool limits and accept RBF in steps of 0.0001 DOGE
+ *  bells:    Increment mempool limits and accept RBF in steps of 0.0001 DOGE
  *  Calculation: DEFAULT_MIN_RELAY_TX_FEE = RECOMMENDED_MIN_TX_FEE / 10
  *               DEFAULT_INCREMENTAL_RELAY_FEE = DEFAULT_MIN_RELAY_TX_FEE / 10
  *
@@ -63,13 +63,13 @@ static const unsigned int MAX_STANDARD_P2WSH_STACK_ITEM_SIZE = 80;
 /** The maximum size of a standard witnessScript */
 static const unsigned int MAX_STANDARD_P2WSH_SCRIPT_SIZE = 3600;
 /**
- * Dogecoin: Default dust limit that is evaluated when considering whether a
+ * bells: Default dust limit that is evaluated when considering whether a
  * transaction output is required to pay additional fee for relay and inclusion
  * in blocks. Overridden by -dustlimit
  */
 static const CAmount DEFAULT_DUST_LIMIT = RECOMMENDED_MIN_TX_FEE;
 /**
- * Dogecoin: Default hard dust limit that is evaluated when considering whether
+ * bells: Default hard dust limit that is evaluated when considering whether
  * a transaction is standard. Transactions under this limit will not be accepted
  * to the mempool and thus not relayed. Can be overridden by -harddustlimit
  *
