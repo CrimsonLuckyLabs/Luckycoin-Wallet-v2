@@ -1,6 +1,6 @@
 [Protocol]
 exec=luckycoin-qt '%u'
-protocol=luckcoin
+protocol=luckycoin
 input=none
 output=none
 helper=true

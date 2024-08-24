@@ -2,13 +2,13 @@
 
 *.exe
 src/luckycoin
-src/luckcoind
+src/luckycoind
 src/luckycoin-cli
 src/luckycoin-tx
-src/test/test_luckcoin
-src/test/test_luckcoin_fuzzy
+src/test/test_luckycoin
+src/test/test_luckycoin_fuzzy
 src/qt/test/test_luckycoin-qt
-src/bench/bench_luckcoin
+src/bench/bench_luckycoin
 
 # autoreconf
 Makefile.in

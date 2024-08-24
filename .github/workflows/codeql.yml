@@ -64,7 +64,7 @@ jobs:
       with:
         languages: ${{ matrix.language }}
 
-    - name: Build LuckCoin
+    - name: Build LuckyCoin
       run: |
        ./autogen.sh
        ./configure --prefix="$PWD"/depends/x86_64-pc-linux-gnu

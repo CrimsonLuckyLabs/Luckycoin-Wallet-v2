@@ -16,7 +16,7 @@ To receive notifications about updates, subscribe to the release mailing list:
 
 Releases are also announced on reddit:
 
-  <https://www.reddit.com/r/luckcoindev/>
+  <https://www.reddit.com/r/luckycoindev/>
 
 Compatibility
 ==============

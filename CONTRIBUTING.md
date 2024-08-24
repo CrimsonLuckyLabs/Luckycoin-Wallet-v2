@@ -6,7 +6,7 @@ or look for work that needs doing, please see:
 
 * [Help requests](https://github.com/luckycoin/luckycoin/labels/help%20wanted)
 * [Projects](https://github.com/luckycoin/luckycoin/projects)
-* [luckcoindev on reddit](https://www.reddit.com/r/luckcoindev/)
+* [luckycoindev on reddit](https://www.reddit.com/r/luckycoindev/)
 
 ## Branch Strategy
 

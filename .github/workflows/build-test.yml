@@ -161,7 +161,7 @@ jobs:
           path: ~/.ccache
           key: ${{ matrix.name }}-${{ env.cache-name }}-${{ hashFiles('**/configure.ac', '.github/workflows/ci.yml') }}
 
-      - name: Build LuckCoin
+      - name: Build LuckyCoin
         run: |
           depends/${{ matrix.host }}/native/bin/ccache --max-size="$CCACHE_SIZE"
           ./autogen.sh
@@ -171,7 +171,7 @@ jobs:
       - name: Run benchmark
         if: ${{ matrix.run-bench }}
         run: |
-          src/bench/bench_luckcoin > ${{ matrix.name }}-bench.csv
+          src/bench/bench_luckycoin > ${{ matrix.name }}-bench.csv
           cat ${{ matrix.name }}-bench.csv
 
       - name: Run tests
@@ -194,6 +194,6 @@ jobs:
         with:
           name: luckycoin-${{ github.sha }}-${{ matrix.name }}
           path: |
-            depends/${{ matrix.host }}/bin/luckcoin*
-            dist/LuckCoin-Qt.app
+            depends/${{ matrix.host }}/bin/luckycoin*
+            dist/LuckyCoin-Qt.app
             ${{ matrix.name }}-bench.csv

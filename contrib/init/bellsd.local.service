@@ -2,9 +2,9 @@
 #
 # The relevant paths are:
 #
-#/usr/local/bin/luckcoind
-#/usr/local/etc/luckcoin/
-#/var/local/luckcoin/
+#/usr/local/bin/luckycoind
+#/usr/local/etc/luckycoin/
+#/var/local/luckycoin/
 
 [Unit]
 Description=LuckyCoin's distributed currency daemon
@@ -12,7 +12,7 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/usr/local/bin/luckcoind -conf=/usr/local/etc/luckcoin/luckcoin.conf -datadir=/var/local/luckcoin
+ExecStart=/usr/local/bin/luckycoind -conf=/usr/local/etc/luckycoin/luckycoin.conf -datadir=/var/local/luckycoin
 
 KillSignal=SIGINT
 Restart=always
@@ -22,8 +22,8 @@ TimeoutStartSec=5
 StartLimitIntervalSec=120
 StartLimitBurst=5
 
-User=luckcoin
-Group=luckcoin
+User=luckycoin
+Group=luckycoin
 
 ### Restrict resource consumption
 MemoryAccounting=yes
@@ -40,8 +40,8 @@ TemporaryFileSystem=/:ro
 BindReadOnlyPaths=/etc/ /lib/ /lib64/
 
 # Add daemon paths
-BindReadOnlyPaths=/usr/local/bin/luckcoind /usr/local/etc/luckcoin/
-BindPaths=/var/local/luckcoin/
+BindReadOnlyPaths=/usr/local/bin/luckycoind /usr/local/etc/luckycoin/
+BindPaths=/var/local/luckycoin/
 
 ### Restrict access to system.
 

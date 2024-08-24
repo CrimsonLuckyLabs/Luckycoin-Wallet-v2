@@ -1,33 +1,33 @@
-# /etc/conf.d/luckcoind: config file for /etc/init.d/luckcoind
+# /etc/conf.d/luckycoind: config file for /etc/init.d/luckycoind
 
 # Config file location
-#luckcoind_CONFIGFILE="/etc/luckcoin/luckcoin.conf"
+#luckycoind_CONFIGFILE="/etc/luckycoin/luckycoin.conf"
 
-# What directory to write pidfile to?  (created and owned by $luckcoind_USER)
-#luckcoind_PIDDIR="/var/run/luckcoind"
+# What directory to write pidfile to?  (created and owned by $luckycoind_USER)
+#luckycoind_PIDDIR="/var/run/luckycoind"
 
 # What filename to give the pidfile
-#luckcoind_PIDFILE="${luckcoind_PIDDIR}/luckcoind.pid"
+#luckycoind_PIDFILE="${luckycoind_PIDDIR}/luckycoind.pid"
 
-# Where to write luckcoind data (be mindful that the blockchain is large)
-#luckcoind_DATADIR="/var/lib/luckcoind"
+# Where to write luckycoind data (be mindful that the blockchain is large)
+#luckycoind_DATADIR="/var/lib/luckycoind"
 
-# User and group to own luckcoind process
-#luckcoind_USER="luckcoin"
-#luckcoind_GROUP="luckcoin"
+# User and group to own luckycoind process
+#luckycoind_USER="luckycoin"
+#luckycoind_GROUP="luckycoin"
 
-# Path to luckcoind executable
-#luckcoind_BIN="/usr/bin/luckcoind"
+# Path to luckycoind executable
+#luckycoind_BIN="/usr/bin/luckycoind"
 
-# Nice value to run luckcoind under
-#luckcoind_NICE=0
+# Nice value to run luckycoind under
+#luckycoind_NICE=0
 
 # Additional options (avoid -conf and -datadir, use flags above)
-luckcoind_OPTS="-disablewallet"
+luckycoind_OPTS="-disablewallet"
 
-# The timeout in seconds OpenRC will wait for luckcoind to terminate
+# The timeout in seconds OpenRC will wait for luckycoind to terminate
 # after a SIGTERM has been raised.
 # Note that this will be mapped as argument to start-stop-daemon's
 # '--retry' option, which means you can specify a retry schedule
 # here. For more information see man 8 start-stop-daemon.
-luckcoind_SIGTERM_TIMEOUT=60
+luckycoind_SIGTERM_TIMEOUT=60

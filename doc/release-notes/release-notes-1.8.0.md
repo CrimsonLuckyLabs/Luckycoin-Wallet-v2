@@ -25,7 +25,7 @@ menu. Ensure your existing wallet software is closed before upgrading.
 Note that a full reindex is required as part of the upgrade to 1.8, and this
 will typically take around an hour to complete. If you are running the Qt client
 you will be prompted to reindex when first running the software, while if you
-use "luckcoind" you must run it the first time with the "-reindex" command line
+use "luckycoind" you must run it the first time with the "-reindex" command line
 option.
 
 To ensure a smooth switchover to AuxPoW, 1.8 has safe mode disabled 1 hour before
@@ -95,5 +95,5 @@ disposed of in all cases.
 Tweaked trigger conditions for safe mode to take into account the much faster block time
 of Dogecoin compared to Bitcoin. This should lead to less false positives.
 
-A problem in parsing mangled luckcoin: URIs under Windows has been resolved, and as
-part of this work network detection for luckcoin: URIs is now more robust.
+A problem in parsing mangled luckycoin: URIs under Windows has been resolved, and as
+part of this work network detection for luckycoin: URIs is now more robust.

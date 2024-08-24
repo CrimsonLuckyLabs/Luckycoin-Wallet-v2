@@ -12,7 +12,7 @@ architectures:
 
 apps:
   d:
-    command: luckcoind
+    command: luckycoind
     plugs: [home, removable-media, network, network-bind]
     environment:
     # Override HOME so the datadir is located at ~/snap/luckycoin-core/common/.luckycoin/ instead of ~/snap/luckycoin-core/current/.luckycoin/, and each new version of the snap won't have a different data directory: https://docs.snapcraft.io/environment-variables/7983
@@ -54,7 +54,7 @@ parts:
         echo "Dogecoin tests passed."
       fi
       echo "Installing Dogecoin..."
-      install -m 0755 -D -t $SNAPCRAFT_PART_INSTALL/bin luckycoin-${SNAPCRAFT_PROJECT_VERSION}/bin/luckcoind
+      install -m 0755 -D -t $SNAPCRAFT_PART_INSTALL/bin luckycoin-${SNAPCRAFT_PROJECT_VERSION}/bin/luckycoind
       install -m 0755 -D -t $SNAPCRAFT_PART_INSTALL/bin luckycoin-${SNAPCRAFT_PROJECT_VERSION}/bin/luckycoin-qt
       install -m 0755 -D -t $SNAPCRAFT_PART_INSTALL/bin luckycoin-${SNAPCRAFT_PROJECT_VERSION}/bin/luckycoin-cli
       wget https://raw.githubusercontent.com/luckycoin/luckycoin/master/share/pixmaps/dogecoin128.png

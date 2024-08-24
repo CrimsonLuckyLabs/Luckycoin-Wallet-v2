@@ -1,11 +1,11 @@
 Sample configuration files for:
 
-SystemD: luckcoind.service
-Upstart: luckcoind.conf
-OpenRC:  luckcoind.openrc
-         luckcoind.openrcconf
-CentOS:  luckcoind.init
-OS X:    org.luckcoin.luckcoind.plist
+SystemD: luckycoind.service
+Upstart: luckycoind.conf
+OpenRC:  luckycoind.openrc
+         luckycoind.openrcconf
+CentOS:  luckycoind.init
+OS X:    org.luckycoin.luckycoind.plist
 
 have been made available to assist packagers in creating node packages here.
 

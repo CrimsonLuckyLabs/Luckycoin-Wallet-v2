@@ -3,10 +3,10 @@
 <plist version="1.0">
 <dict>
 	<key>Label</key>
-	<string>org.luckcoin.luckcoind</string>
+	<string>org.luckycoin.luckycoind</string>
 	<key>ProgramArguments</key>
 	<array>
-		<string>/usr/local/bin/luckcoind</string>
+		<string>/usr/local/bin/luckycoind</string>
 		<string>-daemon</string>
 	</array>
 	<key>RunAtLoad</key>

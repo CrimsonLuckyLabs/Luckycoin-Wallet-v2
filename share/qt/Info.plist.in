@@ -11,7 +11,7 @@
   </array>
 
   <key>CFBundleIconFile</key>
-  <string>luckcoin.icns</string>
+  <string>luckycoin.icns</string>
 
   <key>CFBundlePackageType</key>
   <string>APPL</string>
@@ -38,7 +38,7 @@
   <true/>
 
   <key>CFBundleIdentifier</key>
-  <string>com.luckcoin.LuckyCoin-Qt</string>
+  <string>com.luckycoin.LuckyCoin-Qt</string>
 
   <key>CFBundleURLTypes</key>
   <array>
@@ -46,10 +46,10 @@
       <key>CFBundleTypeRole</key>
       <string>Editor</string>
       <key>CFBundleURLName</key>
-      <string>com.luckcoin.LuckCoinPayment</string>
+      <string>com.luckycoin.LuckyCoinPayment</string>
       <key>CFBundleURLSchemes</key>
       <array>
-        <string>luckcoin</string>
+        <string>luckycoin</string>
       </array>
     </dict>
   </array>
@@ -58,7 +58,7 @@
   <array>
     <dict>
       <key>UTTypeIdentifier</key>
-      <string>com.luckcoin.paymentrequest</string>
+      <string>com.luckycoin.paymentrequest</string>
       <key>UTTypeDescription</key>
       <string>LuckyCoin payment request</string>
       <key>UTTypeConformsTo</key>
@@ -71,7 +71,7 @@
         <string>application/luckycoin-paymentrequest</string>
         <key>public.filename-extension</key>
         <array>
-          <string>luckcoinpaymentrequest</string>
+          <string>luckycoinpaymentrequest</string>
         </array>
       </dict>
     </dict>
@@ -84,7 +84,7 @@
       <string>Editor</string>
       <key>LSItemContentTypes</key>
       <array>
-        <string>com.luckcoin.paymentrequest</string>
+        <string>com.luckycoin.paymentrequest</string>
       </array>
       <key>LSHandlerRank</key>
       <string>Owner</string>

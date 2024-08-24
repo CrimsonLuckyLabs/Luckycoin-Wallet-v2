@@ -1,6 +1,6 @@
 ## Getting started
 
-This tutorial will help you to go through the basics to use Dogecoin Core after you completed the [installation instructions](/INSTALL.md). You now have `luckcoind` or `luckycoin-qt` executables available to run a node, and `luckycoin-cli`/`luckycoin-tx` tools to help you transact DOGE.
+This tutorial will help you to go through the basics to use Dogecoin Core after you completed the [installation instructions](/INSTALL.md). You now have `luckycoind` or `luckycoin-qt` executables available to run a node, and `luckycoin-cli`/`luckycoin-tx` tools to help you transact DOGE.
 
 > **Note:** For simplicity, this guide assumes that executables can be found under the `PATH` environment variable.
 If needed, you can specify their location by typing `PATH=$PATH:/path/to/executables`, or prepend the full path to the command like:
@@ -26,9 +26,9 @@ If needed, you can specify their location by typing `PATH=$PATH:/path/to/executa
 
 ## Starting a Dogecoin node
 
-To start your node, you can run an headless server using `luckcoind`:
+To start your node, you can run an headless server using `luckycoind`:
 ```console
-shibetoshi:~$ luckcoind -daemon
+shibetoshi:~$ luckycoind -daemon
 ```
 
 Or you can use the Graphical User Interface (GUI), `luckycoin-qt`:
@@ -310,16 +310,16 @@ The `vout` structure will give you information about where the transaction outpu
 
 There are many parameters that can be configured to tune your node to your liking. There are two ways to change the configuration.
 
-Using `luckcoind -help` will display all available configuration parameters that can be added as arguments:
+Using `luckycoind -help` will display all available configuration parameters that can be added as arguments:
 
 **Command example :**
 ```console
-shibetoshi:~$ luckcoind -daemon -paytxfee=0.01 -sendfreetransactions=1 -maxconnections=150
+shibetoshi:~$ luckycoind -daemon -paytxfee=0.01 -sendfreetransactions=1 -maxconnections=150
 ```
 
-Configuration can be persisted by creating a `luckcoin.conf` file. Create it in the directory defined with the `datadir` setting, `$HOME/.luckycoin` by default, or specify the file location with `-conf`.
+Configuration can be persisted by creating a `luckycoin.conf` file. Create it in the directory defined with the `datadir` setting, `$HOME/.luckycoin` by default, or specify the file location with `-conf`.
 
-**luckcoin.conf example :**
+**luckycoin.conf example :**
 ```
 daemon=1
 server=1
@@ -328,7 +328,7 @@ paytxfee=0.01
 sendfreetransactions=1
 maxconnections=150
 ```
-You can see a more concrete example [here](/contrib/debian/examples/luckcoin.conf).
+You can see a more concrete example [here](/contrib/debian/examples/luckycoin.conf).
 
 ### Mainnet, testnet and regtest
 
@@ -338,7 +338,7 @@ When trying out new things, for example to test your application that interacts 
 **Testnet** : The test network, with peers.  
 **Regtest** : The regression test network, to test with only local peers and create blocks on-demand.
 
-When not specifying any network, *Mainnet* is the network used by default. To enable *testnet*, use the `luckcoind -testnet`.
+When not specifying any network, *Mainnet* is the network used by default. To enable *testnet*, use the `luckycoind -testnet`.
 
 To enable *regtest*, use the `-regtest` option.
 

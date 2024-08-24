@@ -12,7 +12,7 @@ Please report bugs using the issue tracker at github:
 
 To receive security and update notifications, please watch reddit or Twitter:
 
-  * https://www.reddit.com/r/luckcoindev/
+  * https://www.reddit.com/r/luckycoindev/
   * @Dogecoin on Twitter for high priority announcements
   * @luckycoin\_devs on Twitter for updates on development work
 
@@ -38,7 +38,7 @@ most Dogecoin Core users.
 
 This release addresses CVE-2021-3401 that opened potential remote code execution
 on QT (graphical user interface) wallets through malicious use of
-`luckcoin:` URIs.
+`luckycoin:` URIs.
 
 **Dogecoin QT users are urged to please update their installations to this
 version immediately**, to prevent malicious actors from exploiting this

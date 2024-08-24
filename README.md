@@ -6,12 +6,12 @@ LuckyCoin Core [BEL]
 
 <div align="center">
 
-[![LuckCoinBadge](https://img.shields.io/badge/LuckyCoin-Coin-blue)](https://luckycoin.com)
+[![LuckyCoinBadge](https://img.shields.io/badge/LuckyCoin-Coin-blue)](https://luckycoin.com)
 [![MuchWow](https://img.shields.io/badge/OG-Coin-yellow.svg)](https://luckycoin.com)
 
 </div>
 
-## This branch contains the latest version 2.0.0 of the luckcoin network.
+## This branch contains the latest version 2.0.0 of the luckycoin network.
 
 ## What is LuckyCoin?
 LuckyCoin is the twin of DogeCoin, born before it, and just seen the lights now. [Visit blockchain explorer](https://belscan.io/)
@@ -28,7 +28,7 @@ The JSON-RPC API provided by LuckyCoin Core is self-documenting and can be brows
 
 ## Frequently Asked Questions
 
-### How much luckcoin can exist?
+### How much luckycoin can exist?
 Max supply of 500,000,000 coins with special rewards system.
 
 ### How to get $bel?

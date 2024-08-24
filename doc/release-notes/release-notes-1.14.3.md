@@ -77,7 +77,7 @@ Minor changes
 
 * Set BIP65 softfork heights in chainparams.cpp.
 * Update package links for OSX cross compilation.
-* Change IPC prefix from `bitcoin:` to `luckcoin:`.
+* Change IPC prefix from `bitcoin:` to `luckycoin:`.
 * Locale independent sorting.
 * Corrections to Italian translation.
 * Refresh main and test network checkpoints and seeds.
