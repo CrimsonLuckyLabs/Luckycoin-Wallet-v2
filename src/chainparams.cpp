@@ -110,11 +110,9 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP66].nStartTime = 1734490155;   // 2023-12-25 00:00:00
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP66].nTimeout   = 1744490155;   // 2024-12-25 18:00:00
 
-
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP65].bit = 2;
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP65].nStartTime = 1734490155;   // 2023-12-25 00:00:00
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP65].nTimeout   = 1744490155;   // 2024-12-25 18:00:00
-
 
         // Deployment of BIP68, BIP112, and BIP113.
         // XXX: BIP heights and hashes all need to be updated to LuckyCoin values
@@ -177,13 +175,13 @@ public:
         nDefaultPort = 18818;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1369199888, 12097647, 0x1e0ffff0, 1, 88 * COIN);
+        genesis = CreateGenesisBlock(1369199888, 11288888, 0x1e0ffff0, 1, 88 * COIN); // 12097647
 
         consensus.hashGenesisBlock = genesis.GetHash();
         digishieldConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
         auxpowConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
 
-        assert(consensus.hashGenesisBlock == uint256S("0x324635c8e36f663b0adb126a21ad0bd7fa43cc5c5f15aec992bf4dde650bc0ea"));
+        assert(consensus.hashGenesisBlock == uint256S("0x9b7bce58999062b63bfb18586813c42491fa32f4591d8d3043cb4fa9e551541b"));
         assert(genesis.hashMerkleRoot == uint256S("0x6f80efd038566e1e3eab3e1d38131604d06481e77f2462235c6a9a94b1f8abf9"));
 
         // Note that of those with the service bits flag, most only support a subset of possible options
