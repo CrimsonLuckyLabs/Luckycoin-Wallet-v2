@@ -9,7 +9,7 @@ Dogecoin Core 1.8.2 is a bugfix release. It updates OpenSSL to 1.0.1l, mainly fi
 
 ## OpenSSL Warning
 
-The main takeaway is that builds from http://dogecoin.com are not affected. But if you build your own version,
+The main takeaway is that builds from http://luckycoin.com are not affected. But if you build your own version,
 please make sure you update to 1.8.2 **before** updating your OpenSSL!
 
 Please refer to this section in the Bitcoin Core release notes for further info: https://github.com/bitcoin/bitcoin/blob/0.9/doc/release-notes.md#openssl-warning

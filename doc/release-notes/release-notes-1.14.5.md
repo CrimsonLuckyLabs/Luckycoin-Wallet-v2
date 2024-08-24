@@ -1,6 +1,6 @@
 Dogecoin Core version 1.14.5 is now available from:
 
-  <https://github.com/dogecoin/dogecoin/releases/tag/v1.14.5/>
+  <https://github.com/luckycoin/luckycoin/releases/tag/v1.14.5/>
 
 This is a new minor version release, including important security updates and
 changes to network policies. All Dogecoin Core users, miners, services, relay
@@ -8,13 +8,13 @@ operators and wallet users are strongly recommended to upgrade.
 
 Please report bugs using the issue tracker at github:
 
-  <https://github.com/dogecoin/dogecoin/issues>
+  <https://github.com/luckycoin/luckycoin/issues>
 
 To receive security and update notifications, please watch reddit or Twitter:
 
   * https://www.reddit.com/r/bellsdev/
   * @Dogecoin on Twitter for high priority announcements
-  * @dogecoin\_devs on Twitter for updates on development work
+  * @luckycoin\_devs on Twitter for updates on development work
 
 Compatibility
 ==============

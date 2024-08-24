@@ -1,16 +1,16 @@
 ## Getting started
 
-This tutorial will help you to go through the basics to use Dogecoin Core after you completed the [installation instructions](/INSTALL.md). You now have `bellsd` or `bells-qt` executables available to run a node, and `dogecoin-cli`/`dogecoin-tx` tools to help you transact DOGE.
+This tutorial will help you to go through the basics to use Dogecoin Core after you completed the [installation instructions](/INSTALL.md). You now have `bellsd` or `bells-qt` executables available to run a node, and `luckycoin-cli`/`luckycoin-tx` tools to help you transact DOGE.
 
 > **Note:** For simplicity, this guide assumes that executables can be found under the `PATH` environment variable.
 If needed, you can specify their location by typing `PATH=$PATH:/path/to/executables`, or prepend the full path to the command like:
 > ```console
-> shibetoshi:~$ /path/to/dogecoin-cli [arguments ...]
+> shibetoshi:~$ /path/to/luckycoin-cli [arguments ...]
 > ```
 
 ### Table of contents
 
-1. [Starting a dogecoin node](#starting-a-dogecoin-node)
+1. [Starting a luckycoin node](#starting-a-luckycoin-node)
 2. [Introduction to the JSON-RPC API](#introduction-to-the-json-rpc-api)
     * [Creating a wallet](#creating-a-wallet)
     * [Verifying your balance](#verifying-your-balance)
@@ -41,22 +41,22 @@ Detailed logging is recorded in `debug.log`, located in the [data directory](#da
 
 Your node is now running and starts with a *synchronization process* that downloads the entire blockchain from other nodes. This operation will take many hours to complete, but you are now part of the Dogecoin network!
 
-> **Note:** The rest of this guide assumes the use of an headless node. The RPC server is not exposed with `bells-qt` until you activate the `-server` option as a startup argument, but inside the GUI application, you can use all the commands explored below (without `dogecoin-cli`) by going to `Help -> Debug window` and inside the popup window selecting the tab `Console`.
+> **Note:** The rest of this guide assumes the use of an headless node. The RPC server is not exposed with `bells-qt` until you activate the `-server` option as a startup argument, but inside the GUI application, you can use all the commands explored below (without `luckycoin-cli`) by going to `Help -> Debug window` and inside the popup window selecting the tab `Console`.
 
 ## Introduction to the JSON-RPC API
 
 Dogecoin Core exposes a JSON-RPC interface that allows you to request information about the network, blockchain and individual transactions, send transactions to the networks and manage your wallet.
 
-The Dogecoin Core installation provides the `dogecoin-cli` tool to interact with the JSON-RPC from the command line, and the interface is exposed over HTTP on port `22555`, so that other tools and libraries can interact with it.
+The Dogecoin Core installation provides the `luckycoin-cli` tool to interact with the JSON-RPC from the command line, and the interface is exposed over HTTP on port `22555`, so that other tools and libraries can interact with it.
 
 To have an overview of the available commands, use the `help` command:
 
 ```console
 #List all commands
-shibetoshi:~$ dogecoin-cli help
+shibetoshi:~$ luckycoin-cli help
 
 #Get help for a specific command
-shibetoshi:~$ dogecoin-cli help COMMAND
+shibetoshi:~$ luckycoin-cli help COMMAND
 ```
 
 Some commands are different, but it's possible to use the [bitcoin RPC API documentation](https://developer.bitcoin.org/reference/rpc/).
@@ -70,7 +70,7 @@ By default, the Dogecoin Core software will automatically create an address for 
 You can list wallet addresses using `getaddressesbyaccount`:
 
 ```console
-shibetoshi:~$ dogecoin-cli getaddressesbyaccount ""
+shibetoshi:~$ luckycoin-cli getaddressesbyaccount ""
 [
   "DA2fBazU8Y4epNJ2fQRZCcWpxKZY9HrhLN"
 ]
@@ -78,14 +78,14 @@ shibetoshi:~$ dogecoin-cli getaddressesbyaccount ""
 
 Using `getnewaddress` will generate a new wallet address:
 ```console
-shibetoshi:~$ dogecoin-cli getnewaddress
+shibetoshi:~$ luckycoin-cli getnewaddress
 DNnGtXk9khadE7EKCmQzxjnehenX92PKAv
 ```
 
 Private keys are stored in the `wallet.dat` file. You can use `backupwallet` to save a copy:
 
 ```console
-shibetoshi:~$ dogecoin-cli backupwallet /path/of/wallet/backup
+shibetoshi:~$ luckycoin-cli backupwallet /path/of/wallet/backup
 ```
 
 **Tip:** Dogecoin addresses start with the letter `D`.
@@ -98,14 +98,14 @@ The total balance of all addresses held in your wallet can be found with the `ge
 
 ```console
 #Syntax
-shibetoshi:~$ dogecoin-cli getbalance "*" minconf
+shibetoshi:~$ luckycoin-cli getbalance "*" minconf
 ```
 
 `minconf` stands for minimum confirmations.
 For example, to see current balance with transaction having at least 5 confirmations:
 
 ```console
-shibetoshi:~$ dogecoin-cli getbalance "*" 5
+shibetoshi:~$ luckycoin-cli getbalance "*" 5
 421.552000
 ```
 
@@ -118,10 +118,10 @@ Dogecoin implements the [Unspent Transaction Output (UTXO)](https://en.wikipedia
 It's possible to use a single command to create, sign and send a transaction :
 ```console
 #Syntax
-shibetoshi:~$ dogecoin-cli sendtoaddress address amount
+shibetoshi:~$ luckycoin-cli sendtoaddress address amount
 
 #Example
-shibetoshi:~$ dogecoin-cli sendtoaddress nWSYUqtimF7B6qW4GBdczaG6jvqKutS1Nh 420
+shibetoshi:~$ luckycoin-cli sendtoaddress nWSYUqtimF7B6qW4GBdczaG6jvqKutS1Nh 420
 ```
 
 So much spending power !
@@ -134,10 +134,10 @@ This displays a list of UTXOs associated to addresses kept in the wallet.
 
 ```console
 #Syntax
-shibetoshi:~$ dogecoin-cli listunspent minconf maxconf '["address", ...]'
+shibetoshi:~$ luckycoin-cli listunspent minconf maxconf '["address", ...]'
 
 #Example
-shibetoshi:~$ dogecoin-cli listunspent 1 9999999 '["nnJDY1xCRgWQc7vBXHUPMPsEynuZW23Y3P"]'
+shibetoshi:~$ luckycoin-cli listunspent 1 9999999 '["nnJDY1xCRgWQc7vBXHUPMPsEynuZW23Y3P"]'
 [
   {
     "txid": "b869ed6606d52e6446dc12db02cf868ab693dd5b9f661116269536f0f8fa2433",
@@ -171,7 +171,7 @@ shibetoshi:~$ utxos_to_use='
     },
     ...
   ]'
-shibetoshi:~$ dogecoin-cli createrawtransaction "$utxos_to_use" '{"address":amount, ...}'
+shibetoshi:~$ luckycoin-cli createrawtransaction "$utxos_to_use" '{"address":amount, ...}'
 
 #Example
 shibetoshi:~$ utxos_to_use='
@@ -181,13 +181,13 @@ shibetoshi:~$ utxos_to_use='
     "vout": 0
   }
 ]'
-shibetoshi:~$ dogecoin-cli createrawtransaction "$utxos_to_use" '{"nWSYUqtimF7B6qW4GBdczaG6jvqKutS1Nh":69, "nnJDY1xCRgWQc7vBXHUPMPsEynuZW23Y3P": 30.999}'
+shibetoshi:~$ luckycoin-cli createrawtransaction "$utxos_to_use" '{"nWSYUqtimF7B6qW4GBdczaG6jvqKutS1Nh":69, "nnJDY1xCRgWQc7vBXHUPMPsEynuZW23Y3P": 30.999}'
 01000000013324faf8f03695261611669f5bdd93b68a86cf02db12dc46642ed50666ed69b80000000000ffffffff0200a5459b010000001976a91418a89ee36293f15c4db4c01173babd579243161188ac60b8c4b8000000001976a914c6977da37560e1432c2e14e16952981a4c272cac88ac00000000
 ```
 
 You can combine multiple UTXO and send it to multiple recipients by extending the `utxos_to_use` and recipient JSON structures.
 
-> **Tip:** The transaction returned is encoded in hexadecimal encoding. You can use `dogecoin-cli decoderawtransaction` or `dogecoin-tx -json` to convert the content to JSON format.
+> **Tip:** The transaction returned is encoded in hexadecimal encoding. You can use `luckycoin-cli decoderawtransaction` or `luckycoin-tx -json` to convert the content to JSON format.
 
 ##### signrawtransaction
 
@@ -195,10 +195,10 @@ Before sending a transaction, it must be signed by the private key that the addr
 
 ```console
 #Syntax
-shibetoshi:~$ dogecoin-cli signrawtransaction encoded_transaction
+shibetoshi:~$ luckycoin-cli signrawtransaction encoded_transaction
 
 #Example
-shibetoshi:~$ dogecoin-cli signrawtransaction "01000000013324faf8f03695261611669f5bdd93b68a86cf02db12dc46642ed50666ed69b80000000000ffffffff0200a5459b010000001976a91418a89ee36293f15c4db4c01173babd579243161188ac60b8c4b8000000001976a914c6977da37560e1432c2e14e16952981a4c272cac88ac00000000"
+shibetoshi:~$ luckycoin-cli signrawtransaction "01000000013324faf8f03695261611669f5bdd93b68a86cf02db12dc46642ed50666ed69b80000000000ffffffff0200a5459b010000001976a91418a89ee36293f15c4db4c01173babd579243161188ac60b8c4b8000000001976a914c6977da37560e1432c2e14e16952981a4c272cac88ac00000000"
 {
   "hex": "01000000013324faf8f03695261611669f5bdd93b68a86cf02db12dc46642ed50666ed69b8000000006a47304402200e1bf722d4335179de170f7c762755b463b3f7b8f026f30950f701bc834f0e6e022036295fdd5e607ca41c4e0e62e59d0911b607bfabedde2424665ffae13564d0e001210388f8f226d12eccd3ba93c1454ec4498b065cea96e29b918fbdb517872ebbf581ffffffff0200a5459b010000001976a91418a89ee36293f15c4db4c01173babd579243161188ac60b8c4b8000000001976a914c6977da37560e1432c2e14e16952981a4c272cac88ac00000000",
   "complete": true
@@ -211,10 +211,10 @@ Finally, broadcast the transaction to the network so that it can be included in 
 
 ```console
 #Syntax
-shibetoshi:~$ dogecoin-cli sendrawtransaction signed_transaction
+shibetoshi:~$ luckycoin-cli sendrawtransaction signed_transaction
 
 #Example
-shibetoshi:~$ dogecoin-cli sendrawtransaction 01000000013324faf8f03695261611669f5bdd93b68a86cf02db12dc46642ed50666ed69b8000000006a47304402200e1bf722d4335179de170f7c762755b463b3f7b8f026f30950f701bc834f0e6e022036295fdd5e607ca41c4e0e62e59d0911b607bfabedde2424665ffae13564d0e001210388f8f226d12eccd3ba93c1454ec4498b065cea96e29b918fbdb517872ebbf581ffffffff0200a5459b010000001976a91418a89ee36293f15c4db4c01173babd579243161188ac60b8c4b8000000001976a914c6977da37560e1432c2e14e16952981a4c272cac88ac00000000
+shibetoshi:~$ luckycoin-cli sendrawtransaction 01000000013324faf8f03695261611669f5bdd93b68a86cf02db12dc46642ed50666ed69b8000000006a47304402200e1bf722d4335179de170f7c762755b463b3f7b8f026f30950f701bc834f0e6e022036295fdd5e607ca41c4e0e62e59d0911b607bfabedde2424665ffae13564d0e001210388f8f226d12eccd3ba93c1454ec4498b065cea96e29b918fbdb517872ebbf581ffffffff0200a5459b010000001976a91418a89ee36293f15c4db4c01173babd579243161188ac60b8c4b8000000001976a914c6977da37560e1432c2e14e16952981a4c272cac88ac00000000
 b4fae2a43cb35f8016a547e9658e061f1da4a043efafecc42f739d46d95dee21
 ```
 
@@ -229,11 +229,11 @@ First, request the information about block 69:
 
 ```console
 #Find block hash from his height
-shibetoshi:~$ dogecoin-cli getblockhash 69
+shibetoshi:~$ luckycoin-cli getblockhash 69
 3d2def20cd0d3aca148741ef469bda11647a3040d7669c82745d03c728706a8b
 
 #Get block data
-shibetoshi:~$ dogecoin-cli getblock 3d2def20cd0d3aca148741ef469bda11647a3040d7669c82745d03c728706a8b
+shibetoshi:~$ luckycoin-cli getblock 3d2def20cd0d3aca148741ef469bda11647a3040d7669c82745d03c728706a8b
 {
   "hash": "3d2def20cd0d3aca148741ef469bda11647a3040d7669c82745d03c728706a8b",
   "confirmations": 7816,
@@ -264,10 +264,10 @@ We can see the entire transaction by querying for its identifier:
 
 ```console
 #Syntax
-shibetoshi:~$ dogecoin-cli getrawtransaction txid verbose
+shibetoshi:~$ luckycoin-cli getrawtransaction txid verbose
 
 #Example
-shibetoshi:~$ dogecoin-cli getrawtransaction 695ce4208fa7a87ef9e99805b0910dc129058ecdceb5cef7e25f71dcdc7936db 1
+shibetoshi:~$ luckycoin-cli getrawtransaction 695ce4208fa7a87ef9e99805b0910dc129058ecdceb5cef7e25f71dcdc7936db 1
 {
   "hex": "01000000010000000000000000000000000000000000000000000000000000000000000000ffffffff0e04d9eea3520101062f503253482fffffffff0100ac6156be23000023210340a42a5ad6c4c0cd5ae539657032e0a359bd3e0f95771f34d71691b13460a624ac00000000",
   "txid": "695ce4208fa7a87ef9e99805b0910dc129058ecdceb5cef7e25f71dcdc7936db",
@@ -317,7 +317,7 @@ Using `bellsd -help` will display all available configuration parameters that ca
 shibetoshi:~$ bellsd -daemon -paytxfee=0.01 -sendfreetransactions=1 -maxconnections=150
 ```
 
-Configuration can be persisted by creating a `bells.conf` file. Create it in the directory defined with the `datadir` setting, `$HOME/.dogecoin` by default, or specify the file location with `-conf`.
+Configuration can be persisted by creating a `bells.conf` file. Create it in the directory defined with the `datadir` setting, `$HOME/.luckycoin` by default, or specify the file location with `-conf`.
 
 **bells.conf example :**
 ```
@@ -342,7 +342,7 @@ When not specifying any network, *Mainnet* is the network used by default. To en
 
 To enable *regtest*, use the `-regtest` option.
 
-> **Tip:** Remember to specify the network when you want to use `dogecoin-cli`.
+> **Tip:** Remember to specify the network when you want to use `luckycoin-cli`.
 
 ### Data directory
 
@@ -352,11 +352,11 @@ The data directory is the location where Dogecoin Core files are stored, includi
 
 Platform | Data directory path
 ---------|--------------------
-Linux    | `$HOME/.dogecoin`
+Linux    | `$HOME/.luckycoin`
 macOS    | `$HOME/Library/Application Support/Dogecoin`
 Windows  | `%APPDATA%\Dogecoin`
 
-You may need to specify `-datadir` also when using `dogecoin-cli`.
+You may need to specify `-datadir` also when using `luckycoin-cli`.
 
 See the [full documentation on file system](files.md) for more information.
 

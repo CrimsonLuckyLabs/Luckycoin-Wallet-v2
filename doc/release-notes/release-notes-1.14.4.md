@@ -1,19 +1,19 @@
 Dogecoin Core version 1.14.4 is now available from:
 
-  <https://github.com/dogecoin/dogecoin/releases/tag/v1.14.4/>
+  <https://github.com/luckycoin/luckycoin/releases/tag/v1.14.4/>
 
 This is a new minor version release, including various bugfixes and performance improvements. It is a recommended
 update for all users.
 
 Please report bugs using the issue tracker at github:
 
-  <https://github.com/dogecoin/dogecoin/issues>
+  <https://github.com/luckycoin/luckycoin/issues>
 
 To receive security and update notifications, please watch reddit or Twitter:
 
-  * https://www.reddit.com/r/dogecoin/
+  * https://www.reddit.com/r/luckycoin/
   * @Dogecoin on Twitter for high priority announcements
-  * @dogecoin\_devs on Twitter for updates on development work
+  * @luckycoin\_devs on Twitter for updates on development work
 
 Compatibility
 ==============
@@ -44,7 +44,7 @@ The main highlights for these enhancements are:
 * Transaction sizes are no longer rounded up to the nearest kilobyte when
   deciding if a transaction can be accepted from another node and in applying
   fee-filter requests from peers, when relaying transactions.
-* The default setting shipped with dogecoin core for relay fee has been reduced
+* The default setting shipped with luckycoin core for relay fee has been reduced
   to 0.001 DOGE (was: 1 DOGE). This can be changed by operators using the
   `-mintxrelayfee=<amount>` option.
 * Spam management has been delegated to miners, where currently a default fee

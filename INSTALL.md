@@ -4,7 +4,7 @@
 
 The easiest way to install the latest version of the Bells Core software is
 by to download the latest precompiled binaries for your platform from the
-[release page](https://github.com/dogecoin/dogecoin/releases). Currently,
+[release page](https://github.com/luckycoin/luckycoin/releases). Currently,
 binaries are released for the following platforms:
 
 - Windows, 64-bit and 32-bit

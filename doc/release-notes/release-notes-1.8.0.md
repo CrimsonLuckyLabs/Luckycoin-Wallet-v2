@@ -62,7 +62,7 @@ Dogecoin Core 1.8 adds payment protocol support, which is used to streamline pay
 being made to merchants.
 
 This protocol is defined in DIP0070-DIP0072, based on the BIP standards with the same
-assigned numbers. DIP standards can be found at https://github.com/dogecoin/dips/ .
+assigned numbers. DIP standards can be found at https://github.com/luckycoin/dips/ .
 The key differencs between the Bitcoin and Dogecoin payment protocols are that
 the Dogecoin payment request uses a "genesis" field containing the hash of the network's
 genesis block to identify networks instead of the "network" field. Further, MIME types

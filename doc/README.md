@@ -19,7 +19,7 @@ The Dogecoin repo's [root README](/README.md) contains relevant information on t
 
 ### Resources
 * Discuss on the [BitcoinTalk](https://bitcointalk.org/) forums, in the [Dogecoin thread](https://bitcointalk.org/index.php?topic=361813.0).
-* Discuss on [#dogecoin-dev](http://webchat.freenode.net/?channels=dogecoin-dev) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net/?channels=dogecoin-dev).
+* Discuss on [#luckycoin-dev](http://webchat.freenode.net/?channels=luckycoin-dev) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net/?channels=luckycoin-dev).
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)

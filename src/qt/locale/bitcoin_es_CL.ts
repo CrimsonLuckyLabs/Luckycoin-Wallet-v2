@@ -143,7 +143,7 @@
     </message>
     <message>
         <source>Send coins to a Dogecoin address</source>
-        <translation>Enviar monedas a una dirección dogecoin</translation>
+        <translation>Enviar monedas a una dirección luckycoin</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -773,7 +773,7 @@
     </message>
     <message>
         <source>Dogecoin Core</source>
-        <translation>dogecoin core</translation>
+        <translation>luckycoin core</translation>
     </message>
     <message>
         <source>Error loading block database</source>

@@ -1,4 +1,4 @@
-name: dogecoin-core # you probably want to 'snapcraft register <name>'
+name: luckycoin-core # you probably want to 'snapcraft register <name>'
 version: '1.14.5'
 summary: Reference client of Dogecoin, a peer-to-peer digital currency like Bitcoin.
 description: |
@@ -15,7 +15,7 @@ apps:
     command: bellsd
     plugs: [home, removable-media, network, network-bind]
     environment:
-    # Override HOME so the datadir is located at ~/snap/dogecoin-core/common/.dogecoin/ instead of ~/snap/dogecoin-core/current/.dogecoin/, and each new version of the snap won't have a different data directory: https://docs.snapcraft.io/environment-variables/7983
+    # Override HOME so the datadir is located at ~/snap/luckycoin-core/common/.luckycoin/ instead of ~/snap/luckycoin-core/current/.luckycoin/, and each new version of the snap won't have a different data directory: https://docs.snapcraft.io/environment-variables/7983
       HOME: $SNAP_USER_COMMON
   qt:
     command: qt4-launch bells-qt
@@ -24,40 +24,40 @@ apps:
       HOME: $SNAP_USER_COMMON
       DISABLE_WAYLAND: 1
   cli:
-    command: dogecoin-cli
+    command: luckycoin-cli
     plugs: [home, removable-media, network]
     environment:
       HOME: $SNAP_USER_COMMON
 
 parts:
-  dogecoin-core:
+  luckycoin-core:
     plugin: nil
     override-build: |
       echo "Downloading files..."
-      wget https://github.com/dogecoin/dogecoin/releases/download/v${SNAPCRAFT_PROJECT_VERSION}/dogecoin-${SNAPCRAFT_PROJECT_VERSION}-${SNAPCRAFT_ARCH_TRIPLET}.tar.gz
-      wget https://github.com/dogecoin/gitian.sigs/archive/refs/heads/master.zip
+      wget https://github.com/luckycoin/luckycoin/releases/download/v${SNAPCRAFT_PROJECT_VERSION}/luckycoin-${SNAPCRAFT_PROJECT_VERSION}-${SNAPCRAFT_ARCH_TRIPLET}.tar.gz
+      wget https://github.com/luckycoin/gitian.sigs/archive/refs/heads/master.zip
       unzip master.zip
       echo "Verifying secure hash matches signed values..."
-      checksum=$(sha256sum dogecoin-${SNAPCRAFT_PROJECT_VERSION}-${SNAPCRAFT_ARCH_TRIPLET}.tar.gz)
-      if ! (grep -r $checksum * | grep dogecoin-${SNAPCRAFT_PROJECT_VERSION}-${SNAPCRAFT_ARCH_TRIPLET}.tar.gz); then
+      checksum=$(sha256sum luckycoin-${SNAPCRAFT_PROJECT_VERSION}-${SNAPCRAFT_ARCH_TRIPLET}.tar.gz)
+      if ! (grep -r $checksum * | grep luckycoin-${SNAPCRAFT_PROJECT_VERSION}-${SNAPCRAFT_ARCH_TRIPLET}.tar.gz); then
         echo "Secure hash not verified."
         return
       else
         echo "Secure hash verified."
       fi
-      tar -xvf dogecoin-${SNAPCRAFT_PROJECT_VERSION}-${SNAPCRAFT_ARCH_TRIPLET}.tar.gz
+      tar -xvf luckycoin-${SNAPCRAFT_PROJECT_VERSION}-${SNAPCRAFT_ARCH_TRIPLET}.tar.gz
       echo "Running tests..."
-      if ! (dogecoin-${SNAPCRAFT_PROJECT_VERSION}/bin/test_dogecoin); then
+      if ! (luckycoin-${SNAPCRAFT_PROJECT_VERSION}/bin/test_dogecoin); then
         echo "Dogecoin tests failed."
         return
       else
         echo "Dogecoin tests passed."
       fi
       echo "Installing Dogecoin..."
-      install -m 0755 -D -t $SNAPCRAFT_PART_INSTALL/bin dogecoin-${SNAPCRAFT_PROJECT_VERSION}/bin/bellsd
-      install -m 0755 -D -t $SNAPCRAFT_PART_INSTALL/bin dogecoin-${SNAPCRAFT_PROJECT_VERSION}/bin/bells-qt
-      install -m 0755 -D -t $SNAPCRAFT_PART_INSTALL/bin dogecoin-${SNAPCRAFT_PROJECT_VERSION}/bin/dogecoin-cli
-      wget https://raw.githubusercontent.com/dogecoin/dogecoin/master/share/pixmaps/dogecoin128.png
+      install -m 0755 -D -t $SNAPCRAFT_PART_INSTALL/bin luckycoin-${SNAPCRAFT_PROJECT_VERSION}/bin/bellsd
+      install -m 0755 -D -t $SNAPCRAFT_PART_INSTALL/bin luckycoin-${SNAPCRAFT_PROJECT_VERSION}/bin/bells-qt
+      install -m 0755 -D -t $SNAPCRAFT_PART_INSTALL/bin luckycoin-${SNAPCRAFT_PROJECT_VERSION}/bin/luckycoin-cli
+      wget https://raw.githubusercontent.com/luckycoin/luckycoin/master/share/pixmaps/dogecoin128.png
       install -m 0644 -D -t $SNAPCRAFT_PART_INSTALL/share/pixmaps dogecoin128.png
     build-packages:
       - unzip

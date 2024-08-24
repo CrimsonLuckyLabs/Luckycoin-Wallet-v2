@@ -9,5 +9,5 @@ if ENABLE_QT
 endif
 
 if BUILD_BITCOIN_UTILS
-  dist_man1_MANS+=dogecoin-cli.1 dogecoin-tx.1
+  dist_man1_MANS+=luckycoin-cli.1 luckycoin-tx.1
 endif

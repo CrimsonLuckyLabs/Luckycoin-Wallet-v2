@@ -13,7 +13,7 @@ can be found in the contrib/init folder.
 1. Service User
 ---------------------------------
 
-All three Linux startup configurations assume the existence of a "dogecoin" user
+All three Linux startup configurations assume the existence of a "luckycoin" user
 and group.  They must be created before attempting to use these scripts.
 The OS X configuration assumes bellsd will be set up for the current user.
 
@@ -54,15 +54,15 @@ see `contrib/debian/examples/bells.conf`.
 All three configurations assume several paths that might need to be adjusted.
 
 Binary:              `/usr/bin/bellsd`  
-Configuration file:  `/etc/dogecoin/bells.conf`  
+Configuration file:  `/etc/luckycoin/bells.conf`  
 Data directory:      `/var/lib/bellsd`  
 PID file:            `/var/run/bellsd/bellsd.pid` (OpenRC and Upstart) or `/var/lib/bellsd/bellsd.pid` (systemd)  
 Lock file:           `/var/lock/subsys/bellsd` (CentOS)  
 
 The configuration file, PID directory (if applicable) and data directory
-should all be owned by the dogecoin user and group.  It is advised for security
+should all be owned by the luckycoin user and group.  It is advised for security
 reasons to make the configuration file and data directory only readable by the
-dogecoin user and group.  Access to dogecoin-cli and other bellsd rpc clients
+luckycoin user and group.  Access to luckycoin-cli and other bellsd rpc clients
 can then be controlled by group membership.
 
 3b) Mac OS X
@@ -109,14 +109,14 @@ setting the bellsd and FLAGS environment variables in the file
 
 4e) Mac OS X
 
-Copy org.dogecoin.bellsd.plist into ~/Library/LaunchAgents. Load the launch agent by
-running `launchctl load ~/Library/LaunchAgents/org.dogecoin.bellsd.plist`.
+Copy org.luckycoin.bellsd.plist into ~/Library/LaunchAgents. Load the launch agent by
+running `launchctl load ~/Library/LaunchAgents/org.luckycoin.bellsd.plist`.
 
 This Launch Agent will cause bellsd to start whenever the user logs in.
 
 NOTE: This approach is intended for those wanting to run bellsd as the current user.
-You will need to modify org.dogecoin.bellsd.plist if you intend to use it as a
-Launch Daemon with a dedicated dogecoin user.
+You will need to modify org.luckycoin.bellsd.plist if you intend to use it as a
+Launch Daemon with a dedicated luckycoin user.
 
 5. Auto-respawn
 -----------------------------------

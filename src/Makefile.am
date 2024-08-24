@@ -99,10 +99,10 @@ BITCOIN_CORE_H = \
   core_io.h \
   core_memusage.h \
   cuckoocache.h \
-  dogecoin.cpp \
-  dogecoin.h \
-  dogecoin-fees.cpp \
-  dogecoin-fees.h \
+  luckycoin.cpp \
+  luckycoin.h \
+  luckycoin-fees.cpp \
+  luckycoin-fees.h \
   httprpc.h \
   httpserver.h \
   indirectmap.h \

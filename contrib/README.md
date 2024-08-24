@@ -35,13 +35,13 @@ PGP keys used for signing Dogecoin Core [Gitian release](/doc/release-process.md
 Scripts and notes for Mac builds.
 
 ### [RPM](/contrib/rpm) ###
-RPM spec file for building dogecoin-core on RPM based distributions
+RPM spec file for building luckycoin-core on RPM based distributions
 
 ### [Gitian-build](/contrib/gitian-build.sh) ###
 Script for running full Gitian builds.
 
 ### [Snap](/contrib/snap) ###
-snapcraft.yaml file for building and distributing dogecoin-core with Snapcraft.
+snapcraft.yaml file for building and distributing luckycoin-core with Snapcraft.
 
 Test and Verify Tools
 ---------------------
@@ -50,4 +50,4 @@ Test and Verify Tools
 Utilities to generate test vectors for the data-driven Dogecoin tests.
 
 ### [Verify Binaries](/contrib/verifybinaries) ###
-This script attempts to download and verify the signature file SHA256SUMS.asc from dogecoin.com.
+This script attempts to download and verify the signature file SHA256SUMS.asc from luckycoin.com.

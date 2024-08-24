@@ -127,17 +127,17 @@ gpg: skipped "shibetoshi": secret key not available
 When you execute `gsign` you will get an error from GPG, which can be ignored. Copy the resulting `.assert` files in `gitian.sigs` to your signing machine and do
 
 ```bash
-gpg --detach-sign ${VERSION}-linux/${SIGNER}/dogecoin-linux-build.assert
-gpg --detach-sign ${VERSION}-win/${SIGNER}/dogecoin-win-build.assert
-gpg --detach-sign ${VERSION}-osx-unsigned/${SIGNER}/dogecoin-osx-build.assert
+gpg --detach-sign ${VERSION}-linux/${SIGNER}/luckycoin-linux-build.assert
+gpg --detach-sign ${VERSION}-win/${SIGNER}/luckycoin-win-build.assert
+gpg --detach-sign ${VERSION}-osx-unsigned/${SIGNER}/luckycoin-osx-build.assert
 ```
 
 This will create the `.sig` files that can be committed together with the `.assert` files to assert your Gitian build.
 
 ## Publish signatures
 
-Gitian signatures for each release are added to https://github.com/dogecoin/gitian.sigs.
+Gitian signatures for each release are added to https://github.com/luckycoin/gitian.sigs.
 
-`gitian-build.sh` will create signatures inside `gitian-output/sigs/` folder. Create a pull request to [dogecoin/gitian.sigs](https://github.com/dogecoin/gitian.sigs) to publish your signatures, the `.assert` and `.assert.sig` files.
+`gitian-build.sh` will create signatures inside `gitian-output/sigs/` folder. Create a pull request to [luckycoin/gitian.sigs](https://github.com/luckycoin/gitian.sigs) to publish your signatures, the `.assert` and `.assert.sig` files.
 
 **When your PR is merged, you will be recorded for all future history as a *Gitian Builder of Dogecoin Core*!**

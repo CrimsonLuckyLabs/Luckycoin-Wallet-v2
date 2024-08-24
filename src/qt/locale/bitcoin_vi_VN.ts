@@ -270,8 +270,8 @@
         <translation>Hiện thỉ danh sách các địa chỉ và nhãn đã dùng để nhận.</translation>
     </message>
     <message>
-        <source>Open a dogecoin: URI or payment request</source>
-        <translation>Mở dogecoin:URL hoặc yêu cầu thanh toán</translation>
+        <source>Open a luckycoin: URI or payment request</source>
+        <translation>Mở luckycoin:URL hoặc yêu cầu thanh toán</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>

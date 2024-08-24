@@ -31,7 +31,7 @@ outgoing connections be anonymized, but more is possible.
 
 In a typical situation, this suffices to run behind a Tor proxy:
 
-	./dogecoin -proxy=127.0.0.1:9050
+	./luckycoin -proxy=127.0.0.1:9050
 
 
 2. Run a Dogecoin hidden server
@@ -41,7 +41,7 @@ If you configure your Tor system accordingly, it is possible to make your node a
 reachable from the Tor network. Add these lines to your /etc/tor/torrc (or equivalent
 config file):
 
-	HiddenServiceDir /var/lib/tor/dogecoin-service/
+	HiddenServiceDir /var/lib/tor/luckycoin-service/
 	HiddenServicePort 22556 127.0.0.1:22556
 	HiddenServicePort 44556 127.0.0.1:44556
 
@@ -51,7 +51,7 @@ your bellsd's P2P listen port (22556 by default).
 	-externalip=X   You can tell Dogecoin about its publicly reachable address using
 	                this option, and this can be a .onion address. Given the above
 	                configuration, you can find your onion address in
-	                /var/lib/tor/dogecoin-service/hostname. Onion addresses are given
+	                /var/lib/tor/luckycoin-service/hostname. Onion addresses are given
 	                preference for your node to advertise itself with, for connections
 	                coming from unroutable addresses (such as 127.0.0.1, where the
 	                Tor proxy typically runs).
@@ -86,7 +86,7 @@ and open port 22556 on your firewall (or use -upnp).
 If you only want to use Tor to reach onion addresses, but not use it as a proxy
 for normal IPv4/IPv6 communication, use:
 
-	./dogecoin -onion=127.0.0.1:9050 -externalip=57qr3yd1nyntf5k.onion -discover
+	./luckycoin -onion=127.0.0.1:9050 -externalip=57qr3yd1nyntf5k.onion -discover
 
 3. Automatically listen on Tor
 --------------------------------
@@ -118,7 +118,7 @@ Tor configuration.
 4. Privacy recommendations
 ---------------------------
 
-- Do not add anything but dogecoin ports to the hidden service created in section 2.
+- Do not add anything but luckycoin ports to the hidden service created in section 2.
   If you run a web service too, create a new hidden service for that.
   Otherwise it is trivial to link them, which may reduce privacy. Hidden
   services created automatically (as in section 3) always have only one port

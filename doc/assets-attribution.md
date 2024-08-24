@@ -1,4 +1,4 @@
-The following is a list of assets used in the dogecoin source and their proper attribution.
+The following is a list of assets used in the luckycoin source and their proper attribution.
 
 [Typicons/Stephen Hutchings](http://typicons.com)
 -----------------------
@@ -48,9 +48,9 @@ Other
 ### Assets Used
     src/qt/res/icons/about.png
     src/qt/res/icons/about_qt.png,
-    src/qt/res/icons/dogecoin.icns
-    src/qt/res/icons/dogecoin.ico,
-    src/qt/res/icons/dogecoin.png
+    src/qt/res/icons/luckycoin.icns
+    src/qt/res/icons/luckycoin.ico,
+    src/qt/res/icons/luckycoin.png
     src/qt/res/icons/clock*.png,
     src/qt/res/icons/connect*.png
     src/qt/res/icons/eye_minus.png,

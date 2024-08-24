@@ -5,8 +5,8 @@ of the latest changes on NixOS.
 
 Clone and enter the repo:
 
-    $ git clone https://github.com/dogecoin/dogecoin
-    $ cd dogecoin
+    $ git clone https://github.com/luckycoin/luckycoin
+    $ cd luckycoin
 
 Enter the `nix-shell` environment with all the Dogecoin dependencies present:
 

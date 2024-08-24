@@ -6,8 +6,8 @@ Bells Core [BEL]
 
 <div align="center">
 
-[![BellsBadge](https://img.shields.io/badge/Bells-Coin-blue)](https://dogecoin.com)
-[![MuchWow](https://img.shields.io/badge/OG-Coin-yellow.svg)](https://dogecoin.com)
+[![BellsBadge](https://img.shields.io/badge/Bells-Coin-blue)](https://luckycoin.com)
+[![MuchWow](https://img.shields.io/badge/OG-Coin-yellow.svg)](https://luckycoin.com)
 
 </div>
 

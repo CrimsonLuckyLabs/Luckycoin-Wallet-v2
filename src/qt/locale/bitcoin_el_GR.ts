@@ -211,7 +211,7 @@
     </message>
     <message>
         <source>Send coins to a Dogecoin address</source>
-        <translation>Στείλε νομίσματα σε μια διεύθυνση dogecoin</translation>
+        <translation>Στείλε νομίσματα σε μια διεύθυνση luckycoin</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>

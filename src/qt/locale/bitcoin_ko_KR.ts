@@ -451,8 +451,8 @@
         <translation>툴바 색인표</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and dogecoin: URIs)</source>
-        <translation>지불 요청하기(QR 코드와 dogecoin: URI 생성)</translation>
+        <source>Request payments (generates QR codes and luckycoin: URIs)</source>
+        <translation>지불 요청하기(QR 코드와 luckycoin: URI 생성)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -463,8 +463,8 @@
         <translation>한 번 이상 사용된 받는 주소와 라벨의 목록 보기</translation>
     </message>
     <message>
-        <source>Open a dogecoin: URI or payment request</source>
-        <translation>dogecoin: URI 또는 지불 요청 열기</translation>
+        <source>Open a luckycoin: URI or payment request</source>
+        <translation>luckycoin: URI 또는 지불 요청 열기</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -1073,7 +1073,7 @@
         <translation>알 수 없음. 헤더 동기화 중(%1)...</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet&apos;s balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the dogecoin network, as detailed below.</source>
+        <source>Recent transactions may not yet be visible, and therefore your wallet&apos;s balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the luckycoin network, as detailed below.</source>
         <translation>최근 거래가 아직 표시되지 않을 수 있으므로 지갑 잔액이 정확하지 않을 수 있습니다. 이 정보는 아래에 자세히 설명된 대로 지갑이 도지코인 네트워크와 동기화를 완료하면 고쳐질것 입니다.</translation>
     </message>
 </context>
@@ -1684,8 +1684,8 @@ p, li { white-space: pre-wrap; }
         <translation>지불 요청 오류</translation>
     </message>
     <message>
-        <source>Cannot start dogecoin: click-to-pay handler</source>
-        <translation>dogecoin: click-to-pay 핸들러를 시작할 수 없음</translation>
+        <source>Cannot start luckycoin: click-to-pay handler</source>
+        <translation>luckycoin: click-to-pay 핸들러를 시작할 수 없음</translation>
     </message>
     <message>
         <source>URI handling</source>
@@ -2558,7 +2558,7 @@ p, li { white-space: pre-wrap; }
         <translation>최소 수수료</translation>
     </message>
     <message>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for dogecoin transactions than the network can process.</source>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for luckycoin transactions than the network can process.</source>
         <translation>블록의 용량보다 거래의 볼륨이 적은 경우에는 최소한의 수수료만으로도 충분합니다. 그러나 도지코인 네트워크의 처리량보다 더 많은 거래 요구가 있다면 영원히 검증이 안된 거래로 남을 수도 있습니다.</translation>
     </message>
     <message>
@@ -2813,8 +2813,8 @@ p, li { white-space: pre-wrap; }
         <translation>이 주소의 라벨을 입력하여 사용된 주소 목록에 추가하기</translation>
     </message>
     <message>
-        <source>A message that was attached to the dogecoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Dogecoin network.</source>
-        <translation>dogecoin: URI에 첨부된 메시지는 참조를 위해 거래와 함께 저장됩니다. 참고: 이 메시지는 도지코인 네트워크를 통해 전송되지 않습니다.</translation>
+        <source>A message that was attached to the luckycoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Dogecoin network.</source>
+        <translation>luckycoin: URI에 첨부된 메시지는 참조를 위해 거래와 함께 저장됩니다. 참고: 이 메시지는 도지코인 네트워크를 통해 전송되지 않습니다.</translation>
     </message>
     <message>
         <source>Pay To:</source>

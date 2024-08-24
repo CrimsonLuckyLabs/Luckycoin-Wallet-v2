@@ -84,7 +84,7 @@ sudo apt-get install libminiupnpc-dev
 
 ## Build steps
 
-According to installed dependencies, the following steps will compile `bellsd`, `dogecoin-cli` and `bells-qt`.
+According to installed dependencies, the following steps will compile `bellsd`, `luckycoin-cli` and `bells-qt`.
 
 ```bash
 ./autogen.sh
@@ -172,7 +172,7 @@ Hardening enables the following features:
 
     To test that you have built PIE executable, install scanelf, part of paxutils, and use:
 
-	`scanelf -e ./dogecoin`
+	`scanelf -e ./luckycoin`
 
     The output should contain:
 
@@ -186,7 +186,7 @@ Hardening enables the following features:
     executable without the non-executable stack protection.
 
     To verify that the stack is non-executable after compiling, use:
-    `scanelf -e ./dogecoin`
+    `scanelf -e ./luckycoin`
 
     the output should contain:
     `STK/REL/PTL RW- R-- RW-`

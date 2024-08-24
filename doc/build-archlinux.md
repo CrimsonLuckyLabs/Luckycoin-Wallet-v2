@@ -9,8 +9,8 @@ bellsd on archlinux:
 
 ```sh
 pacman -S git base-devel boost libevent python db
-git clone https://github.com/dogecoin/dogecoin.git
-cd dogecoin/
+git clone https://github.com/luckycoin/luckycoin.git
+cd luckycoin/
 ./autogen.sh
 ./configure --without-gui --without-miniupnpc
 make

@@ -6,11 +6,11 @@ Tested on OSX 10.11 El Capitan, 10.13 High Sierra and 11.1 Big Sur.
 
 **Paper wallet printing support seems to work fine through this method as well.**
 
-### Clone dogecoin locally, or check it out, etc. ###
+### Clone luckycoin locally, or check it out, etc. ###
 
 For this purpose, just indicating the 1.14-branding branch in my repo.
 
-	$git clone -b 1.14-branding --single-branch https://github.com/michilumin/dogecoin.git
+	$git clone -b 1.14-branding --single-branch https://github.com/michilumin/luckycoin.git
 
 ### Set up OSX basic build dependencies. ##
 
@@ -78,7 +78,7 @@ Build BDB 5.3.28
 
 ### Go back to your Bells repo ###
 
-    $cd ~/dogecoin
+    $cd ~/luckycoin
     $./autogen.sh
     $./configure --with-gui=qt5 --with-qrcode=yes
     $make

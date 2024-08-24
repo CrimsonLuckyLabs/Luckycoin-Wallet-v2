@@ -33,7 +33,7 @@ test=false
 # Other Basic variables
 SIGNER=
 VERSION=
-url=https://github.com/dogecoin/dogecoin
+url=https://github.com/luckycoin/luckycoin
 proc=2
 mem=2000
 scriptName=$(basename -- "$0")
@@ -66,7 +66,7 @@ Options:
 -j proc             Number of processes to use. Default $proc
 -m n                Memory to allocate in MiB. Default $mem
 -c|--commit         Indicate that the version argument is for a commit or branch
--u|--url repo       Specify the URL of the repository. Default is https://github.com/dogecoin/dogecoin
+-u|--url repo       Specify the URL of the repository. Default is https://github.com/luckycoin/luckycoin
 --test              CI TEST. Uses Docker
 -h|--help           Print this help message
 EOF
@@ -197,7 +197,7 @@ function download_file () {
 }
 
 function move_build_files() {
-    find build/out -type f -exec mv '{}' $outputDir/dogecoin-binaries/${VERSION}/ \;
+    find build/out -type f -exec mv '{}' $outputDir/luckycoin-binaries/${VERSION}/ \;
 }
 
 function download_descriptor() {
@@ -254,8 +254,8 @@ fi
 ### Setup ###
 
 if [[ $setup == true ]]; then
-    git clone https://github.com/dogecoin/gitian.sigs.git
-    git clone https://github.com/dogecoin/dogecoin-detached-sigs.git
+    git clone https://github.com/luckycoin/gitian.sigs.git
+    git clone https://github.com/luckycoin/luckycoin-detached-sigs.git
     git clone https://github.com/devrandom/gitian-builder.git
 
     pushd ./gitian-builder
@@ -306,21 +306,21 @@ popd
 
 if [[ $build == true ]]; then
     # Make output folder
-    mkdir -p $outputDir/dogecoin-binaries/"$VERSION"
+    mkdir -p $outputDir/luckycoin-binaries/"$VERSION"
 
     pushd ./gitian-builder || exit 1
 
-    # Clean dogecoin git directory because of old caching
-    if [ -d inputs/dogecoin/ ]; then
+    # Clean luckycoin git directory because of old caching
+    if [ -d inputs/luckycoin/ ]; then
         echo "Cleaning Dogecoin directory..."
-        rm -rf inputs/dogecoin/
+        rm -rf inputs/luckycoin/
     fi
 
     for descriptor in "${DESCRIPTORS[@]}"; do
         echo ""
         echo "Compiling ${VERSION} ${descriptor}"
         echo ""
-        ./bin/gbuild -j "$proc" -m "$mem" --commit dogecoin="$COMMIT" --url dogecoin="$url" ../gitian-descriptors/gitian-"$descriptor".yml  || exit 1
+        ./bin/gbuild -j "$proc" -m "$mem" --commit luckycoin="$COMMIT" --url luckycoin="$url" ../gitian-descriptors/gitian-"$descriptor".yml  || exit 1
 
         if [ -n "$SIGNER" ]; then
             ./bin/gsign --signer "$SIGNER" --release "$VERSION"-"$descriptor" \

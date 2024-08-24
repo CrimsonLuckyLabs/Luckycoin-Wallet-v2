@@ -370,8 +370,8 @@
         <translation>說明 &amp;H</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and dogecoin: URIs)</source>
-        <translation>要求付款 (產生QR碼 dogecoin: URIs)</translation>
+        <source>Request payments (generates QR codes and luckycoin: URIs)</source>
+        <translation>要求付款 (產生QR碼 luckycoin: URIs)</translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>

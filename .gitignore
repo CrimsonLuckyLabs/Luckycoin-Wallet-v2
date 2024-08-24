@@ -1,7 +1,7 @@
 *.tar.gz
 
 *.exe
-src/dogecoin
+src/luckycoin
 src/bellsd
 src/bells-cli
 src/bells-tx

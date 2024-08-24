@@ -40,7 +40,7 @@ below:
 
 ## Known Issues
 
-There is a known issue with quantities in JSON used by the RPC interface (https://github.com/dogecoin/dogecoin/issues/134).
+There is a known issue with quantities in JSON used by the RPC interface (https://github.com/luckycoin/luckycoin/issues/134).
 This stems from the use of a floating point precision number to hold fixed precision data.
 Currently looking at solutions, which primarily either involve JSON which is not compliant
 to the specification, or making the RPC layer slightly incompatible with the conventional

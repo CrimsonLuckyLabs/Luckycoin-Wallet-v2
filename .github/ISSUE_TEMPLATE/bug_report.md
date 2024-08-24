@@ -8,7 +8,7 @@ title: '[bug] '
 
 <!-- For general questions about Dogecoin or wallet recovery please use one of the various communities:
 * [Dogeducation on reddit](https://www.reddit.com/r/dogeducation/)
-* [Discord](https://discord.com/invite/dogecoin) -->
+* [Discord](https://discord.com/invite/luckycoin) -->
 
 <!-- ISSUES MISSING IMPORTANT INFORMATION MAY BE CLOSED WITHOUT INVESTIGATION. -->
 
