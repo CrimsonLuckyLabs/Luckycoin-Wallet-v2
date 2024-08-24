@@ -80,7 +80,7 @@ to recover with:
 
 ```bash
 rm -rf cache
-killall bellsd
+killall luckcoind
 ```
 
 Writing tests

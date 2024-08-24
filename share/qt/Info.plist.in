@@ -11,7 +11,7 @@
   </array>
 
   <key>CFBundleIconFile</key>
-  <string>bells.icns</string>
+  <string>luckcoin.icns</string>
 
   <key>CFBundlePackageType</key>
   <string>APPL</string>
@@ -29,16 +29,16 @@
   <string>????</string>
 
   <key>CFBundleExecutable</key>
-  <string>Bells-Qt</string>
+  <string>LuckyCoin-Qt</string>
 
   <key>CFBundleName</key>
-  <string>Bells-Qt</string>
+  <string>LuckyCoin-Qt</string>
 
   <key>LSHasLocalizedDisplayName</key>
   <true/>
 
   <key>CFBundleIdentifier</key>
-  <string>com.bells.Bells-Qt</string>
+  <string>com.luckcoin.LuckyCoin-Qt</string>
 
   <key>CFBundleURLTypes</key>
   <array>
@@ -46,10 +46,10 @@
       <key>CFBundleTypeRole</key>
       <string>Editor</string>
       <key>CFBundleURLName</key>
-      <string>com.bells.BellsPayment</string>
+      <string>com.luckcoin.LuckCoinPayment</string>
       <key>CFBundleURLSchemes</key>
       <array>
-        <string>bells</string>
+        <string>luckcoin</string>
       </array>
     </dict>
   </array>
@@ -58,9 +58,9 @@
   <array>
     <dict>
       <key>UTTypeIdentifier</key>
-      <string>com.bells.paymentrequest</string>
+      <string>com.luckcoin.paymentrequest</string>
       <key>UTTypeDescription</key>
-      <string>Bells payment request</string>
+      <string>LuckyCoin payment request</string>
       <key>UTTypeConformsTo</key>
       <array>
         <string>public.data</string>
@@ -71,7 +71,7 @@
         <string>application/luckycoin-paymentrequest</string>
         <key>public.filename-extension</key>
         <array>
-          <string>bellspaymentrequest</string>
+          <string>luckcoinpaymentrequest</string>
         </array>
       </dict>
     </dict>
@@ -84,7 +84,7 @@
       <string>Editor</string>
       <key>LSItemContentTypes</key>
       <array>
-        <string>com.bells.paymentrequest</string>
+        <string>com.luckcoin.paymentrequest</string>
       </array>
       <key>LSHandlerRank</key>
       <string>Owner</string>

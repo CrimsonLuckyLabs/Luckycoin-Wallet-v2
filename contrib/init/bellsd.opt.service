@@ -3,17 +3,17 @@
 #
 # The relevant paths are:
 #
-#/opt/bells/bellsd
-#/etc/opt/bells/
-#/var/opt/bells/
+#/opt/luckcoin/luckcoind
+#/etc/opt/luckcoin/
+#/var/opt/luckcoin/
 
 [Unit]
-Description=Bells's distributed currency daemon
+Description=LuckyCoin's distributed currency daemon
 After=network.target
 
 [Service]
 Type=simple
-ExecStart=/opt/bells/bin/bellsd -conf=/etc/opt/bells/bells.conf -datadir=/var/opt/bells
+ExecStart=/opt/luckcoin/bin/luckcoind -conf=/etc/opt/luckcoin/luckcoin.conf -datadir=/var/opt/luckcoin
 
 KillSignal=SIGINT
 Restart=always
@@ -23,8 +23,8 @@ TimeoutStartSec=5
 StartLimitIntervalSec=120
 StartLimitBurst=5
 
-User=bells
-Group=bells
+User=luckcoin
+Group=luckcoin
 
 ### Restrict resource consumption
 MemoryAccounting=yes
@@ -41,8 +41,8 @@ TemporaryFileSystem=/:ro
 BindReadOnlyPaths=/etc/ /lib/ /lib64/
 
 # Add daemon paths
-BindReadOnlyPaths=/opt/bells/ /etc/opt/bells/
-BindPaths=/var/opt/bells/
+BindReadOnlyPaths=/opt/luckcoin/ /etc/opt/luckcoin/
+BindPaths=/var/opt/luckcoin/
 
 ### Restrict access to system.
 

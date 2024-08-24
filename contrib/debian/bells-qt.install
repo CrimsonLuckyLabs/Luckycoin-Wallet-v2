@@ -1,6 +1,6 @@
 usr/local/bin/luckycoin-qt usr/bin
-share/pixmaps/bells32.xpm usr/share/pixmaps
-share/pixmaps/bells16.xpm usr/share/pixmaps
-share/pixmaps/bells128.png usr/share/pixmaps
+share/pixmaps/luckcoin32.xpm usr/share/pixmaps
+share/pixmaps/luckcoin16.xpm usr/share/pixmaps
+share/pixmaps/luckcoin128.png usr/share/pixmaps
 debian/luckycoin-qt.desktop usr/share/applications
 debian/luckycoin-qt.protocol usr/share/kde4/services/

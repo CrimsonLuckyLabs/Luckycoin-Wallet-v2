@@ -512,8 +512,8 @@ std::string HelpMessage(HelpMessageMode mode)
 
 std::string LicenseInfo()
 {
-    const std::string URL_SOURCE_CODE = "<https://github.com/luckycoin-community/luckycoinv2>";
-    const std::string URL_WEBSITE = "<https://github.com/luckycoin-community/luckycoinv2>";
+    const std::string URL_SOURCE_CODE = "<https://github.com/luckycoin-community/luckycoin>";
+    const std::string URL_WEBSITE = "<https://github.com/luckycoin-community/luckycoin>";
 
     return CopyrightHolders(strprintf(_("Copyright (C) %i-%i"), 2013, COPYRIGHT_YEAR) + " ") + "\n" +
            "\n" +
@@ -795,7 +795,7 @@ void InitLogging()
     fLogIPs = GetBoolArg("-logips", DEFAULT_LOGIPS);
 
     LogPrintf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-    LogPrintf("Bells version %s\n", FormatFullVersion());
+    LogPrintf("LuckyCoin version %s\n", FormatFullVersion());
 }
 
 namespace { // Variables internal to initialization process only

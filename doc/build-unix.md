@@ -84,7 +84,7 @@ sudo apt-get install libminiupnpc-dev
 
 ## Build steps
 
-According to installed dependencies, the following steps will compile `bellsd`, `luckycoin-cli` and `luckycoin-qt`.
+According to installed dependencies, the following steps will compile `luckcoind`, `luckycoin-cli` and `luckycoin-qt`.
 
 ```bash
 ./autogen.sh

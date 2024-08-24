@@ -1,2 +1,2 @@
-contrib/bellsd.bash-completion	bellsd
+contrib/luckcoind.bash-completion	luckcoind
 contrib/luckycoin-cli.bash-completion	luckycoin-cli

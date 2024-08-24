@@ -1,33 +1,33 @@
-# /etc/conf.d/bellsd: config file for /etc/init.d/bellsd
+# /etc/conf.d/luckcoind: config file for /etc/init.d/luckcoind
 
 # Config file location
-#bellsd_CONFIGFILE="/etc/bells/bells.conf"
+#luckcoind_CONFIGFILE="/etc/luckcoin/luckcoin.conf"
 
-# What directory to write pidfile to?  (created and owned by $bellsd_USER)
-#bellsd_PIDDIR="/var/run/bellsd"
+# What directory to write pidfile to?  (created and owned by $luckcoind_USER)
+#luckcoind_PIDDIR="/var/run/luckcoind"
 
 # What filename to give the pidfile
-#bellsd_PIDFILE="${bellsd_PIDDIR}/bellsd.pid"
+#luckcoind_PIDFILE="${luckcoind_PIDDIR}/luckcoind.pid"
 
-# Where to write bellsd data (be mindful that the blockchain is large)
-#bellsd_DATADIR="/var/lib/bellsd"
+# Where to write luckcoind data (be mindful that the blockchain is large)
+#luckcoind_DATADIR="/var/lib/luckcoind"
 
-# User and group to own bellsd process
-#bellsd_USER="bells"
-#bellsd_GROUP="bells"
+# User and group to own luckcoind process
+#luckcoind_USER="luckcoin"
+#luckcoind_GROUP="luckcoin"
 
-# Path to bellsd executable
-#bellsd_BIN="/usr/bin/bellsd"
+# Path to luckcoind executable
+#luckcoind_BIN="/usr/bin/luckcoind"
 
-# Nice value to run bellsd under
-#bellsd_NICE=0
+# Nice value to run luckcoind under
+#luckcoind_NICE=0
 
 # Additional options (avoid -conf and -datadir, use flags above)
-bellsd_OPTS="-disablewallet"
+luckcoind_OPTS="-disablewallet"
 
-# The timeout in seconds OpenRC will wait for bellsd to terminate
+# The timeout in seconds OpenRC will wait for luckcoind to terminate
 # after a SIGTERM has been raised.
 # Note that this will be mapped as argument to start-stop-daemon's
 # '--retry' option, which means you can specify a retry schedule
 # here. For more information see man 8 start-stop-daemon.
-bellsd_SIGTERM_TIMEOUT=60
+luckcoind_SIGTERM_TIMEOUT=60

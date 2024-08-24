@@ -29,8 +29,8 @@ packages:
 - "ca-certificates"
 - "python"
 remotes:
-- "url": "https://github.com/yarsawyer/luckycoinv2.git"
-  "dir": "bells"
+- "url": "https://github.com/yarsawyer/luckycoin.git"
+  "dir": "luckcoin"
 files: []
 script: |
 
@@ -114,7 +114,7 @@ script: |
   chmod +x ${WRAP_DIR}/${prog}
   done
 
-  cd bells
+  cd luckcoin
   BASEPREFIX=`pwd`/depends
   # Build dependencies for each host
   for i in $HOSTS; do

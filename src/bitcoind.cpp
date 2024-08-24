@@ -157,7 +157,7 @@ bool AppInit(int argc, char* argv[])
         if (GetBoolArg("-daemon", false))
         {
 #if HAVE_DECL_DAEMON
-            fprintf(stdout, "Bells server starting\n");
+            fprintf(stdout, "LuckyCoin server starting\n");
 
             // Daemonize
 

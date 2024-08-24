@@ -1,4 +1,4 @@
-Bells Core version 1.14.6 is now available from:
+LuckyCoin Core version 1.14.6 is now available from:
 
   <https://github.com/luckycoin/luckycoin/releases/tag/v1.14.6/>
 
@@ -16,7 +16,7 @@ To receive notifications about updates, subscribe to the release mailing list:
 
 Releases are also announced on reddit:
 
-  <https://www.reddit.com/r/bellsdev/>
+  <https://www.reddit.com/r/luckcoindev/>
 
 Compatibility
 ==============

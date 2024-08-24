@@ -76,7 +76,7 @@ Build BDB 5.3.28
     $cd /usr/local/include 
     $ln -s ../opt/openssl/include/openssl 
 
-### Go back to your Bells repo ###
+### Go back to your LuckyCoin repo ###
 
     $cd ~/luckycoin
     $./autogen.sh

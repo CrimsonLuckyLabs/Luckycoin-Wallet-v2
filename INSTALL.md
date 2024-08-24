@@ -1,8 +1,8 @@
-# Installing Bells Core
+# Installing LuckyCoin Core
 
 ### Pre-compiled binaries
 
-The easiest way to install the latest version of the Bells Core software is
+The easiest way to install the latest version of the LuckyCoin Core software is
 by to download the latest precompiled binaries for your platform from the
 [release page](https://github.com/luckycoin/luckycoin/releases). Currently,
 binaries are released for the following platforms:
@@ -19,22 +19,22 @@ regarding that process.
 
 ### Compiling using packaged dependencies
 
-It is possible to build your own copy of Bells Core with the exact, tested,
+It is possible to build your own copy of LuckyCoin Core with the exact, tested,
 dependencies, as used for the binary releases, by using the
 [depends system](depends/description.md). Please refer to the
-[depends README](depends/README.md) for instructions to build Bells using
+[depends README](depends/README.md) for instructions to build LuckyCoin using
 these dependencies.
 
 ### Compiling using system-provided libraries
 
-  The following are developer notes on how to build Bells on your native
+  The following are developer notes on how to build LuckyCoin on your native
   platform, using the dependencies as provided by your system's package manager.
   They are not complete guides, but include notes on the necessary libraries,
   compile flags, etc.
 
   - [Unix Build Notes](doc/build-unix.md)
   - [Windows Build Notes](doc/build-windows.md)
-  - [macOS Build Notes](doc/Building-Bells-1.14-for-Mac.md)
+  - [macOS Build Notes](doc/Building-LuckyCoin-1.14-for-Mac.md)
 
 ### Testing
 
@@ -74,7 +74,7 @@ that run in `-regtest` mode.
 
 **DEBUG_LOCKORDER**
 
-Bells Core is a multithreaded application, and deadlocks or other multithreading bugs
+LuckyCoin Core is a multithreaded application, and deadlocks or other multithreading bugs
 can be very difficult to track down. Compiling with `-DDEBUG_LOCKORDER` (`configure
 CXXFLAGS="-DDEBUG_LOCKORDER -g"`) inserts run-time checks to keep track of which locks
 are held, and adds warnings to the debug.log file if inconsistencies are detected.

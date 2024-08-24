@@ -1,7 +1,7 @@
 dist_man1_MANS=
 
 if BUILD_BITCOIND
-  dist_man1_MANS+=bellsd.1
+  dist_man1_MANS+=luckcoind.1
 endif
 
 if ENABLE_QT

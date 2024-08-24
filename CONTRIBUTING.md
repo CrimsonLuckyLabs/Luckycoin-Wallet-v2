@@ -1,16 +1,16 @@
-# Contributing to Bells Core
+# Contributing to LuckyCoin Core
 
-Bells Core is open source software, and we would welcome contributions
+LuckyCoin Core is open source software, and we would welcome contributions
 which improve the state of the software. For those wanting to discuss changes,
 or look for work that needs doing, please see:
 
 * [Help requests](https://github.com/luckycoin/luckycoin/labels/help%20wanted)
 * [Projects](https://github.com/luckycoin/luckycoin/projects)
-* [Bellsdev on reddit](https://www.reddit.com/r/bellsdev/)
+* [luckcoindev on reddit](https://www.reddit.com/r/luckcoindev/)
 
 ## Branch Strategy
 
-Bells Core's default branch is intentionally a stable release, so that anyone
+LuckyCoin Core's default branch is intentionally a stable release, so that anyone
 downloading the code and compiling it gets a stable release. Active development
 occurs on branches named after the version they are targeting, for example the
 1.14.4 branch is named `1.14.4-dev`. When raising PRs, please raise against the
@@ -102,7 +102,7 @@ in the future, they may be removed.
 
 ### Refactoring
 
-Bells Core is a direct fork of Bitcoin Core and therefore benefits from as
+LuckyCoin Core is a direct fork of Bitcoin Core and therefore benefits from as
 little refactoring as possible on code that is created upstream. If you see any
 structural issues with upstream code, please propose these fixes for
 [bitcoin/bitcoin](https://github.com/bitcoin/bitcoin) and future Dogecoin Core

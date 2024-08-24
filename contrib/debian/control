@@ -30,7 +30,7 @@ Homepage: http://www.luckycoin.com/
 Vcs-Git: git://github.com/luckycoin/luckycoin.git
 Vcs-Browser: http://github.com/luckycoin/luckycoin
 
-Package: bellsd
+Package: luckcoind
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - daemon
@@ -43,7 +43,7 @@ Description: peer-to-peer network based digital currency - daemon
  Full transaction history is stored locally at each client.  This
  requires 20+ GB of space, slowly growing.
  .
- This package provides the daemon, bellsd, and the CLI tool
+ This package provides the daemon, luckcoind, and the CLI tool
  luckycoin-cli to interact with the daemon.
 
 Package: luckycoin-qt

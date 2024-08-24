@@ -33,7 +33,7 @@ Build Dogecoin Core
         git clone https://github.com/luckycoin/luckycoin
         cd luckycoin
 
-2.  Build Bells:
+2.  Build LuckyCoin:
 
     Configure and build the headless luckycoin binaries as well as the GUI (if Qt is found).
 
@@ -54,24 +54,24 @@ Build Dogecoin Core
 Running
 -------
 
-Dogecoin Core is now available at `./src/bellsd`
+Dogecoin Core is now available at `./src/luckcoind`
 
 Before running, it's recommended you create an RPC configuration file.
 
-    echo -e "rpcuser=dogecoinrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/Bells/bells.conf"
+    echo -e "rpcuser=dogecoinrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/LuckyCoin/luckcoin.conf"
 
-    chmod 600 "/Users/${USER}/Library/Application Support/Bells/bells.conf"
+    chmod 600 "/Users/${USER}/Library/Application Support/LuckyCoin/luckcoin.conf"
 
-The first time you run bellsd, it will start downloading the blockchain. This process could take several hours.
+The first time you run luckcoind, it will start downloading the blockchain. This process could take several hours.
 
 You can monitor the download process by looking at the debug.log file:
 
-    tail -f $HOME/Library/Application\ Support/Bells/debug.log
+    tail -f $HOME/Library/Application\ Support/LuckyCoin/debug.log
 
 Other commands:
 -------
 
-    ./src/bellsd -daemon # Starts the luckycoin daemon.
+    ./src/luckcoind -daemon # Starts the luckycoin daemon.
     ./src/luckycoin-cli --help # Outputs a list of command-line options.
     ./src/luckycoin-cli help # Outputs a list of RPC commands when the daemon is running.
 

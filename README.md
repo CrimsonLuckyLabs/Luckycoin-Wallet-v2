@@ -1,20 +1,20 @@
 <h1 align="center">
-<img src="https://belscan.io/images/logo.png" data-canonical-src="https://belscan.io/images/logo.png" width="250" height="250" alt="Bells"/>
+<img src="https://belscan.io/images/logo.png" data-canonical-src="https://belscan.io/images/logo.png" width="250" height="250" alt="LuckyCoin"/>
 <br/><br/>
-Bells Core [BEL]
+LuckyCoin Core [BEL]
 </h1>
 
 <div align="center">
 
-[![BellsBadge](https://img.shields.io/badge/Bells-Coin-blue)](https://luckycoin.com)
+[![LuckCoinBadge](https://img.shields.io/badge/LuckyCoin-Coin-blue)](https://luckycoin.com)
 [![MuchWow](https://img.shields.io/badge/OG-Coin-yellow.svg)](https://luckycoin.com)
 
 </div>
 
-## This branch contains the latest version 2.0.0 of the bells network.
+## This branch contains the latest version 2.0.0 of the luckcoin network.
 
-## What is Bells?
-Bells is the twin of DogeCoin, born before it, and just seen the lights now. [Visit blockchain explorer](https://belscan.io/)
+## What is LuckyCoin?
+LuckyCoin is the twin of DogeCoin, born before it, and just seen the lights now. [Visit blockchain explorer](https://belscan.io/)
 
 ## Development and contributions
 Developers work in their own trees, then submit pull requests when they think
@@ -22,13 +22,13 @@ their feature or bug fix is ready.
 
 ## Usage 💻
 
-To start your journey with Bells Core, see the [installation guide](INSTALL.md) and the [getting started](doc/getting-started.md) tutorial.
+To start your journey with LuckyCoin Core, see the [installation guide](INSTALL.md) and the [getting started](doc/getting-started.md) tutorial.
 
-The JSON-RPC API provided by Bells Core is self-documenting and can be browsed with `luckycoin-cli help`, while detailed information for each command can be viewed with `luckycoin-cli help <command>`. Alternatively, see the [Bitcoin Core documentation](https://developer.bitcoin.org/reference/rpc/) - which implement a similar protocol - to get a browsable version.
+The JSON-RPC API provided by LuckyCoin Core is self-documenting and can be browsed with `luckycoin-cli help`, while detailed information for each command can be viewed with `luckycoin-cli help <command>`. Alternatively, see the [Bitcoin Core documentation](https://developer.bitcoin.org/reference/rpc/) - which implement a similar protocol - to get a browsable version.
 
 ## Frequently Asked Questions
 
-### How much bells can exist?
+### How much luckcoin can exist?
 Max supply of 500,000,000 coins with special rewards system.
 
 ### How to get $bel?
@@ -59,6 +59,6 @@ After block 518,400 (~1 year), reward of 2 coins.
 - Added peer seeding
 
 ## License ⚖️
-Bells Core is released under the terms of the MIT license. See
+LuckyCoin Core is released under the terms of the MIT license. See
 [COPYING](COPYING) for more information or see
 [opensource.org](https://opensource.org/licenses/MIT)

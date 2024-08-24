@@ -1,12 +1,12 @@
 [Desktop Entry]
-Name=Bells Core
-Comment=Connect to the Bells P2P Network
-Comment[de]=Verbinde mit dem Bells peer-to-peer Netzwerk
-Comment[fr]=Bells, monnaie virtuelle cryptographique pair à pair
-Comment[tr]=Bells, eşten eşe kriptografik sanal para birimi
+Name=LuckyCoin Core
+Comment=Connect to the LuckyCoin P2P Network
+Comment[de]=Verbinde mit dem LuckyCoin peer-to-peer Netzwerk
+Comment[fr]=LuckyCoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=LuckyCoin, eşten eşe kriptografik sanal para birimi
 Exec=luckycoin-qt %u
 Terminal=false
 Type=Application
-Icon=bells128
-MimeType=x-scheme-handler/bells;
+Icon=luckcoin128
+MimeType=x-scheme-handler/luckcoin;
 Categories=Office;Finance;

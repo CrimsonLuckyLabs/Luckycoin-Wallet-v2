@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright (c) 2021 The Bells Core Developers
+# Copyright (c) 2021 The LuckyCoin Core Developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """CreateAuxBlock QA test.

@@ -49,10 +49,10 @@ static const int MAX_URI_LENGTH = 255;
 /* Number of frames in spinner animation */
 #define SPINNER_FRAMES 36
 
-#define QAPP_ORG_NAME "Bells"
-#define QAPP_ORG_DOMAIN "BELLSCOIN.DOMAIN"
-#define QAPP_APP_NAME_DEFAULT "Bells-Qt"
-#define QAPP_APP_NAME_TESTNET "Bells-Qt-testnet"
+#define QAPP_ORG_NAME "LuckyCoin"
+#define QAPP_ORG_DOMAIN "LUCKYCOIN.DOMAIN"
+#define QAPP_APP_NAME_DEFAULT "LuckyCoin-Qt"
+#define QAPP_APP_NAME_TESTNET "LuckyCoin-Qt-testnet"
 
 /* One gigabyte (GB) in bytes */
 static constexpr uint64_t GB_BYTES{1000000000};

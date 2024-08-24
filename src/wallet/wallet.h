@@ -814,11 +814,11 @@ public:
      */
     static CAmount GetMinimumFee(const CMutableTransaction& tx, unsigned int nTxBytes, unsigned int nConfirmTarget, const CTxMemPool& pool, CAmount targetFee);
     /**
-     * Bells: Get a fee targetting a specific transaction speed.
+     * LuckyCoin: Get a fee targetting a specific transaction speed.
      */
     CAmount GetDogecoinPriorityFee(const CMutableTransaction& tx, unsigned int nTxBytes, FeeRatePreset nSpeed);
     /**
-     * Bells: Get a fee targetting a specific transaction speed.
+     * LuckyCoin: Get a fee targetting a specific transaction speed.
      */
     static CAmount GetDogecoinPriorityFee(const CMutableTransaction& tx, unsigned int nTxBytes, FeeRatePreset nSpeed, CAmount targetFee);
     /**

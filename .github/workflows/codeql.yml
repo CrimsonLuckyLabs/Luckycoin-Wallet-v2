@@ -43,7 +43,7 @@ jobs:
 
     - name: Set permission
       run: |
-        cd .. && chmod 777 -R ./luckycoinv2 && cd ./luckycoinv2 
+        cd .. && chmod 777 -R ./luckycoin && cd ./luckycoin 
 
     - name: Dependency cache
       uses: actions/cache@v3
@@ -64,7 +64,7 @@ jobs:
       with:
         languages: ${{ matrix.language }}
 
-    - name: Build Bellscoin
+    - name: Build LuckCoin
       run: |
        ./autogen.sh
        ./configure --prefix="$PWD"/depends/x86_64-pc-linux-gnu

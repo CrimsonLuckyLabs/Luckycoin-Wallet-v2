@@ -1,4 +1,4 @@
-Bells Core 0.14.2
+LuckyCoin Core 0.14.2
 =====================
 
 Development

@@ -1511,7 +1511,7 @@ void ThreadMapPort()
             }
         }
 
-        std::string strDesc = "Bells " + FormatFullVersion();
+        std::string strDesc = "LuckyCoin " + FormatFullVersion();
 
         try {
             while (true) {

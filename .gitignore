@@ -2,13 +2,13 @@
 
 *.exe
 src/luckycoin
-src/bellsd
+src/luckcoind
 src/luckycoin-cli
 src/luckycoin-tx
-src/test/test_bells
-src/test/test_bells_fuzzy
+src/test/test_luckcoin
+src/test/test_luckcoin_fuzzy
 src/qt/test/test_luckycoin-qt
-src/bench/bench_bells
+src/bench/bench_luckcoin
 
 # autoreconf
 Makefile.in

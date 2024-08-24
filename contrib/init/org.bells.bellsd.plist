@@ -3,10 +3,10 @@
 <plist version="1.0">
 <dict>
 	<key>Label</key>
-	<string>org.bells.bellsd</string>
+	<string>org.luckcoin.luckcoind</string>
 	<key>ProgramArguments</key>
 	<array>
-		<string>/usr/local/bin/bellsd</string>
+		<string>/usr/local/bin/luckcoind</string>
 		<string>-daemon</string>
 	</array>
 	<key>RunAtLoad</key>
