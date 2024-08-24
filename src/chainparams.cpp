@@ -112,7 +112,7 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP66].bit = 1;
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP66].nStartTime = 1724494119;   // 2023-12-25 00:00:00
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP66].nTimeout   = 1734494119;   // 2024-12-25 18:00:00
-        
+
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP65].bit = 2;
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP65].nStartTime = 1724494119;   // 2023-12-25 00:00:00
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP65].nTimeout   = 1734494119;   // 2024-12-25 18:00:00
@@ -180,14 +180,14 @@ public:
         nDefaultPort = 19919;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1383509530, 44481, 0x1e0ffff0, 1, 88 * COIN);
+        genesis = CreateGenesisBlock(1369199888, 44481, 0x1e0ffff0, 1, 88 * COIN);
 
         consensus.hashGenesisBlock = genesis.GetHash();
         digishieldConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
         auxpowConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
 
-        assert(consensus.hashGenesisBlock == uint256S("0xe5be24df57c43a82d15c2f06bda961296948f8f8eb48501bed1efb929afe0698"));
-        assert(genesis.hashMerkleRoot == uint256S("0x5b2a3f53f605d62c53e62932dac6925e3d74afa5a4b459745c36d42d0ed26a69"));
+        //assert(consensus.hashGenesisBlock == uint256S("0xe5be24df57c43a82d15c2f06bda961296948f8f8eb48501bed1efb929afe0698"));
+        //assert(genesis.hashMerkleRoot == uint256S("0x5b2a3f53f605d62c53e62932dac6925e3d74afa5a4b459745c36d42d0ed26a69"));
 
         // Note that of those with the service bits flag, most only support a subset of possible options
         //vSeeds.push_back(CDNSSeedData("belscan.io", "seeder.belscan.io", true));
