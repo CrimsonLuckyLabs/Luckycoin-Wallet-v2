@@ -7,16 +7,16 @@
 
 #include "policy/policy.h"
 #include "arith_uint256.h"
-#include "dogecoin.h"
+#include "luckycoin.h"
 #include "txmempool.h"
 #include "util.h"
 #include "validation.h"
-#include "dogecoin-fees.h"
+#include "luckycoin-fees.h"
 
 int static generateMTRandom(unsigned int s, int range)
 {
     boost::mt19937 gen(s);
-    boost::uniform_int<> dist(1, range);
+    boost::uniform_int_distribution<> dist(1, range);
     return dist(gen);
 }
 
@@ -128,79 +128,41 @@ bool CheckAuxPowProofOfWork(const CBlockHeader& block, const Consensus::Params& 
 
 CAmount GetDogecoinBlockSubsidy(int nHeight, const Consensus::Params& consensusParams, uint256 prevHash)
 {
-    CAmount nSubsidy = 2 * COIN;
+    CAmount nSubsidy = 88 * COIN;
 
-    if(nHeight < 101) {
-        nSubsidy = 2 * COIN; //first 100 blocks have minimal rewards
+    if(nHeight < 50000)
+    {
+        std::string cseed_str = prevHash.ToString().substr(8,7);
+        const char* cseed = cseed_str.c_str();
+        long seed = hex2long(cseed);
+
+        int rand = generateMTRandom(seed, 100000);
+
+        if(rand > 30000 && rand < 35001)
+            nSubsidy = 188 * COIN;
+        else if(rand > 70000 && rand < 71001)
+            nSubsidy = 588 * COIN;
+        else if(rand > 50000 && rand < 50011)
+            nSubsidy = 5888 * COIN;
     } else {
+        // Subsidy is cut in half every 100,000 blocks, which will occur approximately every 2 months
+        nSubsidy >>= (nHeight / 100000); // Luckycoin: 100K blocks in ~2 months
 
-        int rand = generateMTRandom(nHeight, 1000);
-        if (nHeight < 129600) {
-            if(rand >= 990) {
-                nSubsidy = 10000 * COIN;
-            } else if (rand >= 940) {
-                nSubsidy = 1000 * COIN;
-            } else if (rand >= 840) {
-                nSubsidy = 500 * COIN;
-            } else if (rand >= 700) {
-                nSubsidy = 250 * COIN;
-            } else if (rand >= 500) {
-                nSubsidy = 100 * COIN;
-            } else if (rand <= 499) {
-                nSubsidy = 50 * COIN;
-            }
-        } else if(nHeight < 259200) {
-            if (rand >= 990) {
-                nSubsidy = 5000 * COIN;
-            } else if (rand >= 940) {
-                nSubsidy = 500 * COIN;
-            } else if (rand >= 840) {
-                nSubsidy = 250 * COIN;
-            } else if (rand >= 700) {
-                nSubsidy = 125 * COIN;
-            } else if (rand >= 500) {
-                nSubsidy = 50 * COIN;
-            } else if (rand <= 499) {
-                nSubsidy = 25 * COIN;
-            }
-        } else if(nHeight < 518400) {
-            if (rand >= 990) {
-                nSubsidy = 500 * COIN;
-            } else if (rand >= 940) {
-                nSubsidy = 50 * COIN;
-            } else if (rand >= 840) {
-                nSubsidy = 25 * COIN;
-            } else if (rand >= 500) {
-                nSubsidy = 10 * COIN;
-            } else if (rand <= 499) {
-                nSubsidy = 5 * COIN;
-            }
-        }
+        std::string cseed_str = prevHash.ToString().substr(8,7);
+        const char* cseed = cseed_str.c_str();
+        long seed = hex2long(cseed);
+
+        int rand = generateMTRandom(seed, 100000);
+
+        if(rand > 30000 && rand < 35001)
+            nSubsidy *= 2;
+        else if(rand > 70000 && rand < 71001)
+            nSubsidy *= 5;
+        else if(rand > 50000 && rand < 50011)
+            nSubsidy *= 58;
     }
 
-    return nSubsidy;
-
-    // keeping this if we have to change it to halving.
-    /*int halvings = nHeight / consensusParams.nSubsidyHalvingInterval;
-
-    if (!consensusParams.fSimplifiedRewards)
-    {
-        // Old-style rewards derived from the previous block hash
-        const std::string cseed_str = prevHash.ToString().substr(7, 7);
-        const char* cseed = cseed_str.c_str();
-        char* endp = NULL;
-        long seed = strtol(cseed, &endp, 16);
-        CAmount maxReward = (1000000 >> halvings) - 1;
-        int rand = generateMTRandom(seed, maxReward);
-
-        return (1 + rand) * COIN;
-    } else if (nHeight < (6 * consensusParams.nSubsidyHalvingInterval)) {
-        // New-style constant rewards for each halving interval
-        return (500000 * COIN) >> halvings;
-    } else {
-        // Constant inflation
-        return 10000 * COIN;
-    }*/
+    return nSubsidy + nFees;
 }
 
 

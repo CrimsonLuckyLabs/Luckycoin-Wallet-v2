@@ -91,6 +91,8 @@ bool error(const char* fmt, const Args&... args)
     return false;
 }
 
+long hex2long(const char* hexString);
+
 void PrintExceptionContinue(const std::exception *pex, const char* pszThread);
 void ParseParameters(int argc, const char*const argv[]);
 void FileCommit(FILE *file);

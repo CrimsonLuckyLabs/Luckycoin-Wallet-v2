@@ -5,6 +5,7 @@
 #include "amount.h"
 #include "chain.h"
 #include "chainparams.h"
+#include "util.h"
 
 bool AllowDigishieldMinDifficultyForBlock(const CBlockIndex* pindexLast, const CBlockHeader *pblock, const Consensus::Params& params);
 
@@ -19,5 +20,3 @@ unsigned int CalculateDogecoinNextWorkRequired(const CBlockIndex* pindexLast, in
  * @return True iff the PoW is correct.
  */
 bool CheckAuxPowProofOfWork(const CBlockHeader& block, const Consensus::Params& params);
-
-

@@ -51,7 +51,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "Nintondo";
+    const char* pszTimestamp = "May 22, 2013, 12:16 a.m. EDT: Japan\x92s Nikkei Stock Average JP:NIK +1.77%, which ended at their highest level in more than five years in each of the last three trading sessions, climbed a further 1.2% Wednesday";
     const CScript genesisOutputScript = CScript() << ParseHex("040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
@@ -83,20 +83,17 @@ public:
         consensus.nMajorityRejectBlockOutdated = 1900;
         consensus.nMajorityWindow = 2000;
 
-
         // After deployments are activated we can change it
-        consensus.BIP34Hash = uint256S("0x00"); // unused for now.
-        consensus.BIP65Height = 99999999; 
-        consensus.BIP65Height = 99999999; 
-        consensus.BIP66Height = 99999999; 
-
+        consensus.BIP34Hash = uint256S("0x9b7bce58999062b63bfb18586813c42491fa32f4591d8d3043cb4fa9e551541b");
+        consensus.BIP65Height = 0xFFFFFFFF;
+        consensus.BIP65Height = 0xFFFFFFFF;
+        consensus.BIP66Height = 0xFFFFFFFF;
 
         consensus.powLimit = uint256S("0x00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 20;
-        consensus.nPowTargetTimespan = 4 * 60 * 60; // pre-digishield: 4 hours
+        consensus.nPowTargetTimespan = 20 * 60; // pre-digishield: 4 hours
         consensus.nPowTargetSpacing = 60; // 1 minute
-        consensus.nCoinbaseMaturity = 30;
+        consensus.nCoinbaseMaturity = 70;
         consensus.fPowNoRetargeting = false;
-
 
         consensus.nRuleChangeActivationThreshold = 9576; // 95% of 10,080
         consensus.nMinerConfirmationWindow = 10080; // 60 * 24 * 7 = 10,080 blocks, or one week
@@ -131,14 +128,13 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1735084800;   // 2024-12-25 18:00:00
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000003e3c33bc605e5d"); // 4,303,965
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000005e5d"); // 4,303,965
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x2c05ea6918e28ca2d216c6518940c8782c09bebfe705d792155465662e275351"); // 10000
+        consensus.defaultAssumeValid = uint256S("0x9b7bce58999062b63bfb18586813c42491fa32f4591d8d3043cb4fa9e551541b");
 
         // AuxPoW parameters
-
-        consensus.nAuxpowChainId = 0x2000; // 8192
+        consensus.nAuxpowChainId = 0x2013;
         consensus.fStrictChainId = false;  // we set this to false as block is nonAuxPow
 
         consensus.fAllowLegacyBlocks = true;
@@ -151,7 +147,7 @@ public:
         digishieldConsensus.fSimplifiedRewards = true;
         digishieldConsensus.fDigishieldDifficultyCalculation = true;
         digishieldConsensus.nPowTargetTimespan = 60; // post-digishield: 1 minute
-        digishieldConsensus.nCoinbaseMaturity = 240;
+        digishieldConsensus.nCoinbaseMaturity = 70;
 
         // Not implementing digishield yet
         minDifficultyConsensus = digishieldConsensus;
@@ -174,28 +170,27 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        pchMessageStart[0] = 0xc0;
+        pchMessageStart[0] = 0xfb;
         pchMessageStart[1] = 0xc0;
-        pchMessageStart[2] = 0xc0;
-        pchMessageStart[3] = 0xc0;
-        nDefaultPort = 19919;
+        pchMessageStart[2] = 0xb6;
+        pchMessageStart[3] = 0xdb;
+        nDefaultPort = 18818;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1383509530, 44481, 0x1e0ffff0, 1, 88 * COIN);
+        genesis = CreateGenesisBlock(1369199888, 44481, 0x1e0ffff0, 1, 88 * COIN);
 
         consensus.hashGenesisBlock = genesis.GetHash();
         digishieldConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
         auxpowConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
 
-        assert(consensus.hashGenesisBlock == uint256S("0xe5be24df57c43a82d15c2f06bda961296948f8f8eb48501bed1efb929afe0698"));
-        assert(genesis.hashMerkleRoot == uint256S("0x5b2a3f53f605d62c53e62932dac6925e3d74afa5a4b459745c36d42d0ed26a69"));
+        assert(consensus.hashGenesisBlock == uint256S("0x9b7bce58999062b63bfb18586813c42491fa32f4591d8d3043cb4fa9e551541b"));
+        assert(genesis.hashMerkleRoot == uint256S("0x6f80efd038566e1e3eab3e1d38131604d06481e77f2462235c6a9a94b1f8abf9"));
 
         // Note that of those with the service bits flag, most only support a subset of possible options
-        vSeeds.push_back(CDNSSeedData("belscan.io", "seeder.belscan.io", true));
-        vSeeds.push_back(CDNSSeedData("quark.blue", "bdnsseeder.quark.blue"));
+        vSeeds.push_back(CDNSSeedData("luckycoinfoundation.org", "dnsseed.luckycoinfoundation.org", true));
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,25);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,30);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,47);
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,153);
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x02)(0xfa)(0xca)(0xfd).convert_to_container<std::vector<unsigned char> >();
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x02)(0xfa)(0xc3)(0x98).convert_to_container<std::vector<unsigned char> >();
@@ -224,9 +219,7 @@ public:
 
         checkpointData = (CCheckpointData) {
                 boost::assign::map_list_of
-                        (      0, uint256S("0xe5be24df57c43a82d15c2f06bda961296948f8f8eb48501bed1efb929afe0698"))
-                        (   1000, uint256S("0x35668ee4f0fc1334849813c8a8e583814e9b22bfe5dc5a2bd2ded2b3aeec6643"))
-                        (  10000, uint256S("0x2c05ea6918e28ca2d216c6518940c8782c09bebfe705d792155465662e275351"))                        
+                        (      0, uint256S("0x9b7bce58999062b63bfb18586813c42491fa32f4591d8d3043cb4fa9e551541b"))
         };
 
         chainTxData = ChainTxData{
@@ -351,7 +344,7 @@ public:
         nDefaultPort = 29919;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1383509530, 44481, 0x1e0ffff0, 1, 88 * COIN);
+        genesis = CreateGenesisBlock(1369199888, 44481, 0x1e0ffff0, 1, 88 * COIN);
 
         consensus.hashGenesisBlock = genesis.GetHash();
         digishieldConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
@@ -361,8 +354,8 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("0x5b2a3f53f605d62c53e62932dac6925e3d74afa5a4b459745c36d42d0ed26a69"));
 
         // nodes with support for servicebits filtering should be at the top
-        vSeeds.push_back(CDNSSeedData("belscan.io", "testnetseed.belscan.io", true));
-        vSeeds.push_back(CDNSSeedData("belscan.io", "testnetseeder.belscan.io", true));
+        //vSeeds.push_back(CDNSSeedData("belscan.io", "testnetseed.belscan.io", true));
+        //vSeeds.push_back(CDNSSeedData("belscan.io", "testnetseeder.belscan.io", true));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,25);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,30);
@@ -508,7 +501,7 @@ public:
         nDefaultPort = 19919;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1383509530, 44481, 0x1e0ffff0, 1, 88 * COIN);
+        genesis = CreateGenesisBlock(1369199888, 44481, 0x1e0ffff0, 1, 88 * COIN);
 
         consensus.hashGenesisBlock = genesis.GetHash();
         digishieldConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
@@ -518,8 +511,8 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("0x5b2a3f53f605d62c53e62932dac6925e3d74afa5a4b459745c36d42d0ed26a69"));
 
         // nodes with support for servicebits filtering should be at the top
-        vSeeds.push_back(CDNSSeedData("belscan.io", "testnetseed.belscan.io", true));
-        vSeeds.push_back(CDNSSeedData("belscan.io", "testnetseeder.belscan.io", true));
+        //vSeeds.push_back(CDNSSeedData("belscan.io", "testnetseed.belscan.io", true));
+        //vSeeds.push_back(CDNSSeedData("belscan.io", "testnetseeder.belscan.io", true));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,25);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,30);
