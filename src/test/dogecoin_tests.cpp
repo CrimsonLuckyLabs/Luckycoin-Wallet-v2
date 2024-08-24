@@ -66,7 +66,7 @@ BOOST_AUTO_TEST_CASE(subsidy_first_100k_test)
 
     for (int nHeight = 0; nHeight <= 100000; nHeight++) {
         const Consensus::Params& params = mainParams.GetConsensus(nHeight);
-        CAmount nSubsidy = GetDogecoinBlockSubsidy(nHeight, params, ArithToUint256(prevHash));
+        CAmount nSubsidy = GetDogecoinBlockSubsidy(nHeight, 0, params, ArithToUint256(prevHash));
         BOOST_CHECK(MoneyRange(nSubsidy));
         BOOST_CHECK(nSubsidy <= 1000000 * COIN);
         nSum += nSubsidy;
@@ -86,7 +86,7 @@ BOOST_AUTO_TEST_CASE(subsidy_100k_145k_test)
 
     for (int nHeight = 100000; nHeight <= 145000; nHeight++) {
         const Consensus::Params& params = mainParams.GetConsensus(nHeight);
-        CAmount nSubsidy = GetDogecoinBlockSubsidy(nHeight, params, ArithToUint256(prevHash));
+        CAmount nSubsidy = GetDogecoinBlockSubsidy(nHeight, 0, params, ArithToUint256(prevHash));
         BOOST_CHECK(MoneyRange(nSubsidy));
         BOOST_CHECK(nSubsidy <= 500000 * COIN);
         nSum += nSubsidy;
@@ -106,17 +106,17 @@ BOOST_AUTO_TEST_CASE(subsidy_post_145k_test)
 
     for (int nHeight = 145000; nHeight < 600000; nHeight++) {
         const Consensus::Params& params = mainParams.GetConsensus(nHeight);
-        CAmount nSubsidy = GetDogecoinBlockSubsidy(nHeight, params, prevHash);
+        CAmount nSubsidy = GetDogecoinBlockSubsidy(nHeight, 0, params, prevHash);
         CAmount nExpectedSubsidy = (500000 >> (nHeight / 100000)) * COIN;
         BOOST_CHECK(MoneyRange(nSubsidy));
         BOOST_CHECK_EQUAL(nSubsidy, nExpectedSubsidy);
     }
 
     // Test reward at 600k+ is constant
-    CAmount nConstantSubsidy = GetDogecoinBlockSubsidy(600000, mainParams.GetConsensus(600000), prevHash);
+    CAmount nConstantSubsidy = GetDogecoinBlockSubsidy(600000, 0, mainParams.GetConsensus(600000), prevHash);
     BOOST_CHECK_EQUAL(nConstantSubsidy, 10000 * COIN);
 
-    nConstantSubsidy = GetDogecoinBlockSubsidy(700000, mainParams.GetConsensus(700000), prevHash);
+    nConstantSubsidy = GetDogecoinBlockSubsidy(700000, 0, mainParams.GetConsensus(700000), prevHash);
     BOOST_CHECK_EQUAL(nConstantSubsidy, 10000 * COIN);
 }
 
