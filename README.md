@@ -24,7 +24,7 @@ their feature or bug fix is ready.
 
 To start your journey with Bells Core, see the [installation guide](INSTALL.md) and the [getting started](doc/getting-started.md) tutorial.
 
-The JSON-RPC API provided by Bells Core is self-documenting and can be browsed with `bells-cli help`, while detailed information for each command can be viewed with `bells-cli help <command>`. Alternatively, see the [Bitcoin Core documentation](https://developer.bitcoin.org/reference/rpc/) - which implement a similar protocol - to get a browsable version.
+The JSON-RPC API provided by Bells Core is self-documenting and can be browsed with `luckycoin-cli help`, while detailed information for each command can be viewed with `luckycoin-cli help <command>`. Alternatively, see the [Bitcoin Core documentation](https://developer.bitcoin.org/reference/rpc/) - which implement a similar protocol - to get a browsable version.
 
 ## Frequently Asked Questions
 

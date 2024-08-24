@@ -299,8 +299,8 @@
         <translation>&amp;Terima Banget</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and bells: URIs)</source>
-        <translation>Minta pembayaran (bikin kode QR dan bells: URI)</translation>
+        <source>Request payments (generates QR codes and luckycoin: URIs)</source>
+        <translation>Minta pembayaran (bikin kode QR dan luckycoin: URI)</translation>
     </message>
     <message>
         <source>&amp;Transactions</source>
@@ -415,8 +415,8 @@
         <translation>Buka &amp;URI</translation>
     </message>
     <message>
-        <source>Open a bells: URI or payment request</source>
-        <translation>Buka URI bells: atau permintaan pembayaran</translation>
+        <source>Open a luckycoin: URI or payment request</source>
+        <translation>Buka URI luckycoin: atau permintaan pembayaran</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -1641,8 +1641,8 @@ p, li { white-space: pre-wrap; }
         <translation>Permintaan pembayaran gagal</translation>
     </message>
     <message>
-        <source>Cannot start bells: click-to-pay handler</source>
-        <translation>Tidak bisa memulai bells: penanganan ketuk-untuk-bayar</translation>
+        <source>Cannot start luckycoin: click-to-pay handler</source>
+        <translation>Tidak bisa memulai luckycoin: penanganan ketuk-untuk-bayar</translation>
     </message>
     <message>
         <source>URI handling</source>
@@ -2758,8 +2758,8 @@ p, li { white-space: pre-wrap; }
         <translation>Masukkan label untuk alamat ini agar dimasukan ke dalam daftar alamat yang pernah digunakan</translation>
     </message>
     <message>
-        <source>A message that was attached to the bells: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Dogecoin network.</source>
-        <translation>Pesan yang dilampirkan ke bells: URI yang akan disimpan dengan transaksi sebagai referensi kamu. Catatan: Pesan ini tidak akan dikirim bersama dengan pembayaran melalui jaringan Dogecoin.</translation>
+        <source>A message that was attached to the luckycoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Dogecoin network.</source>
+        <translation>Pesan yang dilampirkan ke luckycoin: URI yang akan disimpan dengan transaksi sebagai referensi kamu. Catatan: Pesan ini tidak akan dikirim bersama dengan pembayaran melalui jaringan Dogecoin.</translation>
     </message>
     <message>
         <source>Pay To:</source>

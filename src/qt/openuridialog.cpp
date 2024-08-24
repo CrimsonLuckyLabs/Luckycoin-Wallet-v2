@@ -17,7 +17,7 @@ OpenURIDialog::OpenURIDialog(QWidget *parent) :
 {
     ui->setupUi(this);
 #if QT_VERSION >= 0x040700
-    ui->uriEdit->setPlaceholderText("bells:");
+    ui->uriEdit->setPlaceholderText("luckycoin:");
 #endif
 }
 
@@ -49,5 +49,5 @@ void OpenURIDialog::on_selectFileButton_clicked()
     if(filename.isEmpty())
         return;
     QUrl fileUri = QUrl::fromLocalFile(filename);
-    ui->uriEdit->setText("bells:?r=" + QUrl::toPercentEncoding(fileUri.toString()));
+    ui->uriEdit->setText("luckycoin:?r=" + QUrl::toPercentEncoding(fileUri.toString()));
 }

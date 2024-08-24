@@ -80,7 +80,7 @@ void PaymentServerTests::paymentServerTests()
 
     // Now feed PaymentRequests to server, and observe signals it produces
 
-    // bells: Disable certificate tests as we don't touch this code, and building test
+    // luckycoin: Disable certificate tests as we don't touch this code, and building test
     // data would take significant effort. Also pending discussion on spec
     // This payment request validates directly against the
     // caCert1 certificate authority:

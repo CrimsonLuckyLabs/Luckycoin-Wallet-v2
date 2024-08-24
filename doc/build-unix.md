@@ -69,7 +69,7 @@ sudo apt-get install build-essential libtool autotools-dev automake pkg-config l
 
 **Optional dependencies** :
 ```bash
-# Qt (required for bells-qt GUI)
+# Qt (required for luckycoin-qt GUI)
 sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler libqrencode-dev
 
 # BerkeleyDB (version 5.3)
@@ -84,7 +84,7 @@ sudo apt-get install libminiupnpc-dev
 
 ## Build steps
 
-According to installed dependencies, the following steps will compile `bellsd`, `luckycoin-cli` and `bells-qt`.
+According to installed dependencies, the following steps will compile `bellsd`, `luckycoin-cli` and `luckycoin-qt`.
 
 ```bash
 ./autogen.sh
@@ -99,7 +99,7 @@ See [Build configuration](#build-configuration) for extra settings.
 Configurations are done during the `./configure` step. Use `--help` to see all available options.
 
 #### Enable Qt GUI
-Create `bells-qt`, the core wallet GUI.
+Create `luckycoin-qt`, the core wallet GUI.
 ```bash
 ./configure --with-gui
 ```

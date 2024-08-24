@@ -427,8 +427,8 @@
         <translation>Fül eszköztár</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and bells: URIs)</source>
-        <translation>Fizetési kérelem (QR-kódot és &quot;bells:&quot; URI azonosítót hoz létre)</translation>
+        <source>Request payments (generates QR codes and luckycoin: URIs)</source>
+        <translation>Fizetési kérelem (QR-kódot és &quot;luckycoin:&quot; URI azonosítót hoz létre)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -439,8 +439,8 @@
         <translation>A használt fogadó címek és címkék megtekintése</translation>
     </message>
     <message>
-        <source>Open a bells: URI or payment request</source>
-        <translation>&quot;bells:&quot; URI azonosító vagy fizetési kérelem megnyitása</translation>
+        <source>Open a luckycoin: URI or payment request</source>
+        <translation>&quot;luckycoin:&quot; URI azonosító vagy fizetési kérelem megnyitása</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -1649,7 +1649,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Cannot start bells: click-to-pay handler</source>
+        <source>Cannot start luckycoin: click-to-pay handler</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

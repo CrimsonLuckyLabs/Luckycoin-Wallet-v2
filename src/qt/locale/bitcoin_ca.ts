@@ -447,8 +447,8 @@
         <translation>Barra d&apos;eines de les pestanyes</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and bells: URIs)</source>
-        <translation>Sol·licita pagaments (genera codis QR i bells: URI)</translation>
+        <source>Request payments (generates QR codes and luckycoin: URIs)</source>
+        <translation>Sol·licita pagaments (genera codis QR i luckycoin: URI)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -459,8 +459,8 @@
         <translation>Mostra la llista d&apos;adreces de recepció i etiquetes utilitzades</translation>
     </message>
     <message>
-        <source>Open a bells: URI or payment request</source>
-        <translation>Obre una bells: sol·licitud d&apos;URI o pagament</translation>
+        <source>Open a luckycoin: URI or payment request</source>
+        <translation>Obre una luckycoin: sol·licitud d&apos;URI o pagament</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -1653,8 +1653,8 @@ p, li { white-space: pre-wrap; }
         <translation>Error de la sol·licitud de pagament</translation>
     </message>
     <message>
-        <source>Cannot start bells: click-to-pay handler</source>
-        <translation>No es pot iniciar bells: controlador click-to-pay</translation>
+        <source>Cannot start luckycoin: click-to-pay handler</source>
+        <translation>No es pot iniciar luckycoin: controlador click-to-pay</translation>
     </message>
     <message>
         <source>URI handling</source>
@@ -2788,8 +2788,8 @@ p, li { white-space: pre-wrap; }
         <translation>Introduïu una etiqueta per a aquesta adreça per afegir-la a la llista d&apos;adreces utilitzades</translation>
     </message>
     <message>
-        <source>A message that was attached to the bells: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Dogecoin network.</source>
-        <translation>Un missatge que s&apos;ha adjuntat al bells: URI que s&apos;emmagatzemarà amb la transacció per a la vostra referència. Nota: el missatge no s&apos;enviarà a través de la xarxa Dogecoin.</translation>
+        <source>A message that was attached to the luckycoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Dogecoin network.</source>
+        <translation>Un missatge que s&apos;ha adjuntat al luckycoin: URI que s&apos;emmagatzemarà amb la transacció per a la vostra referència. Nota: el missatge no s&apos;enviarà a través de la xarxa Dogecoin.</translation>
     </message>
     <message>
         <source>Pay To:</source>

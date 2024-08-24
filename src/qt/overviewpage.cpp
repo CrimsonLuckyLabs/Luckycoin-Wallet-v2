@@ -163,7 +163,7 @@ void OverviewPage::UpdateTip()
         tr("Never share your private key with anyone"),
         tr("Who owns the private keys, owns the coins"),
         tr("To see ongoing development and contribute, check out the Bells Core repository on GitHub"),
-        tr("Services that claim to double your bells are always ponzi schemes")
+        tr("Services that claim to double your luckycoin are always ponzi schemes")
     };
 
     int i = rand() % tips.length();

@@ -443,8 +443,8 @@
         <translation>Barre d&apos;outils des onglets</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and bells: URIs)</source>
-        <translation>Demander des paiements (génère des codes QR et des URI bells:)</translation>
+        <source>Request payments (generates QR codes and luckycoin: URIs)</source>
+        <translation>Demander des paiements (génère des codes QR et des URI luckycoin:)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -455,8 +455,8 @@
         <translation>Afficher la liste d&apos;adresses de réception et d&apos;étiquettes utilisées</translation>
     </message>
     <message>
-        <source>Open a bells: URI or payment request</source>
-        <translation>Ouvrir une URI bells: ou une demande de paiement</translation>
+        <source>Open a luckycoin: URI or payment request</source>
+        <translation>Ouvrir une URI luckycoin: ou une demande de paiement</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -1692,8 +1692,8 @@ p, li { white-space: pre-wrap; }
         <translation>Erreur de demande de paiement</translation>
     </message>
     <message>
-        <source>Cannot start bells: click-to-pay handler</source>
-        <translation>Impossible de démarrer le gestionnaire de cliquer-pour-payer bells:</translation>
+        <source>Cannot start luckycoin: click-to-pay handler</source>
+        <translation>Impossible de démarrer le gestionnaire de cliquer-pour-payer luckycoin:</translation>
     </message>
     <message>
         <source>URI handling</source>
@@ -2831,8 +2831,8 @@ p, li { white-space: pre-wrap; }
         <translation>Saisir une étiquette pour cette adresse afin de l&apos;ajouter à la liste d&apos;adresses utilisées</translation>
     </message>
     <message>
-        <source>A message that was attached to the bells: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Dogecoin network.</source>
-        <translation>Un message qui était joint à l&apos;URI bells: et qui sera stocké avec la transaction pour référence. Note : ce message ne sera pas envoyé par le réseau Dogecoin.</translation>
+        <source>A message that was attached to the luckycoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Dogecoin network.</source>
+        <translation>Un message qui était joint à l&apos;URI luckycoin: et qui sera stocké avec la transaction pour référence. Note : ce message ne sera pas envoyé par le réseau Dogecoin.</translation>
     </message>
     <message>
         <source>Pay To:</source>

@@ -99,7 +99,7 @@ UniValue getnetworkhashps(const JSONRPCRequest& request)
 
 UniValue generateBlocks(boost::shared_ptr<CReserveScript> coinbaseScript, int nGenerate, uint64_t nMaxTries, bool keepScript, int nMineAuxPow)
 {
-    // bells: Never mine witness tx
+    // luckycoin: Never mine witness tx
     const bool fMineWitnessTx = false;
     static const int nInnerLoopCount = 0x10000;
     int nHeightStart = 0;
@@ -221,7 +221,7 @@ UniValue generatetoaddress(const JSONRPCRequest& request)
             "\nMine blocks immediately to a specified address (before the RPC call returns)\n"
             "\nArguments:\n"
             "1. nblocks      (numeric, required) How many blocks are generated immediately.\n"
-            "2. address      (string, required) The address to send the newly generated bells to.\n"
+            "2. address      (string, required) The address to send the newly generated luckycoin to.\n"
             "3. maxtries     (numeric, optional) How many iterations to try (default = 1000000).\n"
             "4. auxpow       (numeric, optional) If the block should include the auxpow header (default = 0).\n"
             "\nResult:\n"
@@ -353,7 +353,7 @@ std::string gbt_vb_name(const Consensus::DeploymentPos pos) {
 
 UniValue getblocktemplate(const JSONRPCRequest& request)
 {
-    // bells: Never mine witness tx
+    // luckycoin: Never mine witness tx
     const bool fMineWitnessTx = false;
     if (request.fHelp || request.params.size() > 1)
         throw runtime_error(
@@ -1020,12 +1020,12 @@ static UniValue AuxMiningCreateBlock(const CScript& scriptPubKey)
     static std::map<CScriptID, CBlock*> curBlocks;
     static unsigned nExtraNonce = 0;
 
-    // bells: Never mine witness tx
+    // luckycoin: Never mine witness tx
     const bool fMineWitnessTx = false;
 
     /* Search for cached blocks with given scriptPubKey and assign it to pBlock
      * if we find a match. This allows for creating multiple aux templates with
-     * a single bellsd instance, for example when a pool runs multiple sub-
+     * a single luckycoind instance, for example when a pool runs multiple sub-
      * pools with different payout strategies.
      */
     CBlock* pblock = nullptr;
@@ -1188,7 +1188,7 @@ UniValue getauxblockbip22(const JSONRPCRequest& request)
         static unsigned nExtraNonce = 0;
 
         // Update block
-        // bells: Never mine witness tx
+        // luckycoin: Never mine witness tx
         const bool fMineWitnessTx = false;
         {
             LOCK(cs_main);

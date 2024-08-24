@@ -2,7 +2,7 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-bin_PROGRAMS += qt/bells-qt
+bin_PROGRAMS += qt/luckycoin-qt
 EXTRA_LIBRARIES += qt/libdogecoinqt.a
 
 # bitcoin qt core #
@@ -249,9 +249,9 @@ RES_ICONS = \
   qt/res/icons/address-book.png \
   qt/res/icons/about.png \
   qt/res/icons/about_qt.png \
-  qt/res/icons/bells.ico \
+  qt/res/icons/luckycoin.ico \
   qt/res/icons/bitcoin_testnet.ico \
-  qt/res/icons/bells.png \
+  qt/res/icons/luckycoin.png \
   qt/res/icons/chevron.png \
   qt/res/icons/clock1.png \
   qt/res/icons/clock2.png \
@@ -404,7 +404,7 @@ QT_FORMS_H=$(join $(dir $(QT_FORMS_UI)),$(addprefix ui_, $(notdir $(QT_FORMS_UI:
 # Most files will depend on the forms and moc files as includes. Generate them
 # before anything else.
 $(QT_MOC): $(QT_FORMS_H)
-$(qt_libdogecoinqt_a_OBJECTS) $(qt_bells_qt_OBJECTS) : | $(QT_MOC)
+$(qt_libdogecoinqt_a_OBJECTS) $(qt_luckycoin_qt_OBJECTS) : | $(QT_MOC)
 
 #Generating these with a half-written protobuf header leads to wacky results.
 #This makes sure it's done.
@@ -412,29 +412,29 @@ $(QT_MOC): $(PROTOBUF_H)
 $(QT_MOC_CPP): $(PROTOBUF_H)
 
 # bitcoin-qt binary #
-qt_bells_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
+qt_luckycoin_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
   $(QT_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS)
-qt_bells_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+qt_luckycoin_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
 
-qt_bells_qt_SOURCES = qt/bitcoin.cpp
+qt_luckycoin_qt_SOURCES = qt/bitcoin.cpp
 if TARGET_DARWIN
-  qt_bells_qt_SOURCES += $(BITCOIN_MM)
+  qt_luckycoin_qt_SOURCES += $(BITCOIN_MM)
 endif
 if TARGET_WINDOWS
-  qt_bells_qt_SOURCES += $(BITCOIN_RC)
+  qt_luckycoin_qt_SOURCES += $(BITCOIN_RC)
 endif
-qt_bells_qt_LDADD = qt/libdogecoinqt.a $(LIBDOGECOIN_SERVER)
+qt_luckycoin_qt_LDADD = qt/libdogecoinqt.a $(LIBDOGECOIN_SERVER)
 if ENABLE_WALLET
-qt_bells_qt_LDADD += $(LIBDOGECOIN_WALLET)
+qt_luckycoin_qt_LDADD += $(LIBDOGECOIN_WALLET)
 endif
 if ENABLE_ZMQ
-qt_bells_qt_LDADD += $(LIBDOGECOIN_ZMQ) $(ZMQ_LIBS)
+qt_luckycoin_qt_LDADD += $(LIBDOGECOIN_ZMQ) $(ZMQ_LIBS)
 endif
-qt_bells_qt_LDADD += $(LIBDOGECOIN_CLI) $(LIBDOGECOIN_COMMON) $(LIBDOGECOIN_UTIL) $(LIBDOGECOIN_CONSENSUS) $(LIBDOGECOIN_CRYPTO) $(LIBUNIVALUE) $(LIBLEVELDB) $(LIBMEMENV) \
+qt_luckycoin_qt_LDADD += $(LIBDOGECOIN_CLI) $(LIBDOGECOIN_COMMON) $(LIBDOGECOIN_UTIL) $(LIBDOGECOIN_CONSENSUS) $(LIBDOGECOIN_CRYPTO) $(LIBUNIVALUE) $(LIBLEVELDB) $(LIBMEMENV) \
   $(BOOST_LIBS) $(QT_LIBS) $(QT_DBUS_LIBS) $(QR_LIBS) $(PROTOBUF_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(LIBSECP256K1) \
   $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
-qt_bells_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-qt_bells_qt_LIBTOOLFLAGS = --tag CXX
+qt_luckycoin_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+qt_luckycoin_qt_LIBTOOLFLAGS = --tag CXX
 
 #locale/foo.ts -> locale/foo.qm
 QT_QM=$(QT_TS:.ts=.qm)
@@ -471,10 +471,10 @@ CLEAN_QT = $(nodist_qt_libdogecoinqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda
 
 CLEANFILES += $(CLEAN_QT)
 
-bells_qt_clean: FORCE
-	rm -f $(CLEAN_QT) $(qt_libdogecoinqt_a_OBJECTS) $(qt_bells_qt_OBJECTS) qt/bells-qt$(EXEEXT) $(LIBDOGECOINQT)
+luckycoin_qt_clean: FORCE
+	rm -f $(CLEAN_QT) $(qt_libdogecoinqt_a_OBJECTS) $(qt_luckycoin_qt_OBJECTS) qt/luckycoin-qt$(EXEEXT) $(LIBDOGECOINQT)
 
-bells_qt : qt/bells-qt$(EXEEXT)
+luckycoin_qt : qt/luckycoin-qt$(EXEEXT)
 
 ui_%.h: %.ui
 	@test -f $(UIC)

@@ -447,8 +447,8 @@
         <translation>Barra de ferramentas dos separadores</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and bells: URIs)</source>
-        <translation>Solicitar pagamentos (gera códigos QR e bells: URIs)</translation>
+        <source>Request payments (generates QR codes and luckycoin: URIs)</source>
+        <translation>Solicitar pagamentos (gera códigos QR e luckycoin: URIs)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -459,8 +459,8 @@
         <translation>Mostrar a lista de rótulos e endereços de receção usados</translation>
     </message>
     <message>
-        <source>Open a bells: URI or payment request</source>
-        <translation>Abrir URI bells: ou pedido de pagamento</translation>
+        <source>Open a luckycoin: URI or payment request</source>
+        <translation>Abrir URI luckycoin: ou pedido de pagamento</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -1674,8 +1674,8 @@ p, li { white-space: pre-wrap; }
         <translation>Erro ao comunicar com %1: %2</translation>
     </message>
     <message>
-        <source>Cannot start bells: click-to-pay handler</source>
-        <translation>Não é possível iniciar bells: manipulador clique para pagar</translation>
+        <source>Cannot start luckycoin: click-to-pay handler</source>
+        <translation>Não é possível iniciar luckycoin: manipulador clique para pagar</translation>
     </message>
     <message>
         <source>URI handling</source>

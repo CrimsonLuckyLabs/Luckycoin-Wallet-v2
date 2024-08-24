@@ -1,6 +1,6 @@
 all:
-	$(MAKE) -C .. bells_test
+	$(MAKE) -C .. luckycoin_test
 clean:
-	$(MAKE) -C .. bells_test_clean
+	$(MAKE) -C .. luckycoin_test_clean
 check:
-	$(MAKE) -C .. bells_test_check
+	$(MAKE) -C .. luckycoin_test_check

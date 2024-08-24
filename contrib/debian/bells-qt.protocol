@@ -1,5 +1,5 @@
 [Protocol]
-exec=bells-qt '%u'
+exec=luckycoin-qt '%u'
 protocol=bells
 input=none
 output=none

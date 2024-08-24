@@ -60,7 +60,7 @@ CFeeRate CWallet::minTxFee = CFeeRate(DEFAULT_TRANSACTION_MINFEE);
  */
 CFeeRate CWallet::fallbackFee = CFeeRate(DEFAULT_FALLBACK_FEE);
 /**
- * bells: Effective dust limit for the wallet
+ * luckycoin: Effective dust limit for the wallet
  * - Outputs smaller than this get rejected
  * - Change smaller than this gets discarded to fee
  */
@@ -2141,7 +2141,7 @@ static void ApproximateBestSubset(vector<pair<CAmount, pair<const CWalletTx*,uns
     }
 }
 
-// bells: MIN_CHANGE as a function of discardThreshold and minTxFee(1000)
+// luckycoin: MIN_CHANGE as a function of discardThreshold and minTxFee(1000)
 // Makes the wallet change output minimums configurable instead of hardcoded
 // defaults.
 CAmount CWallet::GetMinChange()
@@ -2507,7 +2507,7 @@ bool CWallet::CreateTransaction(const vector<CRecipient>& vecSend, CWalletTx& wt
                     }
 
                     /*
-                     * bells: check all outputs against the discard threshold
+                     * luckycoin: check all outputs against the discard threshold
                      *           to make sure that the wallet's dust policy gets
                      *           followed rather than the current relay rules,
                      *           because the larger network may settle on a
@@ -2735,7 +2735,7 @@ bool CWallet::CreateTransaction(const vector<CRecipient>& vecSend, CWalletTx& wt
                     CAmount additionalFeeNeeded = nFeeNeeded - nFeeRet;
                     vector<CTxOut>::iterator change_position = txNew.vout.begin()+nChangePosInOut;
                     // Only reduce change if remaining amount is still a large enough output.
-                    /* bells: this has been changed from a static MIN_FINAL_CHANGE that
+                    /* luckycoin: this has been changed from a static MIN_FINAL_CHANGE that
                      * followed DEFAULT_DISCARD_THRESHOLD to instead use the configurable
                      * discard threshold.
                      *
@@ -2872,8 +2872,8 @@ bool CWallet::AddAccountingEntry(const CAccountingEntry& acentry, CWalletDB *pwa
 
 CAmount CWallet::GetRequiredFee(const CMutableTransaction& tx, unsigned int nTxBytes)
 {
-    // bells: Add an increased fee for each output that is lower than the discard threshold
-    return std::max(minTxFee.GetFee(nTxBytes) + GetbellsdustFee(tx.vout, discardThreshold), ::minRelayTxFeeRate.GetFee(nTxBytes));
+    // luckycoin: Add an increased fee for each output that is lower than the discard threshold
+    return std::max(minTxFee.GetFee(nTxBytes) + GetluckycoindustFee(tx.vout, discardThreshold), ::minRelayTxFeeRate.GetFee(nTxBytes));
 }
 
 CAmount CWallet::GetRequiredFee(unsigned int nTxBytes)
@@ -2898,11 +2898,11 @@ CAmount CWallet::GetMinimumFee(const CMutableTransaction& tx, unsigned int nTxBy
         //if (nFeeNeeded == 0)
         //    nFeeNeeded = fallbackFee.GetFee(nTxBytes);
 
-        // bells: Drop the smart fee estimate, use GetRequiredFee
+        // luckycoin: Drop the smart fee estimate, use GetRequiredFee
         nFeeNeeded = GetRequiredFee(tx, nTxBytes);
     }
     // prevent user from paying a fee below minRelayTxFee or minTxFee
-    // bells: as we're adapting minTxFee to never be higher than
+    // luckycoin: as we're adapting minTxFee to never be higher than
     //           payTxFee unless explicitly set, this should be fine
     nFeeNeeded = std::max(nFeeNeeded, GetRequiredFee(tx, nTxBytes));
 
@@ -2927,7 +2927,7 @@ CAmount CWallet::GetDogecoinPriorityFee(const CMutableTransaction& tx, unsigned 
         nFeeNeeded = GetDogecoinFeeRate(nPriority).GetFee(nTxBytes);
     }
     // prevent user from paying a fee below minRelayTxFee or minTxFee
-    // bells: as we're adapting minTxFee to never be higher than
+    // luckycoin: as we're adapting minTxFee to never be higher than
     //           payTxFee unless explicitly set, this should be fine
     nFeeNeeded = std::max(nFeeNeeded, GetRequiredFee(tx, nTxBytes));
 

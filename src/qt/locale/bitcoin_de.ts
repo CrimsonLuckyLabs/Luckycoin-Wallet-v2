@@ -443,8 +443,8 @@
         <translation>Registerkartenleiste</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and bells: URIs)</source>
-        <translation>Zahlungen anfordern (erzeugt QR-Codes und &quot;bells:&quot;-URIs)</translation>
+        <source>Request payments (generates QR codes and luckycoin: URIs)</source>
+        <translation>Zahlungen anfordern (erzeugt QR-Codes und &quot;luckycoin:&quot;-URIs)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -455,8 +455,8 @@
         <translation>Liste verwendeter Empfangsadressen und Bezeichnungen anzeigen</translation>
     </message>
     <message>
-        <source>Open a bells: URI or payment request</source>
-        <translation>Eine &quot;bells:&quot;-URI oder Zahlungsanforderung öffnen</translation>
+        <source>Open a luckycoin: URI or payment request</source>
+        <translation>Eine &quot;luckycoin:&quot;-URI oder Zahlungsanforderung öffnen</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -1189,7 +1189,7 @@
     </message>
     <message>
         <source>Automatically open the Dogecoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automatisch den Dogecoin-Clientport auf dem Router öffnen. Dies funktioniert nur, wenn Ihr Router UPnP unterstützt und dies aktiviert ist.</translation>
+        <translation>Automatisch den LuckycoinClientport auf dem Router öffnen. Dies funktioniert nur, wenn Ihr Router UPnP unterstützt und dies aktiviert ist.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -1649,7 +1649,7 @@ p, li { white-space: pre-wrap; }
         <translation>fehlerhafte Zahlungsanforderung</translation>
     </message>
     <message>
-        <source>Cannot start bells: click-to-pay handler</source>
+        <source>Cannot start luckycoin: click-to-pay handler</source>
         <translation>Kann Dogecoin nicht starten: Klicken-zum-Bezahlen-Handler</translation>
     </message>
     <message>

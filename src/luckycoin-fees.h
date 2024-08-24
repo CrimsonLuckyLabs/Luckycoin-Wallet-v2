@@ -26,6 +26,6 @@ CFeeRate GetDogecoinFeeRate(int priority);
 const std::string GetDogecoinPriorityLabel(int priority);
 #endif // ENABLE_WALLET
 CAmount GetDogecoinMinRelayFee(const CTransaction& tx, unsigned int nBytes, bool fAllowFree);
-CAmount GetbellsdustFee(const std::vector<CTxOut> &vout, const CAmount dustLimit);
+CAmount GetluckycoindustFee(const std::vector<CTxOut> &vout, const CAmount dustLimit);
 
 #endif // BITCOIN_DOGECOIN_FEES_H

@@ -20,7 +20,7 @@ bool AllowMinDifficultyForBlock(const CBlockIndex* pindexLast, const CBlockHeade
     if (!params.fPowAllowMinDifficultyBlocks)
         return false;
 
-    // bells: Magic number at which reset protocol switches
+    // luckycoin: Magic number at which reset protocol switches
     // check if we allow minimum difficulty at this block-height
     if ((unsigned)pindexLast->nHeight < params.nHeightEffective) {
         return false;
@@ -38,7 +38,7 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
     if (pindexLast == NULL)
         return nProofOfWorkLimit;
 
-    // bells: Special rules for minimum difficulty blocks with Digishield
+    // luckycoin: Special rules for minimum difficulty blocks with Digishield
     if (AllowDigishieldMinDifficultyForBlock(pindexLast, pblock, params))
     {
         // Special difficulty rule for testnet:

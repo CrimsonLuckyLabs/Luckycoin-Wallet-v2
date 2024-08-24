@@ -1,21 +1,21 @@
 
 Debian
 ====================
-This directory contains files used to package bellsd/bells-qt
-for Debian-based Linux systems. If you compile bellsd/bells-qt yourself, there are some useful files here.
+This directory contains files used to package bellsd/luckycoin-qt
+for Debian-based Linux systems. If you compile bellsd/luckycoin-qt yourself, there are some useful files here.
 
 ## bells: URI support ##
 
 
-bells-qt.desktop  (Gnome / Open Desktop)
+luckycoin-qt.desktop  (Gnome / Open Desktop)
 To install:
 
-	sudo desktop-file-install bells-qt.desktop
+	sudo desktop-file-install luckycoin-qt.desktop
 	sudo update-desktop-database
 
 If you build yourself, you will either need to modify the paths in
-the .desktop file or copy or symlink your bells-qt binary to `/usr/bin`
+the .desktop file or copy or symlink your luckycoin-qt binary to `/usr/bin`
 and the `../../share/pixmaps/bells128.png` to `/usr/share/pixmaps`
 
-bells-qt.protocol (KDE)
+luckycoin-qt.protocol (KDE)
 

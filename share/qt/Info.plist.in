@@ -68,7 +68,7 @@
       <key>UTTypeTagSpecification</key>
       <dict>
         <key>public.mime-type</key>
-        <string>application/bells-paymentrequest</string>
+        <string>application/luckycoin-paymentrequest</string>
         <key>public.filename-extension</key>
         <array>
           <string>bellspaymentrequest</string>

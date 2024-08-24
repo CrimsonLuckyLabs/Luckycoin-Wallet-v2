@@ -17,13 +17,13 @@ BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
             VALUE "CompanyName",        "Dogecoin"
-            VALUE "FileDescription",    "bellsd (Dogecoin node with a JSON-RPC server)"
+            VALUE "FileDescription",    "luckycoind (Dogecoin node with a JSON-RPC server)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
-            VALUE "InternalName",       "bellsd"
+            VALUE "InternalName",       "luckycoind"
             VALUE "LegalCopyright",     COPYRIGHT_STR
             VALUE "LegalTrademarks1",   "Distributed under the MIT software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
-            VALUE "OriginalFilename",   "bellsd.exe"
-            VALUE "ProductName",        "bellsd"
+            VALUE "OriginalFilename",   "luckycoind.exe"
+            VALUE "ProductName",        "luckycoind"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END
     END

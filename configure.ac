@@ -8,16 +8,16 @@ define(_CLIENT_VERSION_IS_RELEASE, false)
 define(_COPYRIGHT_YEAR, 2023)
 define(_COPYRIGHT_HOLDERS,[The %s developers])
 define(_COPYRIGHT_HOLDERS_SUBSTITUTION,[[Bitcoin Core and Bells Core]])
-AC_INIT([Bells Core],[_CLIENT_VERSION_MAJOR._CLIENT_VERSION_MINOR._CLIENT_VERSION_REVISION],[https://github.com/bellscoin-community/bellscoinv2/issues],[bells],[https://github.com/bellscoin-community/bellscoinv2])
+AC_INIT([Bells Core],[_CLIENT_VERSION_MAJOR._CLIENT_VERSION_MINOR._CLIENT_VERSION_REVISION],[https://github.com/luckycoin-community/luckycoinv2/issues],[bells],[https://github.com/luckycoin-community/luckycoinv2])
 AC_CONFIG_SRCDIR([src/validation.cpp])
 AC_CONFIG_HEADERS([src/config/bitcoin-config.h])
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([build-aux/m4])
 
-BITCOIN_DAEMON_NAME=bellsd
-BITCOIN_GUI_NAME=bells-qt
-BITCOIN_CLI_NAME=bells-cli
-BITCOIN_TX_NAME=bells-tx
+BITCOIN_DAEMON_NAME=luckycoind
+BITCOIN_GUI_NAME=luckycoin-qt
+BITCOIN_CLI_NAME=luckycoin-cli
+BITCOIN_TX_NAME=luckycoin-tx
 
 AC_CANONICAL_HOST
 
@@ -883,7 +883,7 @@ AC_MSG_CHECKING([whether to build bellsd])
 AM_CONDITIONAL([BUILD_BITCOIND], [test x$build_bitcoind = xyes])
 AC_MSG_RESULT($build_bitcoind)
 
-AC_MSG_CHECKING([whether to build utils (bells-cli bells-tx)])
+AC_MSG_CHECKING([whether to build utils (luckycoin-cli luckycoin-tx)])
 AM_CONDITIONAL([BUILD_BITCOIN_UTILS], [test x$build_bitcoin_utils = xyes])
 AC_MSG_RESULT($build_bitcoin_utils)
 
@@ -984,7 +984,7 @@ if test x$bitcoin_enable_qt != xno; then
     AC_MSG_WARN("xgettext is required to update qt translations")
   fi
 
-  AC_MSG_CHECKING([whether to build test_bells-qt])
+  AC_MSG_CHECKING([whether to build test_luckycoin-qt])
   if test x$use_gui_tests$bitcoin_enable_qt_test = xyesyes; then
     AC_MSG_RESULT([yes])
     BUILD_TEST_QT="yes"

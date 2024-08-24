@@ -66,11 +66,11 @@ TESTS =
 BENCHMARKS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += bellsd
+  bin_PROGRAMS += luckycoind
 endif
 
 if BUILD_BITCOIN_UTILS
-  bin_PROGRAMS += bells-cli bells-tx
+  bin_PROGRAMS += luckycoin-cli luckycoin-tx
 endif
 
 .PHONY: FORCE check-symbols check-security
@@ -372,16 +372,16 @@ nodist_libdogecoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
 # bitcoind binary #
-bellsd_SOURCES = bitcoind.cpp
-bellsd_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-bellsd_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-bellsd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+luckycoind_SOURCES = bitcoind.cpp
+luckycoind_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+luckycoind_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+luckycoind_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-bellsd_SOURCES += bitcoind-res.rc
+luckycoind_SOURCES += bitcoind-res.rc
 endif
 
-bellsd_LDADD = \
+luckycoind_LDADD = \
   $(LIBDOGECOIN_SERVER) \
   $(LIBDOGECOIN_COMMON) \
   $(LIBUNIVALUE) \
@@ -394,38 +394,38 @@ bellsd_LDADD = \
   $(LIBMEMENV) \
   $(LIBSECP256K1)
 
-bellsd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
+luckycoind_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
 
 # bitcoin-cli binary #
-bells_cli_SOURCES = bitcoin-cli.cpp
-bells_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
-bells_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-bells_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+luckycoin_cli_SOURCES = bitcoin-cli.cpp
+luckycoin_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
+luckycoin_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+luckycoin_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-bells_cli_SOURCES += bitcoin-cli-res.rc
+luckycoin_cli_SOURCES += bitcoin-cli-res.rc
 endif
 
-bells_cli_LDADD = \
+luckycoin_cli_LDADD = \
   $(LIBDOGECOIN_CLI) \
   $(LIBUNIVALUE) \
   $(LIBDOGECOIN_UTIL) \
   $(LIBDOGECOIN_CRYPTO)
 
-bells_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
+luckycoin_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
 #
 
 # bitcoin-tx binary #
-bells_tx_SOURCES = bitcoin-tx.cpp
-bells_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-bells_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-bells_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+luckycoin_tx_SOURCES = bitcoin-tx.cpp
+luckycoin_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+luckycoin_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+luckycoin_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-bells_tx_SOURCES += bitcoin-tx-res.rc
+luckycoin_tx_SOURCES += bitcoin-tx-res.rc
 endif
 
-bells_tx_LDADD = \
+luckycoin_tx_LDADD = \
   $(LIBUNIVALUE) \
   $(LIBDOGECOIN_COMMON) \
   $(LIBDOGECOIN_UTIL) \
@@ -433,7 +433,7 @@ bells_tx_LDADD = \
   $(LIBDOGECOIN_CRYPTO) \
   $(LIBSECP256K1)
 
-bells_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
+luckycoin_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
 #
 
 # bitcoinconsensus library #

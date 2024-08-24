@@ -165,7 +165,7 @@ public:
         return (nValue == -1);
     }
 
-    // bells: allow comparison against different dustlimit parameters
+    // luckycoin: allow comparison against different dustlimit parameters
     bool IsDust(const CAmount dustLimit) const
     {
       if (scriptPubKey.IsUnspendable())
@@ -279,7 +279,7 @@ class CTransaction
 {
 public:
     // Default transaction version.
-    // bells: Temporarily restricted to v1 for compatibility with 1.10
+    // luckycoin: Temporarily restricted to v1 for compatibility with 1.10
     static const int32_t CURRENT_VERSION=1;
 
     // Changing the default transaction version requires a two step process: first

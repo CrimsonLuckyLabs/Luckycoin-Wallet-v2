@@ -443,7 +443,7 @@
         <translation>Barra de pestañas</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and bells: URIs)</source>
+        <source>Request payments (generates QR codes and luckycoin: URIs)</source>
         <translation>Solicitar pagos (generando códigos QR e identificadores URI &quot;luckycoin:&quot;)</translation>
     </message>
     <message>

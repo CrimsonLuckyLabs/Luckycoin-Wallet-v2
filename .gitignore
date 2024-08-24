@@ -3,11 +3,11 @@
 *.exe
 src/luckycoin
 src/bellsd
-src/bells-cli
-src/bells-tx
+src/luckycoin-cli
+src/luckycoin-tx
 src/test/test_bells
 src/test/test_bells_fuzzy
-src/qt/test/test_bells-qt
+src/qt/test/test_luckycoin-qt
 src/bench/bench_bells
 
 # autoreconf
@@ -75,14 +75,14 @@ src/qt/test/moc*.cpp
 # Compilation and Qt preprocessor part
 *.qm
 Makefile
-bells-qt
-bells-qt
+luckycoin-qt
+luckycoin-qt
 Bitcoin-Qt.app
 
 # Unit-tests
 Makefile.test
-bells-qt_test
-bells-qt_test
+luckycoin-qt_test
+luckycoin-qt_test
 src/test/buildenv.py
 
 # Resources cpp
@@ -128,5 +128,5 @@ stage/
 *.iws
 *.iml
 *.ipr
-src/bells-cli
-src/bells-cli
+src/luckycoin-cli
+src/luckycoin-cli

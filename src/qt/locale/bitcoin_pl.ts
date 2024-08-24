@@ -435,7 +435,7 @@
         <translation>Pasek zakładek</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and bells: URIs)</source>
+        <source>Request payments (generates QR codes and luckycoin: URIs)</source>
         <translation>Żądaj płatności (generuje kod QR oraz Dogecoinowe URI)</translation>
     </message>
     <message>
@@ -447,7 +447,7 @@
         <translation>Pokaż listę adresów i etykiet użytych do odbierania</translation>
     </message>
     <message>
-        <source>Open a bells: URI or payment request</source>
+        <source>Open a luckycoin: URI or payment request</source>
         <translation>Otwórz Dogecoinowe: URI lub żądanie zapłaty</translation>
     </message>
     <message>
@@ -1661,8 +1661,8 @@ p, li { white-space: pre-wrap; }
         <translation>Błąd żądania płatności</translation>
     </message>
     <message>
-        <source>Cannot start bells: click-to-pay handler</source>
-        <translation>Nie można uruchomić protokołu bells: kliknij-by-zapłacić</translation>
+        <source>Cannot start luckycoin: click-to-pay handler</source>
+        <translation>Nie można uruchomić protokołu luckycoin: kliknij-by-zapłacić</translation>
     </message>
     <message>
         <source>URI handling</source>
@@ -2802,7 +2802,7 @@ p, li { white-space: pre-wrap; }
         <translation>Wprowadź etykietę dla tego adresu by dodać go do listy użytych adresów</translation>
     </message>
     <message>
-        <source>A message that was attached to the bells: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Dogecoin network.</source>
+        <source>A message that was attached to the luckycoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Dogecoin network.</source>
         <translation>Wiadomość, która została dołączona do URI Dogecoina, która będzie przechowywana wraz z transakcją w celach informacyjnych. Uwaga: Ta wiadomość nie będzie rozsyłana w sieci Dogecoin.</translation>
     </message>
     <message>

@@ -1,4 +1,4 @@
-### Building bells-qt 1.14 on modern macs. ###
+### Building luckycoin-qt 1.14 on modern macs. ###
 
 Note that this requires changes made by michilumin on the 1.14-dev branch as well as some changes to BDB.
 
@@ -91,7 +91,7 @@ Go have another beverage.
 
 Run it.
 
-	$/usr/local/bin/bells-qt
+	$/usr/local/bin/luckycoin-qt
 
 
 
