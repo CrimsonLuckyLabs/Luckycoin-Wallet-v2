@@ -16,7 +16,7 @@
 int static generateMTRandom(unsigned int s, int range)
 {
     boost::mt19937 gen(s);
-    boost::uniform_int_distribution<> dist(1, range);
+    boost::uniform_int<> dist(1, range);
     return dist(gen);
 }
 
