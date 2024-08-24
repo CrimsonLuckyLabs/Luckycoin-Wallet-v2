@@ -264,7 +264,6 @@ public:
         consensus.nCoinbaseMaturity = 30;
         consensus.fPowNoRetargeting = false;
 
-
         consensus.nRuleChangeActivationThreshold = 9576; // 95% of 10,080
         consensus.nMinerConfirmationWindow = 10080; // 60 * 24 * 7 = 10,080 blocks, or one week
 

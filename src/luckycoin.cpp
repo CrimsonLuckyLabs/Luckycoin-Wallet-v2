@@ -103,12 +103,20 @@ bool CheckAuxPowProofOfWork(const CBlockHeader& block, const Consensus::Params& 
 
     /* If there is no auxpow, just check the block hash.  */
     if (!block.auxpow) {
-        if (block.IsAuxpow())
+        if (block.IsAuxpow()) {
             return error("%s : no auxpow on block with auxpow version",
                          __func__);
+        }
 
-        if (!CheckProofOfWork(block.GetPoWHash(), block.nBits, params))
+        // We have to patch this because LuckyCoin genesis block is invalid.
+        if(block.GetHash() == params.hashGenesisBlock && block.IsLegacy())
+        {
+            return true;
+        }
+
+        if (!CheckProofOfWork(block.GetPoWHash(), block.nBits, params)) {
             return error("%s : non-AUX proof of work failed", __func__);
+        }
 
         return true;
     }
