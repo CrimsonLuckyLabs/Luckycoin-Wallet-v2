@@ -183,7 +183,7 @@ public:
         digishieldConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
         auxpowConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
 
-        assert(consensus.hashGenesisBlock == uint256S("0x9b7bce58999062b63bfb18586813c42491fa32f4591d8d3043cb4fa9e551541b"));
+        assert(consensus.hashGenesisBlock == uint256S("0x324635c8e36f663b0adb126a21ad0bd7fa43cc5c5f15aec992bf4dde650bc0ea"));
         assert(genesis.hashMerkleRoot == uint256S("0x6f80efd038566e1e3eab3e1d38131604d06481e77f2462235c6a9a94b1f8abf9"));
 
         // Note that of those with the service bits flag, most only support a subset of possible options
@@ -350,7 +350,7 @@ public:
         digishieldConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
         auxpowConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
 
-        assert(consensus.hashGenesisBlock == uint256S("0x9b7bce58999062b63bfb18586813c42491fa32f4591d8d3043cb4fa9e551541b"));
+        assert(consensus.hashGenesisBlock == uint256S("0x324635c8e36f663b0adb126a21ad0bd7fa43cc5c5f15aec992bf4dde650bc0ea"));
         assert(genesis.hashMerkleRoot == uint256S("0x6f80efd038566e1e3eab3e1d38131604d06481e77f2462235c6a9a94b1f8abf9"));
 
         // nodes with support for servicebits filtering should be at the top
@@ -507,7 +507,7 @@ public:
         digishieldConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
         auxpowConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
 
-        assert(consensus.hashGenesisBlock == uint256S("0x9b7bce58999062b63bfb18586813c42491fa32f4591d8d3043cb4fa9e551541b"));
+        assert(consensus.hashGenesisBlock == uint256S("0x324635c8e36f663b0adb126a21ad0bd7fa43cc5c5f15aec992bf4dde650bc0ea"));
         assert(genesis.hashMerkleRoot == uint256S("0x6f80efd038566e1e3eab3e1d38131604d06481e77f2462235c6a9a94b1f8abf9"));
 
         // nodes with support for servicebits filtering should be at the top
