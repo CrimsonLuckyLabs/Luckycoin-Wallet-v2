@@ -18,7 +18,7 @@
 
 #include "base58.h"
 #include "chainparams.h"
-#include "dogecoin-fees.h"
+#include "luckycoin-fees.h"
 #include "wallet/coincontrol.h"
 #include "validation.h" // mempool and minRelayTxFeeRate
 #include "ui_interface.h"
