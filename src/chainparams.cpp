@@ -76,7 +76,7 @@ public:
     CMainParams() {
         strNetworkID = "main";
 
-        // Not used in LuckyCoin
+        // Not used in Bells
         consensus.nSubsidyHalvingInterval = 100000;
 
         consensus.nMajorityEnforceBlockUpgrade = 1500;
@@ -181,7 +181,7 @@ public:
         nDefaultPort = 19919;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1369199888, 11288888, 0x1e0ffff0, 1, 88 * COIN);
+        genesis = CreateGenesisBlock(1383509530, 44481, 0x1e0ffff0, 1, 88 * COIN);
 
         consensus.hashGenesisBlock = genesis.GetHash();
         digishieldConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
@@ -194,8 +194,8 @@ public:
         //vSeeds.push_back(CDNSSeedData("belscan.io", "seeder.belscan.io", true));
         //vSeeds.push_back(CDNSSeedData("quark.blue", "bdnsseeder.quark.blue"));
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,47);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,25);
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,30);
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,153);
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x02)(0xfa)(0xca)(0xfd).convert_to_container<std::vector<unsigned char> >();
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x02)(0xfa)(0xc3)(0x98).convert_to_container<std::vector<unsigned char> >();
@@ -253,7 +253,7 @@ public:
     CTestNetParams() {
         strNetworkID = "test";
 
-        // Not used in LuckyCoin
+        // Not used in Bells
         consensus.nSubsidyHalvingInterval = 100000;
 
         consensus.nMajorityEnforceBlockUpgrade = 1500;
@@ -328,7 +328,7 @@ public:
         digishieldConsensus.fSimplifiedRewards = true;
         digishieldConsensus.fDigishieldDifficultyCalculation = true;
         digishieldConsensus.nPowTargetTimespan = 60; // post-digishield: 1 minute
-        digishieldConsensus.nCoinbaseMaturity = 70;
+        digishieldConsensus.nCoinbaseMaturity = 240;
 
         // Not implementing digishield yet
         minDifficultyConsensus = digishieldConsensus;
@@ -351,28 +351,28 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        pchMessageStart[0] = 0xfb;
+        pchMessageStart[0] = 0xc0;
         pchMessageStart[1] = 0xc0;
-        pchMessageStart[2] = 0xb6;
-        pchMessageStart[3] = 0xdb;
+        pchMessageStart[2] = 0xc0;
+        pchMessageStart[3] = 0xc0;
         nDefaultPort = 19919;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1369199888, 11288888, 0x1e0ffff0, 1, 88 * COIN);
+        genesis = CreateGenesisBlock(1383509530, 44481, 0x1e0ffff0, 1, 88 * COIN);
 
         consensus.hashGenesisBlock = genesis.GetHash();
         digishieldConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
         auxpowConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
 
-        //assert(consensus.hashGenesisBlock == uint256S("0xe5be24df57c43a82d15c2f06bda961296948f8f8eb48501bed1efb929afe0698"));
-        //assert(genesis.hashMerkleRoot == uint256S("0x5b2a3f53f605d62c53e62932dac6925e3d74afa5a4b459745c36d42d0ed26a69"));
+        assert(consensus.hashGenesisBlock == uint256S("0xe5be24df57c43a82d15c2f06bda961296948f8f8eb48501bed1efb929afe0698"));
+        assert(genesis.hashMerkleRoot == uint256S("0x5b2a3f53f605d62c53e62932dac6925e3d74afa5a4b459745c36d42d0ed26a69"));
 
         // Note that of those with the service bits flag, most only support a subset of possible options
         //vSeeds.push_back(CDNSSeedData("belscan.io", "seeder.belscan.io", true));
         //vSeeds.push_back(CDNSSeedData("quark.blue", "bdnsseeder.quark.blue"));
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,47);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,25);
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,30);
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,153);
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x02)(0xfa)(0xca)(0xfd).convert_to_container<std::vector<unsigned char> >();
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x02)(0xfa)(0xc3)(0x98).convert_to_container<std::vector<unsigned char> >();
@@ -429,8 +429,7 @@ private:
 public:
     CRegTestParams() {
         strNetworkID = "regtest";
-
-        // Not used in LuckyCoin
+        // Not used in Bells
         consensus.nSubsidyHalvingInterval = 100000;
 
         consensus.nMajorityEnforceBlockUpgrade = 1500;
@@ -505,7 +504,7 @@ public:
         digishieldConsensus.fSimplifiedRewards = true;
         digishieldConsensus.fDigishieldDifficultyCalculation = true;
         digishieldConsensus.nPowTargetTimespan = 60; // post-digishield: 1 minute
-        digishieldConsensus.nCoinbaseMaturity = 70;
+        digishieldConsensus.nCoinbaseMaturity = 240;
 
         // Not implementing digishield yet
         minDifficultyConsensus = digishieldConsensus;
@@ -528,28 +527,28 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        pchMessageStart[0] = 0xfb;
+        pchMessageStart[0] = 0xc0;
         pchMessageStart[1] = 0xc0;
-        pchMessageStart[2] = 0xb6;
-        pchMessageStart[3] = 0xdb;
+        pchMessageStart[2] = 0xc0;
+        pchMessageStart[3] = 0xc0;
         nDefaultPort = 19919;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1369199888, 11288888, 0x1e0ffff0, 1, 88 * COIN);
+        genesis = CreateGenesisBlock(1383509530, 44481, 0x1e0ffff0, 1, 88 * COIN);
 
         consensus.hashGenesisBlock = genesis.GetHash();
         digishieldConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
         auxpowConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
 
-        //assert(consensus.hashGenesisBlock == uint256S("0xe5be24df57c43a82d15c2f06bda961296948f8f8eb48501bed1efb929afe0698"));
-        //assert(genesis.hashMerkleRoot == uint256S("0x5b2a3f53f605d62c53e62932dac6925e3d74afa5a4b459745c36d42d0ed26a69"));
+        assert(consensus.hashGenesisBlock == uint256S("0xe5be24df57c43a82d15c2f06bda961296948f8f8eb48501bed1efb929afe0698"));
+        assert(genesis.hashMerkleRoot == uint256S("0x5b2a3f53f605d62c53e62932dac6925e3d74afa5a4b459745c36d42d0ed26a69"));
 
         // Note that of those with the service bits flag, most only support a subset of possible options
         //vSeeds.push_back(CDNSSeedData("belscan.io", "seeder.belscan.io", true));
         //vSeeds.push_back(CDNSSeedData("quark.blue", "bdnsseeder.quark.blue"));
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,47);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,25);
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,30);
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,153);
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x02)(0xfa)(0xca)(0xfd).convert_to_container<std::vector<unsigned char> >();
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x02)(0xfa)(0xc3)(0x98).convert_to_container<std::vector<unsigned char> >();
