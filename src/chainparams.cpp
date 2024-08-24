@@ -180,7 +180,7 @@ public:
         nDefaultPort = 19919;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1383509530, 44481, 0x1e0ffff0, 1, 88 * COIN);
+        genesis = CreateGenesisBlock(1383509530, 11288888, 0x1e0ffff0, 1, 88 * COIN);
 
         consensus.hashGenesisBlock = genesis.GetHash();
         digishieldConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
@@ -252,6 +252,7 @@ public:
     CTestNetParams() {
         strNetworkID = "test";
 
+        // Not used in Bells
         consensus.nSubsidyHalvingInterval = 100000;
 
         consensus.nMajorityEnforceBlockUpgrade = 1500;
@@ -267,7 +268,7 @@ public:
 
 
         consensus.powLimit = uint256S("0x00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 20;
-        consensus.nPowTargetTimespan = 4 * 60 * 60; // pre-digishield: 4 hours
+        consensus.nPowTargetTimespan = 20 * 60; // pre-digishield: 4 hours
         consensus.nPowTargetSpacing = 60; // 1 minute
         consensus.nCoinbaseMaturity = 30;
         consensus.fPowNoRetargeting = false;
@@ -281,182 +282,28 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999; // December 31, 2008
 
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP34].bit = 0;
-        consensus.vDeployments[Consensus::DEPLOYMENT_BIP34].nStartTime = 1703462400;   // 2023-12-25 00:00:00
-        consensus.vDeployments[Consensus::DEPLOYMENT_BIP34].nTimeout   = 1735084800;   // 2024-12-25 00:00:00
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP34].nStartTime = 1724494119;   // 2023-12-25 00:00:00
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP34].nTimeout   = 1734494119;   // 2024-12-25 00:00:00
 
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP66].bit = 1;
-        consensus.vDeployments[Consensus::DEPLOYMENT_BIP66].nStartTime = 1703462400;   // 2023-12-25 00:00:00
-        consensus.vDeployments[Consensus::DEPLOYMENT_BIP66].nTimeout   = 1735084800;   // 2024-12-25 18:00:00
-
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP66].nStartTime = 1724494119;   // 2023-12-25 00:00:00
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP66].nTimeout   = 1734494119;   // 2024-12-25 18:00:00
 
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP65].bit = 2;
-        consensus.vDeployments[Consensus::DEPLOYMENT_BIP65].nStartTime = 1703462400;   // 2023-12-25 00:00:00
-        consensus.vDeployments[Consensus::DEPLOYMENT_BIP65].nTimeout   = 1735084800;   // 2024-12-25 18:00:00
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP65].nStartTime = 1724494119;   // 2023-12-25 00:00:00
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP65].nTimeout   = 1734494119;   // 2024-12-25 18:00:00
 
 
         // Deployment of BIP68, BIP112, and BIP113.
-        // XXX: BIP heights and hashes all need to be updated to LuckyCoin values
+        // XXX: BIP heights and hashes all need to be updated to Bells values
         consensus.vDeployments[Consensus::DEPLOYMENT_CSV].bit = 3;
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1703462400; // 2023-12-25 00:00:00
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 1735084800;   // 2024-12-25 18:00:00
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1724494119; // 2023-12-25 00:00:00
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 1734494119;   // 2024-12-25 18:00:00
 
         // Deployment of SegWit (BIP141, BIP143, and BIP147)
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].bit = 4;
-        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nStartTime = 1703462400; // 2023-12-25 00:00:00
-        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1735084800;   // 2024-12-25 18:00:00
-
-        // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000003e3c33bc605e5d"); // 4,303,965
-
-        // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x9b7bce58999062b63bfb18586813c42491fa32f4591d8d3043cb4fa9e551541b"); // 10000
-
-        // AuxPoW parameters
-        consensus.nAuxpowChainId = 0x0062; // 98 - Josh Wise!
-        consensus.fStrictChainId = true;
-        consensus.fAllowLegacyBlocks = true;
-
-        // We do not activate digishield in this consensus
-        digishieldConsensus = consensus;
-
-        digishieldConsensus.nHeightEffective = 0xFFFFFFFF; // like never
-
-        digishieldConsensus.fSimplifiedRewards = true;
-        digishieldConsensus.fDigishieldDifficultyCalculation = true;
-        digishieldConsensus.nPowTargetTimespan = 60; // post-digishield: 1 minute
-        digishieldConsensus.nCoinbaseMaturity = 240;
-
-        // Not implementing digishield yet
-        minDifficultyConsensus = digishieldConsensus;
-        minDifficultyConsensus.nHeightEffective = std::numeric_limits<uint32_t>::max();;
-        minDifficultyConsensus.fPowAllowDigishieldMinDifficultyBlocks = true;
-        minDifficultyConsensus.fPowAllowMinDifficultyBlocks = true;
-
-        // Not implementing AuxPow hardfork yet
-        auxpowConsensus = digishieldConsensus;
-        auxpowConsensus.nHeightEffective = std::numeric_limits<uint32_t>::max();
-        auxpowConsensus.fAllowLegacyBlocks = true;
-
-        // Assemble the binary search tree of consensus parameters
-        pConsensusRoot = &digishieldConsensus;
-        digishieldConsensus.pLeft = &consensus;
-        digishieldConsensus.pRight = &auxpowConsensus;
-
-        pchMessageStart[0] = 0xfc;
-        pchMessageStart[1] = 0xc1;
-        pchMessageStart[2] = 0xb7;
-        pchMessageStart[3] = 0xdc;
-
-        nDefaultPort = 29919;
-        nPruneAfterHeight = 100000;
-
-        genesis = CreateGenesisBlock(1369199888, 11288888, 0x1e0ffff0, 1, 88 * COIN);
-
-        consensus.hashGenesisBlock = genesis.GetHash();
-        digishieldConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
-        auxpowConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
-
-        //assert(consensus.hashGenesisBlock == uint256S("0x9b7bce58999062b63bfb18586813c42491fa32f4591d8d3043cb4fa9e551541b"));
-        //assert(genesis.hashMerkleRoot == uint256S("0x6f80efd038566e1e3eab3e1d38131604d06481e77f2462235c6a9a94b1f8abf9"));
-
-        // nodes with support for servicebits filtering should be at the top
-        //vSeeds.push_back(CDNSSeedData("belscan.io", "testnetseed.belscan.io", true));
-        //vSeeds.push_back(CDNSSeedData("belscan.io", "testnetseeder.belscan.io", true));
-
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,47);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,153);
-        base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x02)(0xfa)(0xca)(0xfd).convert_to_container<std::vector<unsigned char> >();
-        base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x02)(0xfa)(0xc3)(0x98).convert_to_container<std::vector<unsigned char> >();
-
-        vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
-
-        fMiningRequiresPeers = false;
-        fDefaultConsistencyChecks = true;
-        fRequireStandard = false;
-        fMineBlocksOnDemand = true;
-
-        checkpointData = (CCheckpointData) {
-                boost::assign::map_list_of
-                        (      0, uint256S("0x9b7bce58999062b63bfb18586813c42491fa32f4591d8d3043cb4fa9e551541b"))
-        };
-
-        chainTxData = ChainTxData{
-                // Data as of block ed7d266dcbd8bb8af80f9ccb8deb3e18f9cc3f6972912680feeb37b090f8cee0 (height 4303965).
-                // Tx estimate based on average between 2021-07-01 (3793538) and 2022-07-01 (4288126)
-                0, // * UNIX timestamp of last checkpoint block
-                0,   // * total number of transactions between genesis and last checkpoint
-                //   (the tx=... number in the SetBestChain debug.log lines)
-                0        // * estimated number of transactions per second after checkpoint
-        };
-    }
-};
-static CTestNetParams testNetParams;
-
-/**
- * Regression test
- */
-class CRegTestParams : public CChainParams {
-private:
-    Consensus::Params digishieldConsensus;
-    Consensus::Params auxpowConsensus;
-    Consensus::Params minDifficultyConsensus;
-public:
-    CRegTestParams() {
-        strNetworkID = "regtest";
-        // Not used in LuckyCoin
-        consensus.nSubsidyHalvingInterval = 100000;
-
-        consensus.nMajorityEnforceBlockUpgrade = 1500;
-        consensus.nMajorityRejectBlockOutdated = 1900;
-        consensus.nMajorityWindow = 2000;
-
-
-        // After deployments are activated we can change it
-        consensus.BIP34Hash = uint256S("0x00"); // unused for now.
-        consensus.BIP65Height = 99999999;
-        consensus.BIP65Height = 99999999;
-        consensus.BIP66Height = 99999999;
-
-
-        consensus.powLimit = uint256S("0x00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 20;
-        consensus.nPowTargetTimespan = 4 * 60 * 60; // pre-digishield: 4 hours
-        consensus.nPowTargetSpacing = 60; // 1 minute
-        consensus.nCoinbaseMaturity = 30;
-        consensus.fPowNoRetargeting = false;
-
-
-        consensus.nRuleChangeActivationThreshold = 9576; // 95% of 10,080
-        consensus.nMinerConfirmationWindow = 10080; // 60 * 24 * 7 = 10,080 blocks, or one week
-
-        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
-        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1199145601; // January 1, 2008
-        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999; // December 31, 2008
-
-        consensus.vDeployments[Consensus::DEPLOYMENT_BIP34].bit = 0;
-        consensus.vDeployments[Consensus::DEPLOYMENT_BIP34].nStartTime = 1703462400;   // 2023-12-25 00:00:00
-        consensus.vDeployments[Consensus::DEPLOYMENT_BIP34].nTimeout   = 1735084800;   // 2024-12-25 00:00:00
-
-        consensus.vDeployments[Consensus::DEPLOYMENT_BIP66].bit = 1;
-        consensus.vDeployments[Consensus::DEPLOYMENT_BIP66].nStartTime = 1703462400;   // 2023-12-25 00:00:00
-        consensus.vDeployments[Consensus::DEPLOYMENT_BIP66].nTimeout   = 1735084800;   // 2024-12-25 18:00:00
-
-
-        consensus.vDeployments[Consensus::DEPLOYMENT_BIP65].bit = 2;
-        consensus.vDeployments[Consensus::DEPLOYMENT_BIP65].nStartTime = 1703462400;   // 2023-12-25 00:00:00
-        consensus.vDeployments[Consensus::DEPLOYMENT_BIP65].nTimeout   = 1735084800;   // 2024-12-25 18:00:00
-
-
-        // Deployment of BIP68, BIP112, and BIP113.
-        // XXX: BIP heights and hashes all need to be updated to LuckyCoin values
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].bit = 3;
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1703462400; // 2023-12-25 00:00:00
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 1735084800;   // 2024-12-25 18:00:00
-
-        // Deployment of SegWit (BIP141, BIP143, and BIP147)
-        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].bit = 4;
-        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nStartTime = 1703462400; // 2023-12-25 00:00:00
-        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1735084800;   // 2024-12-25 18:00:00
+        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nStartTime = 1724494119; // 2023-12-25 00:00:00
+        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1734494119;   // 2024-12-25 18:00:00
 
         // The best chain should have at least this much work.
         consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000003e3c33bc605e5d"); // 4,303,965
@@ -465,8 +312,10 @@ public:
         consensus.defaultAssumeValid = uint256S("0x2c05ea6918e28ca2d216c6518940c8782c09bebfe705d792155465662e275351"); // 10000
 
         // AuxPoW parameters
-        consensus.nAuxpowChainId = 0x0062; // 98 - Josh Wise!
-        consensus.fStrictChainId = true;
+
+        consensus.nAuxpowChainId = 0x2000; // 8192
+        consensus.fStrictChainId = false;  // we set this to false as block is nonAuxPow
+
         consensus.fAllowLegacyBlocks = true;
 
         // We do not activate digishield in this consensus
@@ -477,7 +326,7 @@ public:
         digishieldConsensus.fSimplifiedRewards = true;
         digishieldConsensus.fDigishieldDifficultyCalculation = true;
         digishieldConsensus.nPowTargetTimespan = 60; // post-digishield: 1 minute
-        digishieldConsensus.nCoinbaseMaturity = 240;
+        digishieldConsensus.nCoinbaseMaturity = 70;
 
         // Not implementing digishield yet
         minDifficultyConsensus = digishieldConsensus;
@@ -507,18 +356,18 @@ public:
         nDefaultPort = 19919;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1369199888, 11288888, 0x1e0ffff0, 1, 88 * COIN);
+        genesis = CreateGenesisBlock(1383509530, 11288888, 0x1e0ffff0, 1, 88 * COIN);
 
         consensus.hashGenesisBlock = genesis.GetHash();
         digishieldConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
         auxpowConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
 
-        //assert(consensus.hashGenesisBlock == uint256S("0x9b7bce58999062b63bfb18586813c42491fa32f4591d8d3043cb4fa9e551541b"));
-        //assert(genesis.hashMerkleRoot == uint256S("0x6f80efd038566e1e3eab3e1d38131604d06481e77f2462235c6a9a94b1f8abf9"));
+        //assert(consensus.hashGenesisBlock == uint256S("0xe5be24df57c43a82d15c2f06bda961296948f8f8eb48501bed1efb929afe0698"));
+        //assert(genesis.hashMerkleRoot == uint256S("0x5b2a3f53f605d62c53e62932dac6925e3d74afa5a4b459745c36d42d0ed26a69"));
 
-        // nodes with support for servicebits filtering should be at the top
-        //vSeeds.push_back(CDNSSeedData("belscan.io", "testnetseed.belscan.io", true));
-        //vSeeds.push_back(CDNSSeedData("belscan.io", "testnetseeder.belscan.io", true));
+        // Note that of those with the service bits flag, most only support a subset of possible options
+        //vSeeds.push_back(CDNSSeedData("belscan.io", "seeder.belscan.io", true));
+        //vSeeds.push_back(CDNSSeedData("quark.blue", "bdnsseeder.quark.blue"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,47);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
@@ -528,20 +377,216 @@ public:
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
 
-        fMiningRequiresPeers = false;
-        fDefaultConsistencyChecks = true;
-        fRequireStandard = false;
-        fMineBlocksOnDemand = true;
+        fMiningRequiresPeers = true;
+        fDefaultConsistencyChecks = false;
+        fRequireStandard = true;
+        fMineBlocksOnDemand = false;
 
-        checkpointData = (CCheckpointData){
+        /*checkpointData = (CCheckpointData) {
                 boost::assign::map_list_of
-                        ( 0, uint256S("0x9b7bce58999062b63bfb18586813c42491fa32f4591d8d3043cb4fa9e551541b"))
+                        (      0, uint256S("0x1a91e3dace36e2be3bf030a65679fe821aa1d6ef92e7c9902eb318182c355691"))
+                        ( 14000, uint256S("0x0f3bec6968ad87171063c28f696f133c0e4bdf3a0bd56d369be658367dd21ee9"))
         };
 
         chainTxData = ChainTxData{
-                0,
-                0,
-                0
+                // Data as of block ed7d266dcbd8bb8af80f9ccb8deb3e18f9cc3f6972912680feeb37b090f8cee0 (height 4303965).
+                // Tx estimate based on average between 2021-07-01 (3793538) and 2022-07-01 (4288126)
+                1702700138, // * UNIX timestamp of last checkpoint block
+                15423,   // * total number of transactions between genesis and last checkpoint
+                //   (the tx=... number in the SetBestChain debug.log lines)
+                0.1        // * estimated number of transactions per second after checkpoint
+        };*/
+
+        checkpointData = (CCheckpointData) {
+                boost::assign::map_list_of
+                        (      0, uint256S("0xe5be24df57c43a82d15c2f06bda961296948f8f8eb48501bed1efb929afe0698"))
+                        (   1000, uint256S("0x35668ee4f0fc1334849813c8a8e583814e9b22bfe5dc5a2bd2ded2b3aeec6643"))
+                        (  10000, uint256S("0x2c05ea6918e28ca2d216c6518940c8782c09bebfe705d792155465662e275351"))
+        };
+
+        chainTxData = ChainTxData{
+                // Data as of block ed7d266dcbd8bb8af80f9ccb8deb3e18f9cc3f6972912680feeb37b090f8cee0 (height 4303965).
+                // Tx estimate based on average between 2021-07-01 (3793538) and 2022-07-01 (4288126)
+                0, // * UNIX timestamp of last checkpoint block
+                0,   // * total number of transactions between genesis and last checkpoint
+                //   (the tx=... number in the SetBestChain debug.log lines)
+                0        // * estimated number of transactions per second after checkpoint
+        };
+    }
+};
+static CTestNetParams testNetParams;
+
+/**
+ * Regression test
+ */
+class CRegTestParams : public CChainParams {
+private:
+    Consensus::Params digishieldConsensus;
+    Consensus::Params auxpowConsensus;
+    Consensus::Params minDifficultyConsensus;
+public:
+    CRegTestParams() {
+        strNetworkID = "regtest";
+
+        // Not used in Bells
+        consensus.nSubsidyHalvingInterval = 100000;
+
+        consensus.nMajorityEnforceBlockUpgrade = 1500;
+        consensus.nMajorityRejectBlockOutdated = 1900;
+        consensus.nMajorityWindow = 2000;
+
+
+        // After deployments are activated we can change it
+        consensus.BIP34Hash = uint256S("0x00"); // unused for now.
+        consensus.BIP65Height = 99999999;
+        consensus.BIP65Height = 99999999;
+        consensus.BIP66Height = 99999999;
+
+
+        consensus.powLimit = uint256S("0x00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 20;
+        consensus.nPowTargetTimespan = 20 * 60; // pre-digishield: 4 hours
+        consensus.nPowTargetSpacing = 60; // 1 minute
+        consensus.nCoinbaseMaturity = 30;
+        consensus.fPowNoRetargeting = false;
+
+
+        consensus.nRuleChangeActivationThreshold = 9576; // 95% of 10,080
+        consensus.nMinerConfirmationWindow = 10080; // 60 * 24 * 7 = 10,080 blocks, or one week
+
+        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
+        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1199145601; // January 1, 2008
+        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999; // December 31, 2008
+
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP34].bit = 0;
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP34].nStartTime = 1724494119;   // 2023-12-25 00:00:00
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP34].nTimeout   = 1734494119;   // 2024-12-25 00:00:00
+
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP66].bit = 1;
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP66].nStartTime = 1724494119;   // 2023-12-25 00:00:00
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP66].nTimeout   = 1734494119;   // 2024-12-25 18:00:00
+
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP65].bit = 2;
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP65].nStartTime = 1724494119;   // 2023-12-25 00:00:00
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP65].nTimeout   = 1734494119;   // 2024-12-25 18:00:00
+
+
+        // Deployment of BIP68, BIP112, and BIP113.
+        // XXX: BIP heights and hashes all need to be updated to Bells values
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].bit = 3;
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1724494119; // 2023-12-25 00:00:00
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 1734494119;   // 2024-12-25 18:00:00
+
+        // Deployment of SegWit (BIP141, BIP143, and BIP147)
+        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].bit = 4;
+        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nStartTime = 1724494119; // 2023-12-25 00:00:00
+        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1734494119;   // 2024-12-25 18:00:00
+
+        // The best chain should have at least this much work.
+        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000003e3c33bc605e5d"); // 4,303,965
+
+        // By default assume that the signatures in ancestors of this block are valid.
+        consensus.defaultAssumeValid = uint256S("0x2c05ea6918e28ca2d216c6518940c8782c09bebfe705d792155465662e275351"); // 10000
+
+        // AuxPoW parameters
+
+        consensus.nAuxpowChainId = 0x2000; // 8192
+        consensus.fStrictChainId = false;  // we set this to false as block is nonAuxPow
+
+        consensus.fAllowLegacyBlocks = true;
+
+        // We do not activate digishield in this consensus
+        digishieldConsensus = consensus;
+
+        digishieldConsensus.nHeightEffective = 0xFFFFFFFF; // like never
+
+        digishieldConsensus.fSimplifiedRewards = true;
+        digishieldConsensus.fDigishieldDifficultyCalculation = true;
+        digishieldConsensus.nPowTargetTimespan = 60; // post-digishield: 1 minute
+        digishieldConsensus.nCoinbaseMaturity = 70;
+
+        // Not implementing digishield yet
+        minDifficultyConsensus = digishieldConsensus;
+        minDifficultyConsensus.nHeightEffective = std::numeric_limits<uint32_t>::max();;
+        minDifficultyConsensus.fPowAllowDigishieldMinDifficultyBlocks = true;
+        minDifficultyConsensus.fPowAllowMinDifficultyBlocks = true;
+
+        // Not implementing AuxPow hardfork yet
+        auxpowConsensus = digishieldConsensus;
+        auxpowConsensus.nHeightEffective = std::numeric_limits<uint32_t>::max();
+        auxpowConsensus.fAllowLegacyBlocks = false;
+
+        // Assemble the binary search tree of consensus parameters
+        pConsensusRoot = &digishieldConsensus;
+        digishieldConsensus.pLeft = &consensus;
+        digishieldConsensus.pRight = &auxpowConsensus;
+
+        /**
+         * The message start string is designed to be unlikely to occur in normal data.
+         * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
+         * a large 32-bit integer with any alignment.
+         */
+        pchMessageStart[0] = 0xc0;
+        pchMessageStart[1] = 0xc0;
+        pchMessageStart[2] = 0xc0;
+        pchMessageStart[3] = 0xc0;
+        nDefaultPort = 19919;
+        nPruneAfterHeight = 100000;
+
+        genesis = CreateGenesisBlock(1383509530, 11288888, 0x1e0ffff0, 1, 88 * COIN);
+
+        consensus.hashGenesisBlock = genesis.GetHash();
+        digishieldConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
+        auxpowConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
+
+        //assert(consensus.hashGenesisBlock == uint256S("0xe5be24df57c43a82d15c2f06bda961296948f8f8eb48501bed1efb929afe0698"));
+        //assert(genesis.hashMerkleRoot == uint256S("0x5b2a3f53f605d62c53e62932dac6925e3d74afa5a4b459745c36d42d0ed26a69"));
+
+        // Note that of those with the service bits flag, most only support a subset of possible options
+        //vSeeds.push_back(CDNSSeedData("belscan.io", "seeder.belscan.io", true));
+        //vSeeds.push_back(CDNSSeedData("quark.blue", "bdnsseeder.quark.blue"));
+
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,47);
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
+        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,153);
+        base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x02)(0xfa)(0xca)(0xfd).convert_to_container<std::vector<unsigned char> >();
+        base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x02)(0xfa)(0xc3)(0x98).convert_to_container<std::vector<unsigned char> >();
+
+        vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
+
+        fMiningRequiresPeers = true;
+        fDefaultConsistencyChecks = false;
+        fRequireStandard = true;
+        fMineBlocksOnDemand = false;
+
+        /*checkpointData = (CCheckpointData) {
+                boost::assign::map_list_of
+                        (      0, uint256S("0x1a91e3dace36e2be3bf030a65679fe821aa1d6ef92e7c9902eb318182c355691"))
+                        ( 14000, uint256S("0x0f3bec6968ad87171063c28f696f133c0e4bdf3a0bd56d369be658367dd21ee9"))
+        };
+
+        chainTxData = ChainTxData{
+                // Data as of block ed7d266dcbd8bb8af80f9ccb8deb3e18f9cc3f6972912680feeb37b090f8cee0 (height 4303965).
+                // Tx estimate based on average between 2021-07-01 (3793538) and 2022-07-01 (4288126)
+                1702700138, // * UNIX timestamp of last checkpoint block
+                15423,   // * total number of transactions between genesis and last checkpoint
+                //   (the tx=... number in the SetBestChain debug.log lines)
+                0.1        // * estimated number of transactions per second after checkpoint
+        };*/
+
+        checkpointData = (CCheckpointData) {
+                boost::assign::map_list_of
+                        (      0, uint256S("0xe5be24df57c43a82d15c2f06bda961296948f8f8eb48501bed1efb929afe0698"))
+                        (   1000, uint256S("0x35668ee4f0fc1334849813c8a8e583814e9b22bfe5dc5a2bd2ded2b3aeec6643"))
+                        (  10000, uint256S("0x2c05ea6918e28ca2d216c6518940c8782c09bebfe705d792155465662e275351"))
+        };
+
+        chainTxData = ChainTxData{
+                // Data as of block ed7d266dcbd8bb8af80f9ccb8deb3e18f9cc3f6972912680feeb37b090f8cee0 (height 4303965).
+                // Tx estimate based on average between 2021-07-01 (3793538) and 2022-07-01 (4288126)
+                0, // * UNIX timestamp of last checkpoint block
+                0,   // * total number of transactions between genesis and last checkpoint
+                //   (the tx=... number in the SetBestChain debug.log lines)
+                0        // * estimated number of transactions per second after checkpoint
         };
     }
 
