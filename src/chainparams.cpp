@@ -103,29 +103,29 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999; // December 31, 2008
 
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP34].bit = 0;
-        consensus.vDeployments[Consensus::DEPLOYMENT_BIP34].nStartTime = 1703462400;   // 2023-12-25 00:00:00
-        consensus.vDeployments[Consensus::DEPLOYMENT_BIP34].nTimeout   = 1735084800;   // 2024-12-25 00:00:00
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP34].nStartTime = 1734490155;   // 2023-12-25 00:00:00
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP34].nTimeout   = 1744490155;   // 2024-12-25 00:00:00
 
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP66].bit = 1;
-        consensus.vDeployments[Consensus::DEPLOYMENT_BIP66].nStartTime = 1703462400;   // 2023-12-25 00:00:00
-        consensus.vDeployments[Consensus::DEPLOYMENT_BIP66].nTimeout   = 1735084800;   // 2024-12-25 18:00:00
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP66].nStartTime = 1734490155;   // 2023-12-25 00:00:00
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP66].nTimeout   = 1744490155;   // 2024-12-25 18:00:00
 
 
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP65].bit = 2;
-        consensus.vDeployments[Consensus::DEPLOYMENT_BIP65].nStartTime = 1703462400;   // 2023-12-25 00:00:00
-        consensus.vDeployments[Consensus::DEPLOYMENT_BIP65].nTimeout   = 1735084800;   // 2024-12-25 18:00:00
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP65].nStartTime = 1734490155;   // 2023-12-25 00:00:00
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP65].nTimeout   = 1744490155;   // 2024-12-25 18:00:00
 
 
         // Deployment of BIP68, BIP112, and BIP113.
         // XXX: BIP heights and hashes all need to be updated to LuckyCoin values
         consensus.vDeployments[Consensus::DEPLOYMENT_CSV].bit = 3;
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1703462400; // 2023-12-25 00:00:00
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 1735084800;   // 2024-12-25 18:00:00
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1734490155; // 2023-12-25 00:00:00
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 1744490155;   // 2024-12-25 18:00:00
 
         // Deployment of SegWit (BIP141, BIP143, and BIP147)
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].bit = 4;
-        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nStartTime = 1703462400; // 2023-12-25 00:00:00
-        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1735084800;   // 2024-12-25 18:00:00
+        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nStartTime = 1734490155; // 2023-12-25 00:00:00
+        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1744490155;   // 2024-12-25 18:00:00
 
         // The best chain should have at least this much work.
         consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000000000"); // 4,303,965
