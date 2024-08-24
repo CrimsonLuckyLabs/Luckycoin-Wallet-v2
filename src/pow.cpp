@@ -123,14 +123,12 @@ bool CheckProofOfWork(uint256 hash, unsigned int nBits, const Consensus::Params&
 
     // Check range
     if (fNegative || bnTarget == 0 || fOverflow || bnTarget > UintToArith256(params.powLimit)) {
-        LogPrintf("Check range");
-
         return false;
     }
 
     // Check proof of work matches claimed amount
     if (UintToArith256(hash) > bnTarget) {
-        LogPrintf("Check proof of work matches claimed amount");
+        LogPrintf("WARN: Check proof of work matches claimed amount %s > %s\n", UintToArith256(hash).ToString().c_str(), bnTarget.ToString().c_str());
         return false;
     }
 
