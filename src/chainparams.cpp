@@ -84,7 +84,7 @@ public:
         consensus.nMajorityWindow = 2000;
 
         // After deployments are activated we can change it
-        consensus.BIP34Hash = uint256S("0x9b7bce58999062b63bfb18586813c42491fa32f4591d8d3043cb4fa9e551541b");
+        consensus.BIP34Hash = uint256S("0x00");
         consensus.BIP65Height = 0xFFFFFFFF;
         consensus.BIP65Height = 0xFFFFFFFF;
         consensus.BIP66Height = 0xFFFFFFFF;

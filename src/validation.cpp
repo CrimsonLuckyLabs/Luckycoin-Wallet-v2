@@ -2267,7 +2267,7 @@ bool static DisconnectTip(CValidationState& state, const CChainParams& chainpara
     // Read block from disk.
     CBlock block;
     if (!ReadBlockFromDisk(block, pindexDelete, chainparams.GetConsensus(chainActive.Height())))
-        return AbortNode(state, "Failed to read block");
+        return AbortNode(state, "Failed to read block (A)");
     // Apply the block atomically to the chain state.
     int64_t nStart = GetTimeMicros();
     {
@@ -2344,7 +2344,7 @@ bool static ConnectTip(CValidationState& state, const CChainParams& chainparams,
         std::shared_ptr<CBlock> pblockNew = std::make_shared<CBlock>();
         connectTrace.blocksConnected.emplace_back(pindexNew, pblockNew);
         if (!ReadBlockFromDisk(*pblockNew, pindexNew, chainparams.GetConsensus(pindexNew->nHeight)))
-            return AbortNode(state, "Failed to read block");
+            return AbortNode(state, "Failed to read block (B)");
     } else {
         connectTrace.blocksConnected.emplace_back(pindexNew, pblock);
     }
