@@ -1238,8 +1238,10 @@ bool IsInitialBlockDownload()
         return true;
     if (chainActive.Tip() == NULL)
         return true;
-    if (chainActive.Tip()->nChainWork < UintToArith256(chainParams.GetConsensus(chainActive.Height()).nMinimumChainWork))
+    if (chainActive.Tip()->nChainWork < UintToArith256(chainParams.GetConsensus(chainActive.Height()).nMinimumChainWork)) {
+        printf("chainActive.Tip()->nChainWork: %s is at %s\n", chainActive.Tip()->nChainWork.GetHex().c_str(), UintToArith256(chainParams.GetConsensus(chainActive.Height()).nMinimumChainWork).GetHex().c_str());
         return true;
+    }
     if (chainActive.Tip()->GetBlockTime() < (GetTime() - nMaxTipAge))
         return true;
     latchToFalse.store(true, std::memory_order_relaxed);
