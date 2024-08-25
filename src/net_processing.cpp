@@ -2033,7 +2033,7 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
 
         std::list<CTransactionRef> lRemovedTxn;
 
-        printf("MissingInputs %d\n", MissingInputs);
+        printf("MissingInputs %d\n", fMissingInputs);
 
         if (!AlreadyHave(inv) && AcceptToMemoryPool(mempool, state, ptx, true, &fMissingInputs, &lRemovedTxn)) {
             printf("ok\n");
