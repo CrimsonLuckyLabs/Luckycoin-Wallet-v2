@@ -891,6 +891,8 @@ bool EvalScript(vector<vector<unsigned char> >& stack, const CScript& script, un
                     CScript scriptCode(pbegincodehash, pend);
 
                     // Drop the signature in pre-segwit scripts but not segwit scripts
+                    printf("Version %d - flags %d", sigversion, flags);
+
                     if (sigversion == SIGVERSION_BASE) {
                         scriptCode.FindAndDelete(CScript(vchSig));
                     }
