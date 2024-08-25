@@ -50,7 +50,7 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
     // Only change once per difficulty adjustment interval
     bool fNewDifficultyProtocol = (pindexLast->nHeight+1 >= 69360);
 
-    const int64_t nTargetTimespanCurrent = fNewDifficultyProtocol ? params.nPowTargetTimespan : (params.nTargetTimespan*12);
+    const int64_t nTargetTimespanCurrent = fNewDifficultyProtocol ? params.nPowTargetTimespan : (params.nPowTargetTimespan*12);
     const int64_t difficultyAdjustmentInterval = nTargetTimespanCurrent / params.nPowTargetSpacing;
 
     //const int64_t difficultyAdjustmentInterval = fNewDifficultyProtocol
