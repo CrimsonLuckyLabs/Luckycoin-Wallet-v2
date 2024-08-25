@@ -2945,6 +2945,7 @@ bool ProcessMessages(CNode* pfrom, CConnman& connman, const std::atomic<bool>& i
         msg.SetVersion(pfrom->GetRecvVersion());
         // Scan for message start
         if (memcmp(msg.hdr.pchMessageStart, chainparams.MessageStart(), CMessageHeader::MESSAGE_START_SIZE) != 0) {
+            printf("%s - %s", msg.hdr.pchMessageStart, chainparams.MessageStart());
             LogPrintf("PROCESSMESSAGE: INVALID MESSAGESTART %s peer=%d\n", SanitizeString(msg.hdr.GetCommand()), pfrom->id);
             pfrom->fDisconnect = true;
             return false;
