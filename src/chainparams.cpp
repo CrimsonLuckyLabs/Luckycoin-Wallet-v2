@@ -92,7 +92,7 @@ public:
         consensus.powLimit = uint256S("0x00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 20;
         consensus.nPowTargetTimespan = 20 * 60; // pre-digishield: 20 minutes
         consensus.nPowTargetSpacing = 60; // 1 minute
-        consensus.nCoinbaseMaturity = 70;
+        consensus.nCoinbaseMaturity = 90;
         consensus.fPowNoRetargeting = false;
 
         consensus.nRuleChangeActivationThreshold = 9576; // 95% of 10,080
