@@ -176,7 +176,7 @@ bool static IsLowDERSignature(const valtype &vchSig, ScriptError* serror) {
     if (!IsValidSignatureEncoding(vchSig)) {
         return set_error(serror, SCRIPT_ERR_SIG_DER);
     }
-    //std::vector<unsigned char> vchSigCopy(vchSig.begin(), vchSig.begin() + vchSig.size() - 1);
+    std::vector<unsigned char> vchSigCopy(vchSig.begin(), vchSig.begin() + vchSig.size() - 1);
     //if (!CPubKey::CheckLowS(vchSigCopy)) {
     //    return set_error(serror, SCRIPT_ERR_SIG_HIGH_S);
     //}
