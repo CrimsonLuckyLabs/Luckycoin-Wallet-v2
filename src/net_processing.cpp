@@ -2010,7 +2010,7 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
             return true;
         }
 
-        printl("ok a\n");
+        printf("ok a\n");
 
         std::deque<COutPoint> vWorkQueue;
         std::vector<uint256> vEraseQueue;
@@ -2033,10 +2033,10 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
 
         std::list<CTransactionRef> lRemovedTxn;
 
-        printl("MissingInputs %d\n", MissingInputs);
+        printf("MissingInputs %d\n", MissingInputs);
 
         if (!AlreadyHave(inv) && AcceptToMemoryPool(mempool, state, ptx, true, &fMissingInputs, &lRemovedTxn)) {
-            printl("ok\n");
+            printf("ok\n");
 
             mempool.check(pcoinsTip);
             RelayTransaction(tx, connman);
@@ -2122,7 +2122,7 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
                 }
             }
             if (!fRejectedParents) {
-                printl("fRejectedParents\n");
+                printf("fRejectedParents\n");
                 uint32_t nFetchFlags = GetFetchFlags(pfrom, chainActive.Tip(), chainparams.GetConsensus(chainActive.Height()));
                 int64_t current_time = GetMockableTimeMicros();
 
@@ -2145,7 +2145,7 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
                 recentRejects->insert(tx.GetHash());
             }
         } else {
-            printl("CorruptionPossible\n");
+            printf("CorruptionPossible\n");
             if (!tx.HasWitness() && !state.CorruptionPossible()) {
                 // Do not use rejection cache for witness transactions or
                 // witness-stripped transactions, as they can have been malleated.
