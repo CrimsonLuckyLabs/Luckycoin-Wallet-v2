@@ -2957,7 +2957,7 @@ bool CheckBlockHeader(const CBlockHeader& block, CValidationState& state, bool f
     // knowing the previous block), but that's okay, as the checks done are permissive
     // (i.e. doesn't check work limit or whether AuxPoW is enabled)
 
-    LogPrintf("Block ChainId: %d nVersion %d ", block.GetChainId(), block.GetBaseVersion());
+    //LogPrintf("Block ChainId: %d nVersion %d ", block.GetChainId(), block.GetBaseVersion());
 
     if (fCheckPOW && !CheckAuxPowProofOfWork(block, Params().GetConsensus(0)))
         return state.DoS(50, false, REJECT_INVALID, "high-hash", false, "proof of work failed");
@@ -3126,8 +3126,10 @@ bool ContextualCheckBlockHeader(const CBlockHeader& block, CValidationState& sta
                          REJECT_INVALID, "early-auxpow-block");
 
     // Check proof of work
-    if (block.nBits != GetNextWorkRequired(pindexPrev, &block, consensusParams))
+    if (block.nBits != GetNextWorkRequired(pindexPrev, &block, consensusParams)) {
+        printf("block.nBits: %d, GetNextWorkRequired: %d\n", block.nBits, GetNextWorkRequired(pindexPrev, &block, consensusParams));
         return state.DoS(100, false, REJECT_INVALID, "bad-diffbits", false, "incorrect proof of work");
+    }
 
     // Check timestamp against prev
     if (block.GetBlockTime() <= pindexPrev->GetMedianTimePast())
