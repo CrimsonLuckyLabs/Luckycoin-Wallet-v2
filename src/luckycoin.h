@@ -11,7 +11,7 @@ bool AllowDigishieldMinDifficultyForBlock(const CBlockIndex* pindexLast, const C
 
 CAmount GetDogecoinBlockSubsidy(int nHeight, int nFees, const Consensus::Params& consensusParams, uint256 prevHash);
 
-unsigned int CalculateDogecoinNextWorkRequired(const CBlockIndex* pindexLast, int64_t nLastRetargetTime, const Consensus::Params& params);
+unsigned int CalculateDogecoinNextWorkRequired(bool fNewDifficultyProtocol, const int64_t nTargetTimespanCurrent, const CBlockIndex* pindexLast, int64_t nLastRetargetTime, const Consensus::Params& params);
 
 /**
  * Check proof-of-work of a block header, taking auxpow into account.

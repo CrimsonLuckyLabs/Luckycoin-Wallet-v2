@@ -39,16 +39,45 @@ bool AllowDigishieldMinDifficultyForBlock(const CBlockIndex* pindexLast, const C
     return (pblock->GetBlockTime() > pindexLast->GetBlockTime() + params.nPowTargetSpacing*2);
 }
 
-unsigned int CalculateDogecoinNextWorkRequired(const CBlockIndex* pindexLast, int64_t nFirstBlockTime, const Consensus::Params& params)
+unsigned int CalculateDogecoinNextWorkRequired(bool fNewDifficultyProtocol, const int64_t nTargetTimespanCurrent, const CBlockIndex* pindexLast, int64_t nFirstBlockTime, const Consensus::Params& params)
 {
     int nHeight = pindexLast->nHeight + 1;
-    const int64_t retargetTimespan = params.nPowTargetTimespan;
-    const int64_t nActualTimespan = pindexLast->GetBlockTime() - nFirstBlockTime;
+
+    int64_t nActualTimespanMin = fNewDifficultyProtocol ? (nTargetTimespanCurrent - nTargetTimespanCurrent/4) : (nTargetTimespanCurrent/4);
+    int64_t nActualTimespanMax = fNewDifficultyProtocol ? (nTargetTimespanCurrent + nTargetTimespanCurrent/4) : (nTargetTimespanCurrent*4);
+
+    int64_t nActualTimespan = pindexLast->GetBlockTime() - nFirstBlockTime;
+
+    if(nHeight > 10000)
+    {
+        if (nActualTimespan < nActualTimespanMin)
+            nActualTimespan = nActualTimespanMin;
+        if (nActualTimespan > nActualTimespanMax)
+            nActualTimespan = nActualTimespanMax;
+    }
+    else if(nHeight > 5000)
+    {
+        if (nActualTimespan < nActualTimespanMin/2)
+            nActualTimespan = nActualTimespanMin/2;
+        if (nActualTimespan > nActualTimespanMax)
+            nActualTimespan = nActualTimespanMax;
+    }
+    else
+    {
+        if (nActualTimespan < nActualTimespanMin/4)
+            nActualTimespan = nActualTimespanMin/4;
+        if (nActualTimespan > nActualTimespanMax)
+            nActualTimespan = nActualTimespanMax;
+    }
+
+    //const int64_t retargetTimespan = params.nPowTargetTimespan;
+    /*
+
     int64_t nModulatedTimespan = nActualTimespan;
     int64_t nMaxTimespan;
     int64_t nMinTimespan;
 
-    if (params.fDigishieldDifficultyCalculation) //DigiShield implementation - thanks to RealSolid & WDC for this code
+    if (params.fDigishieldDifficultyCalculation && params.nHeightEffective <= nHeight) //DigiShield implementation - thanks to RealSolid & WDC for this code
     {
         // amplitude filter - thanks to daft27 for this code
         nModulatedTimespan = retargetTimespan + (nModulatedTimespan - retargetTimespan) / 8;
@@ -70,16 +99,19 @@ unsigned int CalculateDogecoinNextWorkRequired(const CBlockIndex* pindexLast, in
     if (nModulatedTimespan < nMinTimespan)
         nModulatedTimespan = nMinTimespan;
     else if (nModulatedTimespan > nMaxTimespan)
-        nModulatedTimespan = nMaxTimespan;
+        nModulatedTimespan = nMaxTimespan;*/
 
     // Retarget
     const arith_uint256 bnPowLimit = UintToArith256(params.powLimit);
     arith_uint256 bnNew;
-    arith_uint256 bnOld;
+    //arith_uint256 bnOld;
     bnNew.SetCompact(pindexLast->nBits);
-    bnOld = bnNew;
-    bnNew *= nModulatedTimespan;
-    bnNew /= retargetTimespan;
+    bnNew *= nActualTimespan;
+    bnNew /= nTargetTimespanCurrent;
+
+    //bnOld = bnNew;
+    //bnNew *= nModulatedTimespan;
+    //bnNew /= retargetTimespan;
 
     if (bnNew > bnPowLimit)
         bnNew = bnPowLimit;

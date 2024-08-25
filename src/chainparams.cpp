@@ -90,7 +90,7 @@ public:
         consensus.BIP66Height = 0xFFFFFFFF;
 
         consensus.powLimit = uint256S("0x00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 20;
-        consensus.nPowTargetTimespan = 20 * 60; // pre-digishield: 4 hours
+        consensus.nPowTargetTimespan = 20 * 60; // pre-digishield: 20 minutes
         consensus.nPowTargetSpacing = 60; // 1 minute
         consensus.nCoinbaseMaturity = 70;
         consensus.fPowNoRetargeting = false;
@@ -151,7 +151,7 @@ public:
         minDifficultyConsensus = digishieldConsensus;
         minDifficultyConsensus.nHeightEffective = std::numeric_limits<uint32_t>::max();;
         minDifficultyConsensus.fPowAllowDigishieldMinDifficultyBlocks = true;
-        minDifficultyConsensus.fPowAllowMinDifficultyBlocks = true;
+        minDifficultyConsensus.fPowAllowMinDifficultyBlocks = false;
 
         // Not implementing AuxPow hardfork yet
         auxpowConsensus = digishieldConsensus;
