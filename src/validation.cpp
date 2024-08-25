@@ -1287,7 +1287,7 @@ void CheckForkWarningConditions()
     if (pindexBestForkTip || (pindexBestInvalid && pindexBestInvalid->nChainWork > chainActive.Tip()->nChainWork + (GetBlockProof(*chainActive.Tip()) * 30)))
     {
         printf("pindexBestForkTip: %s\n", pindexBestForkTip ? pindexBestForkTip->GetBlockHash().ToString().c_str() : "NULL");
-        printf("Want pindexBestInvalid->nChainWork %s > chainActive.Tip()->nChainWork: %s\n", pindexBestInvalid->nChainWork.ToString().c_str(), chainActive.Tip()->nChainWork + (GetBlockProof(*chainActive.Tip()) * 30)).ToString().c_str());
+        printf("Want pindexBestInvalid->nChainWork %d > chainActive.Tip()->nChainWork: %d\n", pindexBestInvalid->nChainWork, chainActive.Tip()->nChainWork + (GetBlockProof(*chainActive.Tip()) * 30)));
         if (!GetfLargeWorkForkFound() && pindexBestForkBase)
         {
             std::string warning = std::string("'Warning: Large-work fork detected, forking after block ") +
