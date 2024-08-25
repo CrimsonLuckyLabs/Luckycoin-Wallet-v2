@@ -2033,8 +2033,6 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
 
         std::list<CTransactionRef> lRemovedTxn;
 
-        printf("MissingInputs %d\n", fMissingInputs);
-
         if (!AlreadyHave(inv) && AcceptToMemoryPool(mempool, state, ptx, true, &fMissingInputs, &lRemovedTxn)) {
             printf("ok\n");
 
@@ -2145,8 +2143,8 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
                 recentRejects->insert(tx.GetHash());
             }
         } else {
-            printf("CorruptionPossible\n");
             if (!tx.HasWitness() && !state.CorruptionPossible()) {
+                printf("CorruptionPossible\n");
                 // Do not use rejection cache for witness transactions or
                 // witness-stripped transactions, as they can have been malleated.
                 // See https://github.com/bitcoin/bitcoin/issues/8279 for details.
@@ -2177,6 +2175,8 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
                 }
             }
         }
+
+        printf("MissingInputs %d\n", fMissingInputs);
 
         for (const CTransactionRef& removedTx : lRemovedTxn)
             AddToCompactExtraTransactions(removedTx);
