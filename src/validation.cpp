@@ -1281,7 +1281,7 @@ void CheckForkWarningConditions()
 
     // If our best fork is no longer within 360 blocks (+/- 6 hours if no one mines it)
     // of our head, drop it
-    if (pindexBestForkTip && chainActive.Height() - pindexBestForkTip->nHeight >= 360)
+    if (pindexBestForkTip && chainActive.Height() - pindexBestForkTip->nHeight >= 100)
         pindexBestForkTip = NULL;
 
     if (pindexBestForkTip || (pindexBestInvalid && pindexBestInvalid->nChainWork > chainActive.Tip()->nChainWork + (GetBlockProof(*chainActive.Tip()) * 30)))
