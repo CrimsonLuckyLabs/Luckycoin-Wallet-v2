@@ -1,7 +1,7 @@
 <h1 align="center">
-<img src="https://belscan.io/images/logo.png" data-canonical-src="https://belscan.io/images/logo.png" width="250" height="250" alt="LuckyCoin"/>
+<img src="https://luckycoinfoundation.org/images/logo.png" data-canonical-src="https://luckycoinfoundation.org/images/logo.png" width="250" height="250" alt="LuckyCoin"/>
 <br/><br/>
-LuckyCoin Core [BEL]
+LuckyCoin [LKY]
 </h1>
 
 <div align="center">
@@ -11,54 +11,62 @@ LuckyCoin Core [BEL]
 
 </div>
 
-## This branch contains the latest version 2.0.0 of the luckycoin network.
+## This branch contains the latest version 2.0.0 of the Luckycoin network.
 
-## What is LuckyCoin?
-LuckyCoin is the twin of DogeCoin, born before it, and just seen the lights now. [Visit blockchain explorer](https://belscan.io/)
+Luckycoin Client v2.0.0
+=======================
 
-## Development and contributions
-Developers work in their own trees, then submit pull requests when they think
-their feature or bug fix is ready.
+Luckycoin - a fork of Litecoin version with random bonus blocks. Like Litecoin it uses scrypt as a proof of work scheme.
 
-## Usage 💻
+- 1 min block target
+- Difficulty retargets every 20 min with accelerated diff adjustment in the beginning
+- Initially 88 coins per block, halves every 2 months (100,000 blocks)
+- Total around 20 millions coins
+- connection port is 9917, RPC-port 9918
 
-To start your journey with LuckyCoin Core, see the [installation guide](INSTALL.md) and the [getting started](doc/getting-started.md) tutorial.
+Random Super-blocks:
+For the 1st 50000 blocks (1st month)
+- 5% chances 188 coins/block
+- 1% chances 588 coins/block
+- 0.01% chances 5888 coins/block (so expect 5 such blocks)
 
-The JSON-RPC API provided by LuckyCoin Core is self-documenting and can be browsed with `luckycoin-cli help`, while detailed information for each command can be viewed with `luckycoin-cli help <command>`. Alternatively, see the [Bitcoin Core documentation](https://developer.bitcoin.org/reference/rpc/) - which implement a similar protocol - to get a browsable version.
+    After 50000 blocks
+    - 5% chances 2 times the normal coins (i.e. if normal is 88 coins, you get 176 coins)
+    - 1% chances 5 times the normal coins
+    - 0.01% chance 58 times the normal coins
 
-## Frequently Asked Questions
 
-### How much luckycoin can exist?
-Max supply of 500,000,000 coins with special rewards system.
+Official Luckycoin Website and Community Forum
+==================================
 
-### How to get $bel?
-Scrypt Proof of Work
+Please visit the official Luckycoin website for more information.
+https://luckycoinfoundation.org
 
-1 Minute Block Targets, 4 Hour Diff Readjustments
 
-* 50% chance of 50 coins
-* 20% chance of 100 coins
-* 14% chance of 250 coins
-* 10% chance of 500 coins
-* 5% chance of 1000 coins
-* 1% chance of 10000 coins
+Development process
+===================
 
-Halving at 129600 (~90 days)
-Decreasing by 4/5ths at 259200 blocks (~180 days)
-After block 518,400 (~1 year), reward of 2 coins.
+Developers work in their own trees, then submit pull requests when
+they think their feature or bug fix is ready.
 
-### Ports
-| Function | mainnet | testnet | regtest |
-| :------- |--------:| ------: | ------: |
-| P2P      |   19919 |   29919 |   18444 |
-| RPC      |   19918 |   29929 |   18332 |
+The patch will be accepted if there is broad consensus that it is a
+good thing.  Developers should expect to rework and resubmit patches
+if they don't match the project's coding conventions (see coding.txt)
+or are controversial.
 
-## Change Log
-### 0.7.0
-- Updated to protocol 70001
-- Added peer seeding
+The master branch is regularly built and tested, but is not guaranteed
+to be completely stable. Tags are regularly created to indicate new
+official, stable release versions of Luckycoin.
 
-## License ⚖️
-LuckyCoin Core is released under the terms of the MIT license. See
-[COPYING](COPYING) for more information or see
-[opensource.org](https://opensource.org/licenses/MIT)
+Feature branches are created when there are major new features being
+worked on by several people.
+
+From time to time a pull request will become outdated. If this occurs, and
+the pull is no longer automatically mergeable; a comment on the pull will
+be used to issue a warning of closure. The pull will be closed 15 days
+after the warning if action is not taken by the author. Pull requests closed
+in this manner will have their corresponding issue labeled 'stagnant'.
+
+Issues with no commits will be given a similar warning, and closed after
+15 days from their last activity. Issues closed in this manner will be
+labeled 'stale'. 
