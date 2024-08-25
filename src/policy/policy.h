@@ -20,7 +20,7 @@ class CCoinsViewCache;
   * All fee defaults used throughout the client derive their
   * value from this base default.
   */
-static const CAmount RECOMMENDED_MIN_TX_FEE = 10000;
+static const CAmount RECOMMENDED_MIN_TX_FEE = 10000000;
 
 /** Default for -blockmaxsize, which controls the maximum size of block the mining code will create **/
 static const unsigned int DEFAULT_BLOCK_MAX_SIZE = 1000000;
