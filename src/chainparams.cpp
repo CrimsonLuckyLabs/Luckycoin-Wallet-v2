@@ -117,16 +117,16 @@ public:
         // Deployment of BIP68, BIP112, and BIP113.
         // XXX: BIP heights and hashes all need to be updated to LuckyCoin values
         consensus.vDeployments[Consensus::DEPLOYMENT_CSV].bit = 3;
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1734490155; // 2023-12-25 00:00:00
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 1744490155;   // 2024-12-25 18:00:00
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1754490155; // 2023-12-25 00:00:00
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 1764490155;   // 2024-12-25 18:00:00
 
         // Deployment of SegWit (BIP141, BIP143, and BIP147)
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].bit = 4;
-        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nStartTime = 1734490155; // 2023-12-25 00:00:00
-        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1744490155;   // 2024-12-25 18:00:00
+        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nStartTime = 1754490155; // 2023-12-25 00:00:00
+        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1764490155;   // 2024-12-25 18:00:00
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000000000000000001FC6F95A243A8"); // 4,303,965
+        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000000331bcd694b668"); // 4,303,965
 
         // By default assume that the signatures in ancestors of this block are valid.
         consensus.defaultAssumeValid = uint256S("0x324635c8e36f663b0adb126a21ad0bd7fa43cc5c5f15aec992bf4dde650bc0ea");
