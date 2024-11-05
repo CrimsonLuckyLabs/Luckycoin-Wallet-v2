@@ -12,7 +12,7 @@ LuckyCoin [LKY]
 </div>
 
 
-BY USING THIS CODE YOU ARE AWARE THAT YOU ARE IGNORING THE FOLLOWING WARNING AND PUT YOURSELF IN A POTENTIAL LOST OF FUNDS OR EXPLOIT. THIS CODE HAS NOT BEEN AUDITED IN ANY MEAN AND SHOULD **NOT** BE USED. USER HAVE BEEN WARNED.
+BY USING THIS CODE YOU ARE AWARE THAT YOU ARE IGNORING THE FOLLOWING WARNING AND PUT YOURSELF IN A POTENTIAL LOST OF FUNDS OR EXPLOIT. THIS CODE HAS NOT BEEN AUDITED IN ANY MEAN. USER HAVE BEEN WARNED.
 
 ## Why 2.0.0?
 This repo have been made in an experiment to revive the luckycoin chain. It includes an upgraded version of the Bitcoin protocol that is required to run mempool, electrs and more. Please note that changes done to this version have not been tested under any circumstance and should not be used with tokens. Use at your OWN risks. The developper(s) are not responsible for your actions.
